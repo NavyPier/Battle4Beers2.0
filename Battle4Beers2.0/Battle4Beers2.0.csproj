@@ -43,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Action.cs" />
+    <Compile Include="Interfaces\ICaster.cs" />
+    <Compile Include="Interfaces\IFighter.cs" />
+    <Compile Include="Models\Action.cs" />
     <Compile Include="DrawMenu.cs" />
-    <Compile Include="Hero.cs" />
+    <Compile Include="Models\Hero.cs" />
     <Compile Include="Interfaces\IAction.cs" />
     <Compile Include="Interfaces\IHero.cs" />
+    <Compile Include="Models\Mage.cs" />
+    <Compile Include="Models\Priest.cs" />
+    <Compile Include="Models\Warrior.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

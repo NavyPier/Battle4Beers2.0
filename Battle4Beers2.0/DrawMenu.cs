@@ -11,9 +11,7 @@ public class DrawMenu
           |  |     |   |         |   | |  |     |   |
           |  |_____|   |         |   | |  |_____|   |
           |____________|         |___| |____________|";
-
-    //This method creates the starting menu for the game.
-    public static void StartMenu()
+    public static void Menu(string firstAction, string secondAction, string thirdAction, string fourthAction)
     {
         int counter = 1;
         ConsoleKeyInfo enter = new ConsoleKeyInfo();
@@ -29,55 +27,51 @@ public class DrawMenu
             }
 
             Console.WriteLine(GameTitle);
-            string newGame = "NEW GAME";
-            string beerEarnings = "BEERS EARNED";
-            string instructionsText = "INSTRUCTIONS";
-            string quit = "QUIT";
 
             switch (counter)
             {
                 case 1:
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (newGame.Length / 2)) + "}", "-> " + newGame);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (beerEarnings.Length / 2)) + "}", beerEarnings);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (instructionsText.Length / 2)) + "}", instructionsText);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (quit.Length / 2)) + "}", quit); break;
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (firstAction.Length / 2)) + "}", "-> " + firstAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (secondAction.Length / 2)) + "}", secondAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (thirdAction.Length / 2)) + "}", thirdAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", fourthAction); break;
                 case 2:
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (newGame.Length / 2)) + "}", newGame);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (beerEarnings.Length / 2)) + "}", "-> " + beerEarnings);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (instructionsText.Length / 2)) + "}", instructionsText);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (quit.Length / 2)) + "}", quit); break;
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (firstAction.Length / 2)) + "}", firstAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (secondAction.Length / 2)) + "}", "-> " + secondAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (thirdAction.Length / 2)) + "}", thirdAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", fourthAction); break;
                 case 3:
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (newGame.Length / 2)) + "}", newGame);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (beerEarnings.Length / 2)) + "}", beerEarnings);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (instructionsText.Length / 2)) + "}", "-> " + instructionsText);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (quit.Length / 2)) + "}", quit); break;
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (firstAction.Length / 2)) + "}", firstAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (secondAction.Length / 2)) + "}", secondAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (thirdAction.Length / 2)) + "}", "-> " + thirdAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", fourthAction); break;
                 case 4:
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (newGame.Length / 2)) + "}", newGame);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (beerEarnings.Length / 2)) + "}", beerEarnings);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (instructionsText.Length / 2)) + "}", instructionsText);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (quit.Length / 2)) + "}", "-> " + quit); break;
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (firstAction.Length / 2)) + "}", firstAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (secondAction.Length / 2)) + "}", secondAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (thirdAction.Length / 2)) + "}", thirdAction);
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", "-> " + fourthAction); break;
                 default:
                     if (counter == 5)
                     {
                         counter = 1;
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (newGame.Length / 2)) + "}", "-> " + newGame);
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (beerEarnings.Length / 2)) + "}", beerEarnings);
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (instructionsText.Length / 2)) + "}", instructionsText);
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (quit.Length / 2)) + "}", quit);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (firstAction.Length / 2)) + "}", "-> " + firstAction);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (secondAction.Length / 2)) + "}", secondAction);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (thirdAction.Length / 2)) + "}", thirdAction);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", fourthAction);
                     }
                     else if (counter == 0)
                     {
                         counter = 4;
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (newGame.Length / 2)) + "}", newGame);
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (beerEarnings.Length / 2)) + "}", beerEarnings);
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (instructionsText.Length / 2)) + "}", instructionsText);
-                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (quit.Length / 2)) + "}", "-> " + quit);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (firstAction.Length / 2)) + "}", firstAction);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (secondAction.Length / 2)) + "}", secondAction);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (thirdAction.Length / 2)) + "}", thirdAction);
+                        Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", "-> " + fourthAction);
                     }
                     break;
             }
@@ -95,7 +89,22 @@ public class DrawMenu
         }
     }
 
+    //This method creates the starting menu for the game.
+    public static void StartMenu()
+    {
+        var firstAction = "NEW GAME";
+        var secondAction = "BEERS EARNED";
+        var thirdAction = "INSTRUCTIONS";
+        var fourthAction = "QUIT";
+        Menu(firstAction, secondAction, thirdAction, fourthAction);
+    }
+
     public static void ActionsMenu(Hero player)
     {
+        var firstAction = player.Actions[0].ToString();
+        var secondAction = player.Actions[1].ToString();
+        var thirdAction = player.Actions[2].ToString();
+        var fourthAction = player.Actions[3].ToString();
+        Menu(firstAction, secondAction, thirdAction, fourthAction);
     }
 }
