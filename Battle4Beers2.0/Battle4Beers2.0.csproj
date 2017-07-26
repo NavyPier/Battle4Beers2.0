@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionManager.cs" />
+    <Compile Include="Utilities\Constants\Constants.cs" />
     <Compile Include="Interfaces\ICaster.cs" />
     <Compile Include="Interfaces\IFighter.cs" />
     <Compile Include="Models\Action.cs" />

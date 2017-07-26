@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Battle4Beers2._0.Constants;
 
 public abstract class Hero : IHero
 {
@@ -27,8 +28,11 @@ public abstract class Hero : IHero
         {
             if(value.Length < 3 || value.Length > 15)
             {
-                throw new ArgumentException(@"- A player's name must be longer than 3 symbols!!!
-- A player's name must be shorter than 16 symbols!!!");
+                throw new ArgumentException(Constants.InvalidPlayerNameSymbolsCount);
+            }
+            if (String.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException(Constants.NameCannotBeNull);
             }
 
             this.name = value;
