@@ -28,7 +28,11 @@ public abstract class Hero : IHero
         {
             if(value.Length < 3 || value.Length > 15)
             {
+<<<<<<< .mine
                 throw new ArgumentException(Constants.InvalidPlayerNameSymbolsCount);
+=======
+                throw new ArgumentException(Constants.InvalidPlayerSymbolsCount);
+>>>>>>> .theirs
             }
             if (String.IsNullOrEmpty(value))
             {
