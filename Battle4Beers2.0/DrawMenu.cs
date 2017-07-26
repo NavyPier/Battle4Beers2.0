@@ -1,17 +1,8 @@
 ﻿using System;
+using Battle4Beers2._0.Constants;
 
 public class DrawMenu
-{
-    //The game title.
-    public const string GameTitle = @"          _________       ___     ___  _________
-          |   ___  |     |   |   |   | |   ___  |
-          |  |___| |     |   |   |   | |  |___| |
-          |________|__   |   |___|   | |________|__
-          |  ______    | |_______    | |  ______    |
-          |  |     |   |         |   | |  |     |   |
-          |  |_____|   |         |   | |  |_____|   |
-          |____________|         |___| |____________|";
-    
+{    
     //This is the method used to draw all the different types of menus.
     public static void MenuDraw(string firstAction, string secondAction, string thirdAction, string fourthAction)
     {
@@ -28,7 +19,8 @@ public class DrawMenu
                 counter--;
             }
 
-            Console.WriteLine(GameTitle);
+            //The game title.
+            Console.WriteLine(Constants.GameTitle);
 
             //Draws the menu with an arrow pointing to the currently selected action.
             switch (counter)
@@ -56,7 +48,8 @@ public class DrawMenu
                     Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (firstAction.Length / 2)) + "}", firstAction);
                     Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (secondAction.Length / 2)) + "}", secondAction);
                     Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (thirdAction.Length / 2)) + "}", thirdAction);
-                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", "-> " + fourthAction); break;
+                    Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (fourthAction.Length / 2)) + "}", "-> " + fourthAction);
+                    break;
                 default:
                     if (counter == 5)
                     {

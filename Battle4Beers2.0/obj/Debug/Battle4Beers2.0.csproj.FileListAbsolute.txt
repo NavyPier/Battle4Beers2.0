@@ -4,3 +4,9 @@ c:\users\ivail\documents\visual studio 2015\Projects\Battle4Beers2.0\Battle4Beer
 c:\users\ivail\documents\visual studio 2015\Projects\Battle4Beers2.0\Battle4Beers2.0\obj\Debug\Battle4Beers2.0.csprojResolveAssemblyReference.cache
 c:\users\ivail\documents\visual studio 2015\Projects\Battle4Beers2.0\Battle4Beers2.0\obj\Debug\Battle4Beers2.0.exe
 c:\users\ivail\documents\visual studio 2015\Projects\Battle4Beers2.0\Battle4Beers2.0\obj\Debug\Battle4Beers2.0.pdb
+D:\Visual Studio 2017\Projects\Team-Projects\Battle4Beers2.0\Battle4Beers2.0\bin\Debug\Battle4Beers2.0.exe.config
+D:\Visual Studio 2017\Projects\Team-Projects\Battle4Beers2.0\Battle4Beers2.0\bin\Debug\Battle4Beers2.0.exe
+D:\Visual Studio 2017\Projects\Team-Projects\Battle4Beers2.0\Battle4Beers2.0\bin\Debug\Battle4Beers2.0.pdb
+D:\Visual Studio 2017\Projects\Team-Projects\Battle4Beers2.0\Battle4Beers2.0\obj\Debug\Battle4Beers2.0.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2017\Projects\Team-Projects\Battle4Beers2.0\Battle4Beers2.0\obj\Debug\Battle4Beers2.0.exe
+D:\Visual Studio 2017\Projects\Team-Projects\Battle4Beers2.0\Battle4Beers2.0\obj\Debug\Battle4Beers2.0.pdb
