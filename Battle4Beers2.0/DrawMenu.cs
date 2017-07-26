@@ -2,7 +2,7 @@
 
 public class DrawMenu
 {
-    //Constant of the game title.
+    //The game title.
     public const string GameTitle = @"          _________       ___     ___  _________
           |   ___  |     |   |   |   | |   ___  |
           |  |___| |     |   |   |   | |  |___| |
@@ -11,7 +11,9 @@ public class DrawMenu
           |  |     |   |         |   | |  |     |   |
           |  |_____|   |         |   | |  |_____|   |
           |____________|         |___| |____________|";
-    public static void Menu(string firstAction, string secondAction, string thirdAction, string fourthAction)
+    
+    //This is the method used to draw all the different types of menus.
+    public static void MenuDraw(string firstAction, string secondAction, string thirdAction, string fourthAction)
     {
         int counter = 1;
         ConsoleKeyInfo enter = new ConsoleKeyInfo();
@@ -28,6 +30,7 @@ public class DrawMenu
 
             Console.WriteLine(GameTitle);
 
+            //Draws the menu with an arrow pointing to the currently selected action.
             switch (counter)
             {
                 case 1:
@@ -79,32 +82,41 @@ public class DrawMenu
             Console.Clear();
         }
 
+        ActionManager actionManager = new ActionManager();
         switch (counter)
         {
             case 1:
+                actionManager.DoAction(firstAction);
+                break;
             case 2:
+                actionManager.DoAction(secondAction);
+                break;
             case 3:
+                actionManager.DoAction(thirdAction);
+                break;
             case 4:
-                return;
+                actionManager.DoAction(fourthAction);
+                break;
         }
     }
 
-    //This method creates the starting menu for the game.
+    //Gives the MenuDraw method the properties needed to draw the Start Menu.
     public static void StartMenu()
     {
         var firstAction = "NEW GAME";
         var secondAction = "BEERS EARNED";
         var thirdAction = "INSTRUCTIONS";
         var fourthAction = "QUIT";
-        Menu(firstAction, secondAction, thirdAction, fourthAction);
+        MenuDraw(firstAction, secondAction, thirdAction, fourthAction);
     }
 
+    //Gives the MenuDraw method the properties needed to draw an Action Menu for the current hero.
     public static void ActionsMenu(Hero player)
     {
         var firstAction = player.Actions[0].ToString();
         var secondAction = player.Actions[1].ToString();
         var thirdAction = player.Actions[2].ToString();
         var fourthAction = player.Actions[3].ToString();
-        Menu(firstAction, secondAction, thirdAction, fourthAction);
+        MenuDraw(firstAction, secondAction, thirdAction, fourthAction);
     }
 }
