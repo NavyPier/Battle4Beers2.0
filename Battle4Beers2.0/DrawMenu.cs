@@ -3,7 +3,7 @@ using Battle4Beers2._0.Constants;
 
 public class DrawMenu
 {    
-    //This is the method used to draw all the different types of menus.
+    // This is the method used to draw all the different types of menus.
     public static void MenuDraw(string firstAction, string secondAction, string thirdAction, string fourthAction)
     {
         int counter = 1;
