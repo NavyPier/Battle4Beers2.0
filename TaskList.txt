@@ -1,0 +1,39 @@
+# Battle4Beers2.0
+
+
+
+Task List:
+
+
+1. Create Database
+
+ - Georgi - Done
+
+2. Unit Tests
+
+ - Everyone mostly Aleks
+
+3. Models for Heroes and Actions
+
+  3.1 Hero and Action - Done
+  3.2 Priest, Warrior, Mage and different actions
+  3.3 Priest classes, Warrior classes, Mage classes
+ - Ivailo, Vesko
+
+4. Optimize functionality
+
+ - Everyone 
+
+5. Implement game logic
+  5.1 Character creation
+
+  5.2 Coin flip
+
+  5.3 Action cooldown checker
+
+  5.4 Battleground
+
+  5.5 Action result screen
+
+  5.6 Game result screen
+ - Ivailo, Ivo
