@@ -1,17 +1,27 @@
-﻿namespace Battle4Beers.Client.Models
-{
-    public class Warrior : Hero
-    {
-        private int armor;
+﻿using System;
+using Battle4Beers.Client.Interfaces;
 
-        public Warrior(string name, int health) : base(name, health)
+namespace Battle4Beers.Client.Models
+{
+    public abstract class Warrior : Hero, IHero, IFighter
+    {
+        private int rage;
+
+        public Warrior(string name, int health, int rage) : base(name, health)
         {
+            this.Rage = rage;
         }
 
-        public int Armor
+        public int Rage
         {
-            get { return this.armor; }
-            protected set { this.armor = value; }
+            get
+            {
+                return this.rage;
+            }
+            protected set
+            {
+                this.rage = value;
+            }
         }
     }
 }
