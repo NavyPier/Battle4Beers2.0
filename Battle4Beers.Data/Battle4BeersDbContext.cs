@@ -17,16 +17,20 @@ namespace Battle4Beers.Data
         }
 
         public virtual DbSet<Player> Players { get; set; }
-        public virtual DbSet<SingleScore> SingleScores { get; set; }
-        public virtual DbSet<TeamScore> TeamScores { get; set; }
+        public virtual DbSet<Beer> Beers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SingleScore>()
-                .HasRequired(s => s.Player)
-                .WithMany(p => p.SingleScores)
+            modelBuilder.Entity<Player>()
+                .HasMany(p => p.BeersToBeTaken)
+                .WithRequired(b => b.Winner)
                 .WillCascadeOnDelete(false);
-            
+
+            modelBuilder.Entity<Player>()
+                .HasMany(p => p.BeersToBeGiven)
+                .WithRequired(b => b.Loser)
+                .WillCascadeOnDelete(false);
+
             base.OnModelCreating(modelBuilder);
         }
 
