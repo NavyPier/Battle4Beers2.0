@@ -7,8 +7,10 @@ namespace Battle4Beers.Client.Models
         private int mana;
         private int spellPower;
 
-        public Priest(string name, int health) : base(name, health)
+        public Priest(string name, int health, int mana, int spellPower) : base(name, health)
         {
+            this.Mana = mana;
+            this.SpellPower = spellPower;
         }
 
         public int SpellPower

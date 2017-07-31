@@ -4,10 +4,8 @@
     {
         private int frostArmor;
 
-        public FrostMage(string name, int health, int mana, int spellPower) : base(name, health)
+        public FrostMage(string name, int health, int mana, int spellPower) : base(name, health, mana, spellPower)
         {
-            this.Mana = mana;
-            this.SpellPower = spellPower;
         }
 
         public int FrostArmor

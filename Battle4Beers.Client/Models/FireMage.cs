@@ -4,10 +4,8 @@
     {
         private int fireArmor;
 
-        public FireMage(string name, int health, int mana, int spellPower) : base(name, health)
+        public FireMage(string name, int health, int mana, int spellPower) : base(name, health, mana, spellPower)
         {
-            this.Mana = mana;
-            this.SpellPower = spellPower;
         }
 
         public int FireArmor

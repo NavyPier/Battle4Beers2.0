@@ -2,10 +2,8 @@
 {
     public class ArcaneMage : Mage
     {
-        public ArcaneMage(string name, int health, int mana, int spellPower) : base(name, health)
+        public ArcaneMage(string name, int health, int mana, int spellPower) : base(name, health, mana, spellPower)
         {
-            this.Mana = mana;
-            this.SpellPower = spellPower;
         }
     }
 }

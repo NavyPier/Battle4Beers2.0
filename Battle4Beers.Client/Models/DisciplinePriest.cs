@@ -2,9 +2,8 @@
 {
     public class DisciplinePriest : Priest
     {
-        public DisciplinePriest(string name, int health, int mana) : base(name, health)
+        public DisciplinePriest(string name, int health, int mana, int spellPower) : base(name, health, mana, spellPower)
         {
-            this.Mana = mana;
         }
     }
 }
