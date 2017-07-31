@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using System.Collections.Generic;
 
 namespace Battle4Beers.Client.Models
 {
@@ -8,7 +9,7 @@ namespace Battle4Beers.Client.Models
         private int rage;
         private int attackPower;
 
-        public Warrior(string name, int health, int rage, int attackPower) : base(name, health)
+        public Warrior(string name, int health, int healthRegen, List<Action> actions, int armor, int rage, int attackPower) : base(name, health, healthRegen, actions, armor)
         {
             this.Rage = rage;
             this.AttackPower = attackPower;

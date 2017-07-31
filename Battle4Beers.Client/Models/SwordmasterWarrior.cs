@@ -1,9 +1,20 @@
-﻿namespace Battle4Beers.Client.Models
+﻿using System.Collections.Generic;
+
+namespace Battle4Beers.Client.Models
 {
     public class SwordmasterWarrior : Warrior
     {
-        public SwordmasterWarrior(string name, int health, int rage, int attackPower) : base(name, health, rage, attackPower)
+        private bool criticalStrike;
+
+        public SwordmasterWarrior(string name, int health, int healthRegen, List<Action> actions, int armor, int rage, int attackPower) : base(name, health, healthRegen, actions, armor, rage, attackPower)
         {
+            this.CriticalStrike = false;
+        }
+
+        public bool CriticalStrike
+        {
+            get { return this.criticalStrike; }
+            protected set { this.criticalStrike = value; }
         }
     }
 }

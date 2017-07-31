@@ -9,13 +9,15 @@ namespace Battle4Beers.Client.Models
     {
         private string name;
         private int health;
+        private int healthRegen;
         private List<Action> actions;
 
-        public Hero(string name, int health)
+        public Hero(string name, int health, int healthRegen, List<Action> actions, int armor)
         {
             this.Name = name;
             this.Health = health;
-            this.actions = new List<Action>();
+            this.HealthRegen = healthRegen;
+            this.actions = new List<Action>(actions);
         }
 
         public int Health
@@ -47,6 +49,18 @@ namespace Battle4Beers.Client.Models
             get
             {
                 return this.actions;
+            }
+        }
+
+        public int HealthRegen
+        {
+            get
+            {
+                return this.healthRegen;
+            }
+            protected set
+            {
+                this.healthRegen = value;
             }
         }
     }

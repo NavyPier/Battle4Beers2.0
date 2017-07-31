@@ -1,4 +1,6 @@
 ﻿using Battle4Beers.Client.Interfaces;
+using System.Collections.Generic;
+using System;
 
 namespace Battle4Beers.Client.Models
 {
@@ -6,8 +8,9 @@ namespace Battle4Beers.Client.Models
     {
         private int mana;
         private int spellPower;
+        private int manaRegen;
 
-        public Mage(string name, int health, int mana, int spellPower) : base(name, health)
+        public Mage(string name, int health, int healthRegen, List<Action> actions, int armor, int mana, int manaRegen, int spellPower) : base(name, health, healthRegen, actions, armor)
         {
             this.Mana = mana;
             this.SpellPower = spellPower;
@@ -28,6 +31,18 @@ namespace Battle4Beers.Client.Models
             protected set
             {
                 this.mana = value;
+            }
+        }
+
+        public int ManaRegen
+        {
+            get
+            {
+                return this.manaRegen;
+            }
+            protected set
+            {
+                this.manaRegen = value;
             }
         }
     }

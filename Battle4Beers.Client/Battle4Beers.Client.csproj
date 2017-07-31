@@ -45,10 +45,15 @@
     <Compile Include="ActionManager.cs" />
     <Compile Include="DrawMenu.cs" />
     <Compile Include="Interfaces\IAction.cs" />
+    <Compile Include="Interfaces\IBuff.cs" />
     <Compile Include="Interfaces\ICaster.cs" />
     <Compile Include="Interfaces\IFighter.cs" />
     <Compile Include="Interfaces\IHero.cs" />
     <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\Actions\ArcaneMage\AmplifyMagic.cs" />
+    <Compile Include="Models\Actions\ArcaneMage\ArcaneBlast.cs" />
+    <Compile Include="Models\Actions\ArcaneMage\ManaRegeneration.cs" />
+    <Compile Include="Models\Actions\ArcaneMage\Polymorph.cs" />
     <Compile Include="Models\ArcaneMage.cs" />
     <Compile Include="Models\BerserkerWarrior.cs" />
     <Compile Include="Models\DisciplinePriest.cs" />

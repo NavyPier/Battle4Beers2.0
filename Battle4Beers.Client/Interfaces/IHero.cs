@@ -7,6 +7,7 @@ namespace Battle4Beers.Client.Interfaces
     {
         string Name { get; }
         int Health { get; }
+        int HealthRegen { get; }
         List<Action> Actions { get; }
     }
 }
