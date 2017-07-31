@@ -2,7 +2,7 @@
 {
     public class SwordmasterWarrior : Warrior
     {
-        public SwordmasterWarrior(string name, int health, int rage) : base(name, health, rage)
+        public SwordmasterWarrior(string name, int health, int rage, int attackPower) : base(name, health, rage, attackPower)
         {
         }
     }

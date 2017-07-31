@@ -4,7 +4,7 @@
     {
         private int armor;
 
-        public ProtectionWarrior(string name, int health, int rage, int armor) : base(name, health, rage)
+        public ProtectionWarrior(string name, int health, int rage, int attackPower, int armor) : base(name, health, rage, attackPower)
         {
             this.Armor = armor;
         }
