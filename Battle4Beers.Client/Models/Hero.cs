@@ -10,14 +10,24 @@ namespace Battle4Beers.Client.Models
         private string name;
         private int health;
         private int healthRegen;
-        private List<Action> actions;
-
+        private int armor;
+        public List<Action> actions;
+        public List<Buff> buffs;
+        
         public Hero(string name, int health, int healthRegen, List<Action> actions, int armor)
         {
             this.Name = name;
             this.Health = health;
             this.HealthRegen = healthRegen;
+            this.Armor = armor;
             this.actions = new List<Action>(actions);
+            this.buffs = new List<Buff>();
+        }
+
+        public int Armor
+        {
+            get { return this.armor; }
+            protected set { this.armor = value; }
         }
 
         public int Health

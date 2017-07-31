@@ -1,12 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models.Actions.FrostMage
 {
-    class FrozenGround
+    public class FrozenGround : Action, IBuff
     {
+        private int damage;
+        private int duration;
+
+        public FrozenGround(string name, int coolDown, int cost, int damage, int duration) : base(name, coolDown, cost)
+        {
+            this.Damage = damage;
+            this.Duration = duration;
+        }
+
+        public int Damage
+        {
+            get { return this.damage; }
+            protected set { this.damage = value; }
+        }
+
+        public int Duration
+        {
+            get
+            {
+                return this.duration;
+            }
+            protected set
+            {
+                this.duration = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

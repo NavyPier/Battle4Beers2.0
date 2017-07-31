@@ -9,9 +9,11 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
         private double healingPercentage;
         private int duration;
         
-        public Sadism(string name, int coolDown, int cost, double amplifier, double percentageHeal, int duration) : base(name, coolDown, cost)
+        public Sadism(string name, int coolDown, int cost, double amplifier, double healingPercentage, int duration) : base(name, coolDown, cost)
         {
-
+            this.Amplifier = amplifier;
+            this.HealingPercentage = healingPercentage;
+            this.Duration = duration;
         }
 
         public double Amplifier
@@ -23,6 +25,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
         public double HealingPercentage
         {
             get { return this.HealingPercentage; }
+            protected set { this.healingPercentage = value; }
         }
 
         public int Duration

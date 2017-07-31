@@ -3,6 +3,7 @@
     public class Constants
     {
         //01.Hero constants
+        public const int HeroBaseArmor = 0;
 
         //01.1.Warrior
 
@@ -12,7 +13,6 @@
         public const int WarriorDamage = 80;
         public const int WarriorHealtRegen = 70;
         public const int ProtectionWarriorArmor = 300;
-        public const int WarriorBaseArmor = 0;
         #endregion
         
         //01.2.Priest
@@ -24,7 +24,6 @@
         public const int PriestManaRegen = 110;
         public const int PriestSpellPower = 90;
         public const int PriestHealtRegen = 50;
-        public const int PriestBaseArmor = 0;
         #endregion
 
         //01.3.Mage
@@ -36,7 +35,6 @@
         public const int MageSpellPower = 100;
         public const int MageHealtRegen = 50;
         public const int MageManaRegen = 100;
-        public const int MageBaseArmor = 0;
         #endregion
 
         //02.Error messages.

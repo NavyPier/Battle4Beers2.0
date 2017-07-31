@@ -1,12 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models.Actions.FrostMage
 {
-    class IcyVeins
+    public class IcyVeins : Action, IBuff
     {
+        private double amplifier;
+        private int duration;
+
+        public IcyVeins(string name, int coolDown, int cost, double amplifier, int duration) : base(name, coolDown, cost)
+        {
+            this.Amplifier = amplifier;
+            this.Duration = duration;
+        }
+
+        public double Amplifier
+        {
+            get { return this.amplifier; }
+            protected set { this.amplifier = value; }
+        }
+
+        public int Duration
+        {
+            get
+            {
+                return this.duration;
+            }
+            protected set
+            {
+                this.duration = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

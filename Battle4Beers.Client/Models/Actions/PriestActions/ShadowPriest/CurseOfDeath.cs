@@ -1,12 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 {
-    class CurseOfDeath
+    public class CurseOfDeath : Action, IBuff
     {
+        private int damageOverTime;
+        private int duration;
+
+        public CurseOfDeath(string name, int coolDown, int cost, int damageOverTime, int duration) : base(name, coolDown, cost)
+        {
+            this.DamageOverTime = damageOverTime;
+            this.Duration = duration;
+        }
+
+        public int DamageOverTime
+        {
+            get { return this.damageOverTime; }
+            protected set { this.damageOverTime = value; }
+        }
+
+        public int Duration
+        {
+            get
+            {
+                return this.duration;
+            }
+            protected set { this.duration = value; }
+        }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
