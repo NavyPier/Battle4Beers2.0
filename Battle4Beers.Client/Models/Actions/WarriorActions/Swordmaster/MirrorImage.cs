@@ -26,7 +26,7 @@
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.InstantDamageString} {Constants.StunString} {Constants.CooldownAndCost} Rage";
+            return $"{this.Name}: Damage the selected opponent for {this.Damage} damage. Stun target for {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Rage";
         }
 
     }

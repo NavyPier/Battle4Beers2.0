@@ -6,10 +6,17 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
     public class Hit : Action
     {
         private int rageGeneration;
-
-        public Hit(string name, int coolDown, int cost) : base(name, coolDown, cost)
+        private int damage;
+        public Hit(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.RageGeneration = 20;
+            this.Damage = damage;
+        }
+
+        public int Damage
+        {
+            get { return this.damage; }
+            protected set { this.damage = value; }
         }
 
         public int RageGeneration
@@ -20,7 +27,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.InstantDamageString} Generate {this.rageGeneration} rage.";
+            return $"{this.Name}: Damage the selected opponent for {this.Damage} damage. Generate {this.rageGeneration} rage.";
         }
     }
 }

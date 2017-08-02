@@ -18,7 +18,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.GiveArmorString} {Constants.CooldownAndCost} Rage";
+            return $"{this.Name}: Give {this.Armor} to target. Cooldown: {this.CoolDown}, Cost: {this.Cost} Rage";
         }
     }
 }

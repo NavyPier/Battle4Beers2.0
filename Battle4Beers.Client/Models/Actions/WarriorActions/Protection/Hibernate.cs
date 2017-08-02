@@ -36,7 +36,7 @@
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageReductionString} {Constants.HealingString} {Constants.CooldownAndCost}";
+            return $"{this.Name}: Buff target ally to receive only {this.Percentage}% damage for the next {this.Duration} turns Heal target ally for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost}";
         }
 
     }

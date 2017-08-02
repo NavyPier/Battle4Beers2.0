@@ -28,7 +28,7 @@
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageAmplifierString} {Constants.CooldownAndCost} HP";
+            return $"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {this.Duration}turns.Cooldown: {this.CoolDown}, Cost: {this.Cost} HP";
         }
 
     }

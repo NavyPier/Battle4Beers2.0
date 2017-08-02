@@ -19,7 +19,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.InstantDamageString} {Constants.CooldownAndCost} Rage";
+            return $"{this.Name}: Damage the selected opponent for {this.Damage} damage. Cooldown: {this.CoolDown}, Cost: {this.Cost} Rage";
         }
     }
 }
