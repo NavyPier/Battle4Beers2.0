@@ -39,7 +39,7 @@ namespace Battle4Beers.Client.Models.Actions.FireMage
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.GiveArmorString} If anyone attacks the person with Fire Armor on, they get burned for {this.DamageOverTime} damage. {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Give {this.Armor} to target. If anyone attacks the person with Fire Armor on, they get burned for {this.DamageOverTime} damage. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

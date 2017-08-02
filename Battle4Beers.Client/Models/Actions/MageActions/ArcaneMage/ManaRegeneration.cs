@@ -22,7 +22,7 @@ namespace Battle4Beers.Client.Models.Actions
 
         public override string ToString()
         {
-            return $"{this.Name}: Give the target ally {this.Mana} mana {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Give the target ally {this.Mana} mana Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

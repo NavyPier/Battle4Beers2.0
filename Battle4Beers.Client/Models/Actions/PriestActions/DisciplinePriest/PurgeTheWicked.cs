@@ -20,7 +20,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.InstantDamageString} {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Damage the selected opponent for {this.Damage} damage. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

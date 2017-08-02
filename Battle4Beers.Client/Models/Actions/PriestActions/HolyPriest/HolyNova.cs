@@ -28,7 +28,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 
         public override string ToString()
         {
-            return $"{this.Name}: Damage all of your opponents by {this.damage} and heal yourself and nearby teammates by {this.heal}. {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Damage all of your opponents by {this.damage} and heal yourself and nearby teammates by {this.heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

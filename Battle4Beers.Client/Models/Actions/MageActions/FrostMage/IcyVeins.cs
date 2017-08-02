@@ -35,7 +35,7 @@ namespace Battle4Beers.Client.Models.Actions.FrostMage
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageAmplifierString} Lowers remaining cooldown on all used spells by 1 for you and your allies. {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Makes the player deal {this.Amplifier}% more damage for the next {this.Duration} turns. Lowers remaining cooldown on all used spells by 1 for you and your allies. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

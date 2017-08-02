@@ -35,7 +35,7 @@ namespace Battle4Beers.Client.Models.Actions.FrostMage
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageOverTimeString} {Constants.StunString} {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Damage the selected opponent for {this.Damage} damage for the next {this.Duration} turns. Stun target for {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

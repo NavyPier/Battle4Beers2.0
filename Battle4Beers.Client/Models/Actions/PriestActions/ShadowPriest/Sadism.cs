@@ -40,7 +40,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageAmplifierString} The player heals for {this.HealingPercentage}% of his damage dealt. {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {this.Duration} turns. The player heals for {this.HealingPercentage}% of his damage dealt. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

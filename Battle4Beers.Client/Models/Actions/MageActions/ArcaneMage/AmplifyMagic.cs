@@ -35,7 +35,7 @@ namespace Battle4Beers.Client.Models.Actions
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageAmplifierString} {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Makes the player deal {this.Amplifier}% more damage for the next {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

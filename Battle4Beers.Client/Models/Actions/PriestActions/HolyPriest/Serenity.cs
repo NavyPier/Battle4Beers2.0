@@ -20,7 +20,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.HealingString} {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Heal target ally for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

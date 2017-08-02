@@ -24,7 +24,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 
         public override string ToString()
         {
-            return $"Silence: Disables the target from casting any spells or actions for {this.duration} turns {Constants.CooldownAndCost} Mana";
+            return $"Silence: Disables the target from casting any spells or actions for {this.duration} turns Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

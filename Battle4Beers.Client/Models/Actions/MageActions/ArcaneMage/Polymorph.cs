@@ -27,7 +27,7 @@ namespace Battle4Beers.Client.Models.Actions
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.StunString} {Constants.CooldownAndCost}";
+            return $"{this.Name}: Stun target for {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost}";
         }
     }
 }

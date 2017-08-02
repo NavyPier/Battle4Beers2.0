@@ -32,7 +32,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageOverTimeString} {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Damage the selected opponent for {this.DamageOverTime} damage for the next {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

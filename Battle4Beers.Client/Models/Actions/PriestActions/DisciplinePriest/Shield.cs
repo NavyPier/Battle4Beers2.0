@@ -33,7 +33,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 
         public override string ToString()
         {
-            return $"{this.Name}: {Constants.DamageReductionString} {Constants.CooldownAndCost} Mana";
+            return $"{this.Name}: Buff target ally to receive only {this.ShieldRatio}% damage for the next {this.Duration} turns Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }
