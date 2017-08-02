@@ -1,25 +1,26 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 {
     public class Sadism : Action, IBuff
     {
-        private double amplifier;
+        private double percentage;
         private double healingPercentage;
         private int duration;
         
-        public Sadism(string name, int coolDown, int cost, double amplifier, double healingPercentage, int duration) : base(name, coolDown, cost)
+        public Sadism(string name, int coolDown, int cost, double percentage, double healingPercentage, int duration) : base(name, coolDown, cost)
         {
-            this.Amplifier = amplifier;
+            this.Percentage = percentage;
             this.HealingPercentage = healingPercentage;
             this.Duration = duration;
         }
 
-        public double Amplifier
+        public double Percentage
         {
-            get { return this.amplifier; }
-            protected set { this.amplifier = value;}
+            get { return this.percentage; }
+            protected set { this.percentage = value;}
         }
 
         public double HealingPercentage
@@ -39,7 +40,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: {Constants.DamageAmplifierString} The player heals for {this.HealingPercentage}% of his damage dealt. {Constants.CooldownAndCost} Mana";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions.FrostMage
 {
@@ -34,7 +35,7 @@ namespace Battle4Beers.Client.Models.Actions.FrostMage
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: {Constants.DamageAmplifierString} Lowers remaining cooldown on all used spells by 1 for you and your allies. {Constants.CooldownAndCost} Mana";
         }
     }
 }

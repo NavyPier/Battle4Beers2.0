@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 {
@@ -31,7 +32,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: {Constants.DamageOverTimeString} {Constants.CooldownAndCost} Mana";
         }
     }
 }

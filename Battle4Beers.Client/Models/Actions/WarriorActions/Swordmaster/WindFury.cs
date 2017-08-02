@@ -1,6 +1,8 @@
 ﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
 {
     using Interfaces;
+    using Utilities.Constants;
+
     public class WindFury : Action, IBuff
     {
         private int duration;
@@ -25,7 +27,7 @@
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return $"{this.Name}: {Constants.InstantDamageString} {Constants.CooldownAndCost} Rage";
         }
 
     }

@@ -72,32 +72,30 @@
     <Compile Include="Models\Actions\PriestActions\ShadowPriest\CurseOfDeath.cs" />
     <Compile Include="Models\Actions\PriestActions\ShadowPriest\MindBlast.cs" />
     <Compile Include="Models\Actions\PriestActions\ShadowPriest\Sadism.cs" />
-    <Compile Include="Models\Actions\WarriorActions\Berseker\AxeChop.cs" />
     <Compile Include="Models\Actions\WarriorActions\Berseker\Execute.cs" />
     <Compile Include="Models\Actions\WarriorActions\Berseker\GoBerserk.cs" />
     <Compile Include="Models\Actions\WarriorActions\Berseker\WildAxes.cs" />
+    <Compile Include="Models\Actions\WarriorActions\Hit.cs" />
     <Compile Include="Models\Actions\WarriorActions\Protection\ArmorUp.cs" />
     <Compile Include="Models\Actions\WarriorActions\Protection\Hibernate.cs" />
-    <Compile Include="Models\Actions\WarriorActions\Protection\MaceSwing.cs" />
     <Compile Include="Models\Actions\WarriorActions\Protection\ShieldSlam.cs" />
-    <Compile Include="Models\Actions\WarriorActions\Swordmaster\BladeSlash.cs" />
     <Compile Include="Models\Actions\WarriorActions\Swordmaster\LevelUpCrit.cs" />
     <Compile Include="Models\Actions\WarriorActions\Swordmaster\MirrorImage.cs" />
     <Compile Include="Models\Actions\WarriorActions\Swordmaster\WindFury.cs" />
-    <Compile Include="Models\ArcaneMage.cs" />
-    <Compile Include="Models\BerserkerWarrior.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\MageTypes\ArcaneMage.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\WarriorTypes\BerserkerWarrior.cs" />
     <Compile Include="Models\Buff.cs" />
-    <Compile Include="Models\DisciplinePriest.cs" />
-    <Compile Include="Models\FireMage.cs" />
-    <Compile Include="Models\FrostMage.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\PriestTypes\DisciplinePriest.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\MageTypes\FireMage.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\MageTypes\FrostMage.cs" />
     <Compile Include="Models\Hero.cs" />
-    <Compile Include="Models\HolyPriest.cs" />
-    <Compile Include="Models\Mage.cs" />
-    <Compile Include="Models\Priest.cs" />
-    <Compile Include="Models\ProtectionWarrior.cs" />
-    <Compile Include="Models\ShadowPriest.cs" />
-    <Compile Include="Models\SwordmasterWarrior.cs" />
-    <Compile Include="Models\Warrior.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\PriestTypes\HolyPriest.cs" />
+    <Compile Include="Models\Heroes\Mage.cs" />
+    <Compile Include="Models\Heroes\Priest.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\WarriorTypes\ProtectionWarrior.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\PriestTypes\ShadowPriest.cs" />
+    <Compile Include="Models\Heroes\HeroTypes\WarriorTypes\SwordmasterWarrior.cs" />
+    <Compile Include="Models\Heroes\Warrior.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Constants\Constants.cs" />
@@ -115,5 +113,6 @@
       <Name>Battle4Beers.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

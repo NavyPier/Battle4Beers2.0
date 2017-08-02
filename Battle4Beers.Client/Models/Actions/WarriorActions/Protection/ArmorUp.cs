@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions
+﻿using Battle4Beers.Client.Utilities.Constants;
+
+namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
     public class ArmorUp : Action
     {
@@ -16,7 +18,7 @@
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return $"{this.Name}: {Constants.GiveArmorString} {Constants.CooldownAndCost} Rage";
         }
     }
 }

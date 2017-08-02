@@ -8,7 +8,7 @@
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "Level up a 35% chance of Critical strike for double damage for the rest of the game.";
         }
     }
 }

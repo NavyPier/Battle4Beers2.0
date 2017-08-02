@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Battle4Beers.Client.Utilities.Constants;
+using System;
 
 namespace Battle4Beers.Client.Models.Actions
 {
@@ -11,6 +12,8 @@ namespace Battle4Beers.Client.Models.Actions
             this.Mana = mana;
         }
 
+        public object Constant { get; private set; }
+
         public int Mana
         {
             get { return this.mana; }
@@ -19,7 +22,7 @@ namespace Battle4Beers.Client.Models.Actions
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: Give the target ally {this.Mana} mana {Constants.CooldownAndCost} Mana";
         }
     }
 }

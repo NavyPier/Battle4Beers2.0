@@ -1,6 +1,7 @@
 ﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
 {
     using Interfaces;
+    using Battle4Beers.Client.Utilities.Constants;
     public class MirrorImage : Action, IBuff
     {
         private int duration;
@@ -25,7 +26,7 @@
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return $"{this.Name}: {Constants.InstantDamageString} {Constants.StunString} {Constants.CooldownAndCost} Rage";
         }
 
     }

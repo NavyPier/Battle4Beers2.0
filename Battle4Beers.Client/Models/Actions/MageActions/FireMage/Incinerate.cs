@@ -11,11 +11,15 @@ namespace Battle4Beers.Client.Models.Actions.FireMage
             this.Damage = damage;
         }
 
-        public int Damage;
+        public int Damage
+        {
+            get { return this.damage; }
+            protected set { this.damage = value; }
+        }
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: Execute the target if his HP is below {this.damage}";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions
 {
@@ -26,7 +27,7 @@ namespace Battle4Beers.Client.Models.Actions
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: {Constants.StunString} {Constants.CooldownAndCost}";
         }
     }
 }

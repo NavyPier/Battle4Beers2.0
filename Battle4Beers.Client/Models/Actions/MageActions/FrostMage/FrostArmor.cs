@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions.FrostMage
 {
@@ -7,10 +8,18 @@ namespace Battle4Beers.Client.Models.Actions.FrostMage
     {
         private int armor;
         private int duration;
+        private int percentage;
 
-        public FrostArmor(string name, int coolDown, int cost, int armor, int duration) : base(name, coolDown, cost)
+        public FrostArmor(string name, int coolDown, int cost, int armor, int percentage, int duration) : base(name, coolDown, cost)
         {
             this.Armor = armor;
+            this.Percentage = percentage;
+        }
+
+        public int Percentage
+        {
+            get { return this.percentage; }
+            protected set { this.percentage = value; }
         }
 
         public int Armor
@@ -39,7 +48,7 @@ namespace Battle4Beers.Client.Models.Actions.FrostMage
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: {Constants.GiveArmorString} {Constants.DamageReductionString} {Constants.CooldownAndCost} Mana";
         }
     }
 }

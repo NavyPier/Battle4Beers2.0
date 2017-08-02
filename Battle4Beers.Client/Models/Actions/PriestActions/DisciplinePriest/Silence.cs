@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 {
@@ -23,7 +24,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"Silence: Disables the target from casting any spells or actions for {this.duration} turns {Constants.CooldownAndCost} Mana";
         }
     }
 }

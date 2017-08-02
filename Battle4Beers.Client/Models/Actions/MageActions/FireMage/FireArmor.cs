@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions.FireMage
 {
@@ -38,7 +39,7 @@ namespace Battle4Beers.Client.Models.Actions.FireMage
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: {Constants.GiveArmorString} If anyone attacks the person with Fire Armor on, they get burned for {this.DamageOverTime} damage. {Constants.CooldownAndCost} Mana";
         }
     }
 }

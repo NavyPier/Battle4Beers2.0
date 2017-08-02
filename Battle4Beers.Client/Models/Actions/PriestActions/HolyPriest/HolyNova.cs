@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Battle4Beers.Client.Utilities.Constants;
+using System;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 {
@@ -27,7 +28,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"{this.Name}: Damage all of your opponents by {this.damage} and heal yourself and nearby teammates by {this.heal}. {Constants.CooldownAndCost} Mana";
         }
     }
 }

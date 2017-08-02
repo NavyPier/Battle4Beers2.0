@@ -1,6 +1,7 @@
 ﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
     using Interfaces;
+    using Utilities.Constants;
 
     public class ShieldSlam : Action, IBuff
     {
@@ -27,7 +28,7 @@
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return $"{this.Name}: {Constants.InstantDamageString} {Constants.StunString} {Constants.CooldownAndCost} Rage";
         }
 
     }

@@ -1,8 +1,11 @@
-﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
+﻿using Battle4Beers.Client.Utilities.Constants;
+
+namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 {
     public class WildAxes : Action
     {
         private int damage;
+
         public WildAxes(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.Damage = damage;
@@ -16,7 +19,7 @@
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return $"{this.Name}: {Constants.InstantDamageString} {Constants.CooldownAndCost} Rage";
         }
     }
 }
