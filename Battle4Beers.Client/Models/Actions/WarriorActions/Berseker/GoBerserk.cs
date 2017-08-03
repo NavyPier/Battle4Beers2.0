@@ -1,16 +1,11 @@
 ﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 {
-    using Interfaces;
-    using Utilities.Constants;
-
-    public class GoBerserk : Action, IBuff
+    public class GoBerserk : Buff
     {
-        private int duration;
         private int percentage;
 
-        public GoBerserk(string name, int coolDown, int cost, int percentage, int duration) : base(name, coolDown, cost)
+        public GoBerserk(string name, int coolDown, int cost, int duration, int percentage) : base(name, coolDown, cost, duration)
         {
-            this.Duration = duration;
             this.Percentage = 100;
         }
 
@@ -18,12 +13,6 @@
         {
             get { return this.percentage; }
             protected set { this.percentage = value; }
-        }
-
-        public int Duration
-        {
-            get { return this.duration; }
-            protected set { this.duration = value; }
         }
 
         public override string ToString()

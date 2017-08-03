@@ -1,33 +1,18 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
-using Battle4Beers.Client.Utilities.Constants;
-
-namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
+﻿namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 {
-    public class Renew : Action, IBuff
+    public class Renew : Buff
     {
         private int heal;
-        private int duration;
 
-        public Renew(string name, int coolDown, int cost, int heal, int duration) : base(name, coolDown, cost)
+        public Renew(string name, int coolDown, int cost, int duration, int heal) : base(name, coolDown, cost, duration)
         {
             this.Heal = heal;
-            this.Duration = duration;
         }
 
         public int Heal
         {
             get { return this.heal; }
             protected set { this.heal = value; }
-        }
-
-        public int Duration
-        {
-            get
-            {
-                return this.duration;
-            }
-            protected set { this.duration = value; }
         }
 
         public override string ToString()

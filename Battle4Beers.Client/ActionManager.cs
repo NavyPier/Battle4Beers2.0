@@ -4,7 +4,10 @@
     {
         public void DoAction(string action)
         {
-
+            if(action == "NEW GAME")
+            {
+                DrawMenu.NewGameMenu();
+            }
         }
     }
 }

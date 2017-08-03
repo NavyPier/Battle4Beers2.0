@@ -1,20 +1,14 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
-using Battle4Beers.Client.Utilities.Constants;
-
-namespace Battle4Beers.Client.Models.Actions.FireMage
+﻿namespace Battle4Beers.Client.Models.Actions.FireMage
 {
-    public class FireArmor : Action, IBuff
+    public class FireArmor : Buff
     {
         private int damageOverTime;
         private int armor;
-        private int duration;
 
-        public FireArmor(string name, int coolDown, int cost, int damageOverTime, int armor, int duration) : base(name, coolDown, cost)
+        public FireArmor(string name, int coolDown, int cost, int duration, int damageOverTime, int armor) : base(name, coolDown, cost, duration)
         {
             this.DamageOverTime = damageOverTime;
             this.Armor = armor;
-            this.Duration = duration;
         }
 
         public int DamageOverTime
@@ -28,14 +22,6 @@ namespace Battle4Beers.Client.Models.Actions.FireMage
             get { return this.armor; }
             protected set { this.armor = value; }
         }
-
-        public int Duration
-        {
-            get { return this.duration; }
-            protected set { this.duration = value; }
-        }
-
-       
 
         public override string ToString()
         {

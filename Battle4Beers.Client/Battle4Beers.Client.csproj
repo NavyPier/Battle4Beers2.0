@@ -46,7 +46,9 @@
     <Compile Include="DrawMenu.cs" />
     <Compile Include="Interfaces\IAction.cs" />
     <Compile Include="Interfaces\IBuff.cs" />
+    <Compile Include="Interfaces\IBuffable.cs" />
     <Compile Include="Interfaces\ICaster.cs" />
+    <Compile Include="Interfaces\IDebuff.cs" />
     <Compile Include="Interfaces\IFighter.cs" />
     <Compile Include="Interfaces\IHero.cs" />
     <Compile Include="Models\Action.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Models\Actions\WarriorActions\Swordmaster\LevelUpCrit.cs" />
     <Compile Include="Models\Actions\WarriorActions\Swordmaster\MirrorImage.cs" />
     <Compile Include="Models\Actions\WarriorActions\Swordmaster\WindFury.cs" />
+    <Compile Include="Models\Debuff.cs" />
     <Compile Include="Models\Heroes\HeroTypes\MageTypes\ArcaneMage.cs" />
     <Compile Include="Models\Heroes\HeroTypes\WarriorTypes\BerserkerWarrior.cs" />
     <Compile Include="Models\Buff.cs" />

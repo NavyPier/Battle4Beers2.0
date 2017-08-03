@@ -4,25 +4,10 @@ using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions
 {
-    public class Polymorph : Action, IBuff
+    public class Polymorph : Debuff
     {
-        private int duration;
-
-        public Polymorph(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost)
+        public Polymorph(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost, duration)
         {
-            this.Duration = duration;
-        }
-
-        public int Duration
-        {
-            get
-            {
-                return this.duration;
-            }
-            protected set
-            {
-                this.duration = value;
-            }
         }
 
         public override string ToString()

@@ -4,7 +4,7 @@ using System;
 
 namespace Battle4Beers.Client.Models
 {
-    public abstract class Priest : Hero, ICaster, IHero
+    public abstract class Priest : Hero, ICaster
     {
         private int mana;
         private int spellPower;

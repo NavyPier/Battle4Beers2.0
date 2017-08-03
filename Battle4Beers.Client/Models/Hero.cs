@@ -5,7 +5,7 @@ using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models
 {
-    public abstract class Hero : IHero
+    public abstract class Hero : IHero, IBuffable
     {
         private string name;
         private int health;
@@ -13,6 +13,7 @@ namespace Battle4Beers.Client.Models
         private int armor;
         public List<Action> actions;
         public List<Buff> buffs;
+        public List<Debuff> debuffs;
         
         public Hero(string name, int health, int healthRegen, List<Action> actions, int armor)
         {
@@ -22,6 +23,7 @@ namespace Battle4Beers.Client.Models
             this.Armor = armor;
             this.actions = new List<Action>(actions);
             this.buffs = new List<Buff>();
+            this.debuffs = new List<Debuff>();
         }
 
         public int Armor
@@ -60,6 +62,7 @@ namespace Battle4Beers.Client.Models
             {
                 return this.actions;
             }
+            protected set { this.actions = value; }
         }
 
         public int HealthRegen
@@ -72,6 +75,24 @@ namespace Battle4Beers.Client.Models
             {
                 this.healthRegen = value;
             }
+        }
+
+        public List<Buff> Buffs
+        {
+            get
+            {
+                return this.buffs;
+            }
+            protected set { this.buffs = value; }
+        }
+
+        public List<Debuff> Debuffs
+        {
+            get
+            {
+                return this.debuffs;
+            }
+            protected set { this.debuffs = value; }
         }
     }
 }

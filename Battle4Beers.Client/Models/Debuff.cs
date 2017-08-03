@@ -3,11 +3,11 @@ using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models
 {
-    public class Buff : Action, IBuff
+    public class Debuff : Action, IDebuff
     {
         private int duration;
 
-        public Buff(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost)
+        public Debuff(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost)
         {
             this.Duration = duration;
         }

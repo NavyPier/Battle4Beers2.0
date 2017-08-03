@@ -1,6 +1,6 @@
 ﻿namespace Battle4Beers.Client.Interfaces
 {
-    public interface ICaster
+    public interface ICaster : IHero
     {
         int Mana { get; }
         int SpellPower { get; }

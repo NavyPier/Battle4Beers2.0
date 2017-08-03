@@ -1,16 +1,11 @@
 ﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
-    using Interfaces;
-    using Utilities.Constants;
-
-    public class ShieldSlam : Action, IBuff
+    public class ShieldSlam : Debuff
     {
-        private int duration;
         private int damage;
 
-        public ShieldSlam(string name, int coolDown, int cost, int damage, int duration) : base(name, coolDown, cost)
+        public ShieldSlam(string name, int coolDown, int cost, int duration, int damage) : base(name, coolDown, cost, duration)
         {
-            this.Duration = duration;
             this.Damage = damage;
         }
 
@@ -18,12 +13,6 @@
         {
             get { return this.damage; }
             protected set { this.damage = value; }
-        }
-
-        public int Duration
-        {
-            get { return this.duration; }
-            protected set { this.duration = value; }
         }
 
         public override string ToString()

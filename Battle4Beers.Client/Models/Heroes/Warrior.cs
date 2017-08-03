@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Battle4Beers.Client.Models
 {
-    public abstract class Warrior : Hero, IHero, IFighter
+    public abstract class Warrior : Hero, IFighter
     {
         private int rage;
         private int attackPower;
