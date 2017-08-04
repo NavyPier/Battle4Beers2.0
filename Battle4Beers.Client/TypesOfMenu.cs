@@ -77,7 +77,9 @@ namespace Battle4Beers.Client
                 listOfHeroClasses = PriestClassesMenu();
             }
             listOfHeroClasses.Insert(0, title);
-            MenuDrawer.DrawMenu(listOfHeroClasses);
+            var classType = MenuDrawer.DrawMenu(listOfHeroClasses);
+            ActionManager manager = new ActionManager();
+            manager.DoAction(classType);
         }
 
         public static List<string> PriestClassesMenu()
@@ -98,7 +100,7 @@ namespace Battle4Beers.Client
 
         public static List<string> WarriorClassesMenu()
         {
-            var swordMaster = "SWORD MASTER";
+            var swordMaster = "SWORDMASTER";
             var berserker = "BERSERKER";
             var protector = "PROTECTOR";
             return new List<string>() { swordMaster, berserker, protector };

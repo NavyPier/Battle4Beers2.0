@@ -8,6 +8,7 @@ namespace Battle4Beers.Client
     public class CharacterCreation
     {
         public static Validator validator;
+        public List<Hero> players = new List<Hero>();
 
         public static void TypeNames(string action)
         {
@@ -58,6 +59,21 @@ namespace Battle4Beers.Client
             {
                 TypesOfMenu.HeroClassSelectMenu(player.Key, player.Value);
             }
+        }
+
+        public static void CreateWarrior(string typeOfWarrior)
+        {
+
+        }
+
+        public static void CreateMage(string typeOfMage)
+        {
+
+        }
+
+        public static void CreatePriest(string typeOfPriest)
+        {
+
         }
     }
 }
