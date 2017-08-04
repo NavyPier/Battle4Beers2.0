@@ -43,15 +43,6 @@ namespace Battle4Beers.Client.Models
             get { return this.name; }
             protected set
             {
-                if(value.Length < 3 || value.Length > 15)
-                {
-                    throw new ArgumentException(Constants.InvalidPlayerNameSymbolsCount);
-                }
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException(Constants.NameCannotBeNull);
-                }
-
                 this.name = value;
             }
         }

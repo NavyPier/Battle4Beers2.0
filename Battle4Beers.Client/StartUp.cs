@@ -9,7 +9,7 @@ namespace Battle4Beers.Client
     {
         public static void Main()
         {
-            DrawMenu.StartMenu();
+            TypesOfMenu.StartMenu();
         }
     }
 }

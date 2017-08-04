@@ -40,10 +40,10 @@
         
 
         //02.Error messages.
-        public const string InvalidPlayerNameSymbolsCount = @"- A player's name must be longer than 3 symbols!!!
-                                                        - A player's name must be shorter than 16 symbols!!!";
+        public const string InvalidPlayerNameSymbolsCount = @"- Player's name must be longer than 3 symbols!!!
+- A player's name must be shorter than 16 symbols!!!";
 
-        public const string NameCannotBeNull = "- Invalid player's name";
+        public const string NameCannotBeNull = "- Player's name cannot be empty";
 
         //03.Drawing constants
         public const string GameTitle = @"          _________       ___     ___  _________
