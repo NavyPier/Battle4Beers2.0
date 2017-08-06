@@ -1,4 +1,5 @@
 ﻿using Battle4Beers.Client.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Battle4Beers.Client
@@ -13,6 +14,17 @@ namespace Battle4Beers.Client
             {
                 TypesOfMenu.NewGameMenu();
             }
+            else if (action == MenuActions.INSTRUCTIONS.ToString())
+            {
+                TypesOfMenu.Instructions();
+            }
+
+            //--> TERMINATES PROGRAM <--
+            else if (action == MenuActions.QUIT.ToString())
+            {
+                Environment.Exit(0);
+            }
+
             else if (action == MenuActions.DUEL.ToString() || action == MenuActions.ARENA.ToString())
             {
                 CharacterCreation.TypeNames(action);

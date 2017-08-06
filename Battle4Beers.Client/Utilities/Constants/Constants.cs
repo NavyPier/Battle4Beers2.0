@@ -37,7 +37,8 @@
         public const int MageManaRegen = 100;
         #endregion
 
-        
+        public const string instructionsText = "--- PLACEHOLDER SOMEONE WRITE THIS DOWN WHEN WE FINISH THE GAME MECHANICS ---";
+        public const string pressEnterText = "--- PRESS ENTER TO CONTINUE ---";
 
         //02.Error messages.
         public const string InvalidPlayerNameSymbolsCount = @"- Player's name must be longer than 3 symbols!!!

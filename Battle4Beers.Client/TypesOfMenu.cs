@@ -21,7 +21,24 @@ namespace Battle4Beers.Client
             var manager = new ActionManager();
             manager.DoAction(command);
         }
-
+        //Writes instructions and loops untill enter received.
+        internal static void Instructions()
+        {
+            int instructionsTextLenght = Constants.instructionsText.Length;
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (instructionsTextLenght / 2)) + "}"
+                , Constants.instructionsText));
+            var pressEnterTextLenght = Constants.pressEnterText;
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (pressEnterTextLenght.Length / 2)) + "}"
+                , Constants.pressEnterText));
+            Console.Read();
+            var keyInput = Console.ReadKey();
+            while (keyInput.Key != ConsoleKey.Enter)
+            {
+                keyInput = Console.ReadKey();
+            }
+            Console.Clear();
+            StartMenu();
+        }
         //Gives the MenuDraw method the properties needed to draw an Action Menu for the current hero.
         public static void ActionsMenu(Hero player)
         {
@@ -64,15 +81,15 @@ namespace Battle4Beers.Client
         {
             var title = $"SELECT WHAT TYPE OF {heroType} WILL {playerName} PLAY";
             var listOfHeroClasses = new List<string>();
-            if(heroType == MenuActions.WARRIOR.ToString())
+            if (heroType == MenuActions.WARRIOR.ToString())
             {
                 listOfHeroClasses = WarriorClassesMenu();
             }
-            else if(heroType == MenuActions.MAGE.ToString())
+            else if (heroType == MenuActions.MAGE.ToString())
             {
                 listOfHeroClasses = MageClassesMenu();
             }
-            else if(heroType == MenuActions.PRIEST.ToString())
+            else if (heroType == MenuActions.PRIEST.ToString())
             {
                 listOfHeroClasses = PriestClassesMenu();
             }
@@ -87,7 +104,7 @@ namespace Battle4Beers.Client
             var holyPriest = "HOLY PRIEST";
             var disciplinePriest = "DISCIPLINE PRIEST";
             var shadowPriest = "SHADOW PRIEST";
-            return new List<string>() { holyPriest, disciplinePriest, shadowPriest};
+            return new List<string>() { holyPriest, disciplinePriest, shadowPriest };
         }
 
         public static List<string> MageClassesMenu()
