@@ -7,7 +7,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
     {
         private int damage;
 
-        public MindBlast(string name, int coolDown, int cost) : base(name, coolDown, cost)
+        public MindBlast(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.Damage = damage;
         }
