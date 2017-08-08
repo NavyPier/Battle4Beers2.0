@@ -71,13 +71,13 @@ namespace Battle4Beers.Client
                 var warrior = "WARRIOR";
                 var mage = "MAGE";
                 var priest = "PRIEST";
-                var heroType = MenuDrawer.DrawMenu(new List<string>() { title, warrior, mage, priest });
+                    var heroType = MenuDrawer.DrawMenu(new List<string>() { title, warrior, mage, priest });
                 playerNamesAndHeroes[playerNames[i]] = heroType;
             }
             CharacterCreation.SelectHeroClass(playerNamesAndHeroes);
         }
 
-        public static void HeroClassSelectMenu(string playerName, string heroType)
+        public static string HeroClassSelectMenu(string playerName, string heroType)
         {
             var title = $"SELECT WHAT TYPE OF {heroType} WILL {playerName} PLAY";
             var listOfHeroClasses = new List<string>();
@@ -95,8 +95,7 @@ namespace Battle4Beers.Client
             }
             listOfHeroClasses.Insert(0, title);
             var classType = MenuDrawer.DrawMenu(listOfHeroClasses);
-            ActionManager manager = new ActionManager();
-            manager.DoAction(classType);
+            return classType;
         }
 
         public static List<string> PriestClassesMenu()

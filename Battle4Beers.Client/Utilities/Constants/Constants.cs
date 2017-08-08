@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Utilities.Constants
+﻿using System.Collections.Generic;
+
+namespace Battle4Beers.Client.Utilities.Constants
 {
     public class Constants
     {
@@ -8,32 +10,33 @@
         //01.1.Warrior
 
         #region WarriorConstants
-
-        public const int WarriorHealt = 2800;
+        public static List<string> WarriorRoles = new List<string>() { "SWORDMASTER", "BERSERKER", "PROTECTOR" };
+        public const int WarriorHealth = 2800;
         public const int WarriorDamage = 80;
         public const int WarriorHealtRegen = 70;
         public const int ProtectionWarriorArmor = 300;
+        public const int WarriorStartingRage = 0;
         #endregion
         
         //01.2.Priest
 
         #region PriestConstants
-
-        public const int PriestHealt = 2100;
+        public static List<string> PriestRoles = new List<string>() {"HOLY PRIEST", "DISCIPLINE PRIEST", "SHADOW PRIEST"};
+        public const int PriestHealth = 2100;
         public const int PriestMana = 2700;
         public const int PriestManaRegen = 110;
         public const int PriestSpellPower = 90;
-        public const int PriestHealtRegen = 50;
+        public const int PriestHealthRegen = 50;
         #endregion
 
         //01.3.Mage
 
         #region MageConstants
-
-        public const int MageHealt = 2200;
+        public static List<string> MageRoles = new List<string>() {"FIRE MAGE", "ARCANE MAGE", "FROST MAGE"};
+        public const int MageHealth = 2200;
         public const int MageMana = 2500;
         public const int MageSpellPower = 100;
-        public const int MageHealtRegen = 50;
+        public const int MageHealthRegen = 50;
         public const int MageManaRegen = 100;
         #endregion
 
