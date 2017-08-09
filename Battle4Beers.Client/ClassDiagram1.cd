@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Battle4Beers.Client.ActionManager" Collapsed="true">
+    <Position X="76.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.CharacterCreation" Collapsed="true">
+    <Position X="78" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAgAAAEAAAAACAABAAIAAAAIAAAAA=</HashCode>
+      <FileName>CharacterCreation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.MenuDrawer" Collapsed="true">
+    <Position X="76.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenuDrawer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.StartUp" Collapsed="true">
+    <Position X="78" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>StartUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.TypesOfMenu" Collapsed="true">
+    <Position X="79.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAJAAAAAAMAAAAAAAAAAAAABIAAABIAAAAAAAAAA=</HashCode>
+      <FileName>TypesOfMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Validator" Collapsed="true">
+    <Position X="76.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Action" Collapsed="true">
+    <Position X="38.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAABQAAAAcAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Models\Action.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Buff" Collapsed="true">
+    <Position X="58" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Buff.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Debuff" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAACAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Debuff.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Hero" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADCAAAIAAAACAAAAAAAAQAAAAEAAAAEAAAABAAAwg=</HashCode>
+      <FileName>Models\Hero.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.ArcaneMage" Collapsed="true">
+    <Position X="1.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\MageTypes\ArcaneMage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.FireMage" Collapsed="true">
+    <Position X="3.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\MageTypes\FireMage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.FrostMage" Collapsed="true">
+    <Position X="5.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\MageTypes\FrostMage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.DisciplinePriest" Collapsed="true">
+    <Position X="8" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\PriestTypes\DisciplinePriest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.HolyPriest" Collapsed="true">
+    <Position X="10.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\PriestTypes\HolyPriest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.ShadowPriest" Collapsed="true">
+    <Position X="12.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\PriestTypes\ShadowPriest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.BerserkerWarrior" Collapsed="true">
+    <Position X="14.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\WarriorTypes\BerserkerWarrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.ProtectionWarrior" Collapsed="true">
+    <Position X="17" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\WarriorTypes\ProtectionWarrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.SwordmasterWarrior" Collapsed="true">
+    <Position X="19.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Heroes\HeroTypes\WarriorTypes\SwordmasterWarrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Mage" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIIAAAACA=</HashCode>
+      <FileName>Models\Heroes\Mage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Priest" Collapsed="true">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIIAAAACA=</HashCode>
+      <FileName>Models\Heroes\Priest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Warrior" Collapsed="true">
+    <Position X="17" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\Heroes\Warrior.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.AmplifyMagic" Collapsed="true">
+    <Position X="62.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\ArcaneMage\AmplifyMagic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.ArcaneBlast" Collapsed="true">
+    <Position X="69.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\ArcaneMage\ArcaneBlast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.ManaRegeneration" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAAAAIAAAACA=</HashCode>
+      <FileName>Models\Actions\MageActions\ArcaneMage\ManaRegeneration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.Polymorph" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\ArcaneMage\Polymorph.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FireMage.FireArmor" Collapsed="true">
+    <Position X="53.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAEAAAAAAAAAAAEAAAEBAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FireMage\FireArmor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FireMage.FireBlast" Collapsed="true">
+    <Position X="28.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FireMage\FireBlast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FireMage.Incinerate" Collapsed="true">
+    <Position X="33.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FireMage\Incinerate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FireMage.PyroBlast" Collapsed="true">
+    <Position X="37.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FireMage\PyroBlast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FrostMage.FrostArmor" Collapsed="true">
+    <Position X="64.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAgAAAAIEAAAABAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FrostMage\FrostArmor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FrostMage.FrostBolt" Collapsed="true">
+    <Position X="71.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FrostMage\FrostBolt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FrostMage.FrozenGround" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FrostMage\FrozenGround.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.FrostMage.IcyVeins" Collapsed="true">
+    <Position X="49" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\Actions\MageActions\FrostMage\IcyVeins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest.PurgeTheWicked" Collapsed="true">
+    <Position X="24.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\DisciplinePriest\PurgeTheWicked.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest.Shield" Collapsed="true">
+    <Position X="55.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\DisciplinePriest\Shield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest.Silence" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\DisciplinePriest\Silence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.FlashHeal" Collapsed="true">
+    <Position X="40" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\FlashHeal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest.HolyNova" Collapsed="true">
+    <Position X="44.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAIAAgACEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\HolyPriest\HolyNova.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest.Renew" Collapsed="true">
+    <Position X="67" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\HolyPriest\Renew.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest.Serenity" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\HolyPriest\Serenity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest.CurseOfDeath" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAEAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\ShadowPriest\CurseOfDeath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest.MindBlast" Collapsed="true">
+    <Position X="26.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\ShadowPriest\MindBlast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest.Sadism" Collapsed="true">
+    <Position X="58" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAEAAAAAAAAAAgAAAAIABAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\PriestActions\ShadowPriest\Sadism.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Berseker.Execute" Collapsed="true">
+    <Position X="35.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Berseker\Execute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Berseker.GoBerserk" Collapsed="true">
+    <Position X="60.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAgAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Berseker\GoBerserk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Berseker.WildAxes" Collapsed="true">
+    <Position X="46.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Berseker\WildAxes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Hit" Collapsed="true">
+    <Position X="73.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAQAAAAEA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Hit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.ArmorUp" Collapsed="true">
+    <Position X="22" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAEAAAABAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Protection\ArmorUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Hibernate" Collapsed="true">
+    <Position X="51.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACEAAAAAAAAAAgAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Protection\Hibernate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.ShieldSlam" Collapsed="true">
+    <Position X="10.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Protection\ShieldSlam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster.LevelUpCrit" Collapsed="true">
+    <Position X="31" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Swordmaster\LevelUpCrit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster.MirrorImage" Collapsed="true">
+    <Position X="15.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Swordmaster\MirrorImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster.WindFury" Collapsed="true">
+    <Position X="42.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Actions\WarriorActions\Swordmaster\WindFury.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battle4Beers.Client.Utilities.Constants.Constants" Collapsed="true">
+    <Position X="79.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAYEEAAIoQACgAQAAUAAwICAACAAAAkAgAABAIAA=</HashCode>
+      <FileName>Utilities\Constants\Constants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Battle4Beers.Client.Interfaces.IAction" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Battle4Beers.Client.Interfaces.IBuff" Collapsed="true">
+    <Position X="76.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IBuff.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Battle4Beers.Client.Interfaces.IBuffable" Collapsed="true">
+    <Position X="78" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQg=</HashCode>
+      <FileName>Interfaces\IBuffable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Battle4Beers.Client.Interfaces.ICaster" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIIAAAAAA=</HashCode>
+      <FileName>Interfaces\ICaster.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Battle4Beers.Client.Interfaces.IDebuff" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDebuff.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Battle4Beers.Client.Interfaces.IFighter" Collapsed="true">
+    <Position X="2.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IFighter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Battle4Beers.Client.Interfaces.IHero" Collapsed="true">
+    <Position X="1.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IHero.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Battle4Beers.Client.MenuActions" Collapsed="true">
+    <Position X="76.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEEAgAAAACACFAAAAABQAAAAAAACAABABQAAACCI=</HashCode>
+      <FileName>MenuActions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

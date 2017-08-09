@@ -65,12 +65,13 @@ namespace Battle4Beers.Client
 
         public static void SelectHeroClass(Dictionary<string, string> playerNamesAndHeroes)
         {
+            Dictionary<string, string> tempDict = new Dictionary<string, string>();
             foreach(var player in playerNamesAndHeroes)
             {
-               playerNamesAndHeroes[player.Key] = TypesOfMenu.HeroClassSelectMenu(player.Key, player.Value);
+                tempDict.Add(player.Key, TypesOfMenu.HeroClassSelectMenu(player.Key, player.Value));
             }
 
-            foreach(var player in playerNamesAndHeroes)
+            foreach(var player in tempDict)
             {
                 if(Constants.MageRoles.Contains(playerNamesAndHeroes[player.Key]))
                 {
@@ -85,6 +86,8 @@ namespace Battle4Beers.Client
                     CreatePriest(player.Key, player.Value);
                 }
             }
+
+            playerNamesAndHeroes = tempDict;
         }
 
         public static void CreateWarrior(string playerName, string typeOfWarrior)
