@@ -1,4 +1,5 @@
-﻿using Battle4Beers.Client.Models;
+﻿using Battle4Beers.Client;
+using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Models.Actions;
 using Battle4Beers.Client.Models.Actions.FireMage;
 using Battle4Beers.Client.Models.Actions.FrostMage;
@@ -69,7 +70,6 @@ namespace Battle4Beers.Client
             foreach(var player in playerNamesAndHeroes)
             {
                 tempDict.Add(player.Key, TypesOfMenu.HeroClassSelectMenu(player.Key, player.Value));
-               //playerNamesAndHeroes[player.Key] = TypesOfMenu.HeroClassSelectMenu(player.Key, player.Value);
             }
 
             foreach(var player in tempDict)
@@ -87,8 +87,8 @@ namespace Battle4Beers.Client
                     CreatePriest(player.Key, player.Value);
                 }
             }
-
             playerNamesAndHeroes = tempDict;
+            Combat.ShowStats();
         }
 
         public static void CreateWarrior(string playerName, string typeOfWarrior)

@@ -1,4 +1,5 @@
 ﻿using Battle4Beers.Client.Models;
+using Battle4Beers.Client.Utilities.Constants;
 using System;
 using System.Collections.Generic;
 
@@ -16,7 +17,8 @@ namespace Battle4Beers.Client
             }
             else if (action == MenuActions.INSTRUCTIONS.ToString())
             {
-                TypesOfMenu.Instructions();
+                TypesOfMenu.Instructions(Constants.instructionsText.ToString(),Constants.pressEnterText.ToString());
+                TypesOfMenu.StartMenu();
             }
 
             //--> TERMINATES PROGRAM <--
@@ -29,6 +31,10 @@ namespace Battle4Beers.Client
             {
                 CharacterCreation.TypeNames(action);
             }
+        }
+        public void CombatPrep()
+        {
+
         }
     }
 }

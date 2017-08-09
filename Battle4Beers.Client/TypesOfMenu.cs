@@ -8,7 +8,6 @@ namespace Battle4Beers.Client
 {
     public class TypesOfMenu
     {
-
         //Gives the MenuDraw method the properties needed to draw the Start Menu.
         public static void StartMenu()
         {
@@ -22,22 +21,20 @@ namespace Battle4Beers.Client
             manager.DoAction(command);
         }
         //Writes instructions and loops untill enter received.
-        internal static void Instructions()
+        internal static void Instructions(params string[] textToWrite)
         {
-            int instructionsTextLenght = Constants.instructionsText.Length;
+            foreach (var text in textToWrite)
+            {
+            int instructionsTextLenght = text.Length;
             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (instructionsTextLenght / 2)) + "}"
-                , Constants.instructionsText));
-            var pressEnterTextLenght = Constants.pressEnterText;
-            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (pressEnterTextLenght.Length / 2)) + "}"
-                , Constants.pressEnterText));
-            Console.Read();
+                , text));
+            }
             var keyInput = Console.ReadKey();
             while (keyInput.Key != ConsoleKey.Enter)
             {
                 keyInput = Console.ReadKey();
             }
             Console.Clear();
-            StartMenu();
         }
         //Gives the MenuDraw method the properties needed to draw an Action Menu for the current hero.
         public static void ActionsMenu(Hero player)
@@ -71,7 +68,7 @@ namespace Battle4Beers.Client
                 var warrior = "WARRIOR";
                 var mage = "MAGE";
                 var priest = "PRIEST";
-                    var heroType = MenuDrawer.DrawMenu(new List<string>() { title, warrior, mage, priest });
+                var heroType = MenuDrawer.DrawMenu(new List<string>() { title, warrior, mage, priest });
                 playerNamesAndHeroes[playerNames[i]] = heroType;
             }
             CharacterCreation.SelectHeroClass(playerNamesAndHeroes);
@@ -120,6 +117,12 @@ namespace Battle4Beers.Client
             var berserker = "BERSERKER";
             var protector = "PROTECTOR";
             return new List<string>() { swordMaster, berserker, protector };
+        }
+
+        public List<string> ChooseFirstAttacker()
+        {
+            Instructions(Constants.instructionBeerStart,Constants.pressEnterText);
+            return new List<string>() { Constants.beer1, Constants.beer2, Constants.beer3, Constants.beer4 };
         }
     }
 }

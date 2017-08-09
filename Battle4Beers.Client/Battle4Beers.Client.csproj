@@ -43,9 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionManager.cs" />
+    <Compile Include="Combat.cs" />
+    <Compile Include="Interfaces\ICombat.cs" />
     <Compile Include="MenuActions.cs" />
     <Compile Include="CharacterCreation.cs" />
     <Compile Include="MenuDrawer.cs" />
+    <Compile Include="Models\Actions\Randomizer.cs" />
     <Compile Include="TypesOfMenu.cs" />
     <Compile Include="Interfaces\IAction.cs" />
     <Compile Include="Interfaces\IBuff.cs" />
