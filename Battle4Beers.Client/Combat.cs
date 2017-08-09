@@ -1,16 +1,38 @@
-﻿using System;
+﻿using Battle4Beers.Client.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Battle4Beers.Client
 {
     public class Combat
     {
-        public static string ShowStats()
+        public static void ArrangeTeams(List<Hero> players)
         {
-            return "dsa";
+            if(players.Count == 2)
+            {
+                var firstTeam = new List<Hero> { players[0] };
+                var secondTeam = new List<Hero> { players[1] };
+                Battle(firstTeam, secondTeam);
+            }
+            else
+            {
+                var firstTeam = new List<Hero> { players[0], players[1] };
+                var secondTeam = new List<Hero> { players[2], players[3] };
+                Battle(firstTeam, secondTeam);
+            }
+        }
+        
+        public static void Battle(List<Hero> firstTeam, List<Hero> secondTeam)
+        {
+            while(firstTeam.Count > 0 && secondTeam.Count > 0)
+            {
+                var playerIsOnTurn = true;
+
+                while(playerIsOnTurn)
+                {
+                    
+                }
+            }
+
         }
     }
 }

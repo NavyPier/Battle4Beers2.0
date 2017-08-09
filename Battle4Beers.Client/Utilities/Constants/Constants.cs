@@ -17,11 +17,11 @@ namespace Battle4Beers.Client.Utilities.Constants
         public const int ProtectionWarriorArmor = 300;
         public const int WarriorStartingRage = 0;
         #endregion
-        
+
         //01.2.Priest
 
         #region PriestConstants
-        public static List<string> PriestRoles = new List<string>() {"HOLY", "DISCIPLINE", "SHADOW"};
+        public static List<string> PriestRoles = new List<string>() { "HOLY", "DISCIPLINE", "SHADOW" };
         public const int PriestHealth = 2100;
         public const int PriestMana = 2700;
         public const int PriestManaRegen = 110;
@@ -32,7 +32,7 @@ namespace Battle4Beers.Client.Utilities.Constants
         //01.3.Mage
 
         #region MageConstants
-        public static List<string> MageRoles = new List<string>() {"FIRE", "ARCANE", "FROST"};
+        public static List<string> MageRoles = new List<string>() { "FIRE", "ARCANE", "FROST" };
         public const int MageHealth = 2200;
         public const int MageMana = 2500;
         public const int MageSpellPower = 100;
@@ -45,26 +45,30 @@ namespace Battle4Beers.Client.Utilities.Constants
         public const string pressEnterText = "--- PRESS ENTER TO CONTINUE ---";
         //04.2 Instructions - How to pick first attacker
         public const string instructionBeerStart = "Guess which cup is full of beer if you win and your enemy fails you attack first.";
-        public const string beer1 = @"1-|~~~~~~~~~|
-                                        | .   . o |
-                                        \ # o  .  /
-                                         \##  .  /        
-                                          \_____/";
-        public const string beer2 = @"2-|~~~~~~~~~|
-                                        | ##  . . |
-                                        \ ##   .  /
-                                         \ . .   /        
-                                          \_____/";
-        public const string beer3 = @"3-|~~~~~~~~~|
-                                        |# .  . o |
-                                        \#   .  . /
-                                         \# . O ./        
-                                          \_____/";
-        public const string beer4 = @"4-|~~~~~~~~~|
-                                        |###  . o |
-                                        \# o .  . /
-                                         \ .  o  /        
-                                          \_____/";
+        public const string beer1 = @"1-
+        |~~~~~~~~~|
+        | .   . o |
+        \ # o  .  /
+         \##  .  /        
+          \_____/";
+        public const string beer2 = @"2-
+        |~~~~~~~~~|
+        | ##  . . |
+        \ ##   .  /
+         \ . .   /        
+          \_____/";
+        public const string beer3 = @"3-
+        |~~~~~~~~~|
+        |# .  . o |
+        \#   .  . /
+         \# . O ./        
+          \_____/";
+        public const string beer4 = @"4-
+        |~~~~~~~~~|
+        |###  . o |
+        \# o .  . /
+         \ .  o  /        
+          \_____/";
 
 
 
@@ -83,6 +87,6 @@ namespace Battle4Beers.Client.Utilities.Constants
           |  ______    | |_______    | |  ______    |
           |  |     |   |         |   | |  |     |   |
           |  |_____|   |         |   | |  |_____|   |
-          |____________|         |___| |____________|";        
+          |____________|         |___| |____________|";
     }
 }

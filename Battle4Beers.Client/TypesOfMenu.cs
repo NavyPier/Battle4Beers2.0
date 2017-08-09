@@ -119,10 +119,13 @@ namespace Battle4Beers.Client
             return new List<string>() { swordMaster, berserker, protector };
         }
 
-        public List<string> ChooseFirstAttacker()
+        public static int ChooseFirstAttacker()
         {
             Instructions(Constants.instructionBeerStart,Constants.pressEnterText);
-            return new List<string>() { Constants.beer1, Constants.beer2, Constants.beer3, Constants.beer4 };
+            var title = "SELECT A BEER";
+            var winner = MenuDrawer.DrawMenu(new List<string>() { title, Constants.beer1, Constants.beer2, Constants.beer3, Constants.beer4 }).Trim('-');
+            var beerSelected = int.Parse(winner);
+            return 0;
         }
     }
 }

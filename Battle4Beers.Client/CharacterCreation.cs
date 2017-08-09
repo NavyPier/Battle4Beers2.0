@@ -1,5 +1,4 @@
-﻿using Battle4Beers.Client;
-using Battle4Beers.Client.Models;
+﻿using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Models.Actions;
 using Battle4Beers.Client.Models.Actions.FireMage;
 using Battle4Beers.Client.Models.Actions.FrostMage;
@@ -88,7 +87,7 @@ namespace Battle4Beers.Client
                 }
             }
             playerNamesAndHeroes = tempDict;
-            Combat.ShowStats();
+            TypesOfMenu.ChooseFirstAttacker();
         }
 
         public static void CreateWarrior(string playerName, string typeOfWarrior)
