@@ -69,6 +69,7 @@ namespace Battle4Beers.Client
             foreach(var player in playerNamesAndHeroes)
             {
                 tempDict.Add(player.Key, TypesOfMenu.HeroClassSelectMenu(player.Key, player.Value));
+               //playerNamesAndHeroes[player.Key] = TypesOfMenu.HeroClassSelectMenu(player.Key, player.Value);
             }
 
             foreach(var player in tempDict)

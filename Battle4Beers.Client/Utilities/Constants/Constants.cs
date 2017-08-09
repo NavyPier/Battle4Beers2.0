@@ -21,7 +21,7 @@ namespace Battle4Beers.Client.Utilities.Constants
         //01.2.Priest
 
         #region PriestConstants
-        public static List<string> PriestRoles = new List<string>() {"HOLY PRIEST", "DISCIPLINE PRIEST", "SHADOW PRIEST"};
+        public static List<string> PriestRoles = new List<string>() {"HOLY", "DISCIPLINE", "SHADOW"};
         public const int PriestHealth = 2100;
         public const int PriestMana = 2700;
         public const int PriestManaRegen = 110;
@@ -32,7 +32,7 @@ namespace Battle4Beers.Client.Utilities.Constants
         //01.3.Mage
 
         #region MageConstants
-        public static List<string> MageRoles = new List<string>() {"FIRE MAGE", "ARCANE MAGE", "FROST MAGE"};
+        public static List<string> MageRoles = new List<string>() {"FIRE", "ARCANE", "FROST"};
         public const int MageHealth = 2200;
         public const int MageMana = 2500;
         public const int MageSpellPower = 100;

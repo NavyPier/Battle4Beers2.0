@@ -100,17 +100,17 @@ namespace Battle4Beers.Client
 
         public static List<string> PriestClassesMenu()
         {
-            var holyPriest = "HOLY PRIEST";
-            var disciplinePriest = "DISCIPLINE PRIEST";
-            var shadowPriest = "SHADOW PRIEST";
+            var holyPriest = "HOLY";
+            var disciplinePriest = "DISCIPLINE";
+            var shadowPriest = "SHADOW";
             return new List<string>() { holyPriest, disciplinePriest, shadowPriest };
         }
 
         public static List<string> MageClassesMenu()
         {
-            var arcaneMage = "ARCANE MAGE";
-            var fireMage = "FIRE MAGE";
-            var frostMage = "FROST MAGE";
+            var arcaneMage = "ARCANE";
+            var fireMage = "FIRE";
+            var frostMage = "FROST";
             return new List<string>() { arcaneMage, fireMage, frostMage };
         }
 
