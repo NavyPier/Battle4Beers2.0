@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Battle4Beers.Client.Models
 {
@@ -14,7 +15,7 @@ namespace Battle4Beers.Client.Models
         public bool CriticalStrike
         {
             get { return this.criticalStrike; }
-            protected set { this.criticalStrike = value; }
+            set { this.criticalStrike = value; }
         }
     }
 }

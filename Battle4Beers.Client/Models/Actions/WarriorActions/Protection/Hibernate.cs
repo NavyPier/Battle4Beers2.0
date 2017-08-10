@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
     public class Hibernate : Buff
     {
@@ -27,6 +29,5 @@
         {
             return $"{this.Name}: Buff target ally to receive only {this.Percentage}% damage for the next {this.Duration} turns. Heal target ally for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost}";
         }
-
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
+﻿using Battle4Beers.Client.Utilities.Constants;
+using System;
+
+namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 {
     public class GoBerserk : Buff
     {

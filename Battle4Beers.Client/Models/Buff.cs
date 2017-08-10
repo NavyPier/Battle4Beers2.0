@@ -3,7 +3,7 @@ using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models
 {
-    public class Buff : Action, IBuff
+    public abstract class Buff : Action, IBuff
     {
         private int duration;
 

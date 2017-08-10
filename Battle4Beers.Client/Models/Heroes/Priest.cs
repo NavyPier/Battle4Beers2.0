@@ -39,5 +39,10 @@ namespace Battle4Beers.Client.Models
                 this.manaRegen = value;
             }
         }
+
+        public override void ExecuteAction(int cost)
+        {
+            this.Mana -= cost;
+        }
     }
 }

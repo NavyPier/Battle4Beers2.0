@@ -6,14 +6,14 @@ namespace Battle4Beers.Client.Models.Actions
 {
     public class AmplifyMagic : Buff
     {
-        private double amplifier;
+        private int amplifier;
 
-        public AmplifyMagic(string name, int coolDown, int cost, int duration, double amplifier) : base(name, coolDown, cost, duration)
+        public AmplifyMagic(string name, int coolDown, int cost, int duration, int amplifier) : base(name, coolDown, cost, duration)
         {
             this.Amplifier = amplifier;
         }
 
-        public double Amplifier
+        public int Amplifier
         {
             get { return this.amplifier; }
             protected set { this.amplifier = value; }

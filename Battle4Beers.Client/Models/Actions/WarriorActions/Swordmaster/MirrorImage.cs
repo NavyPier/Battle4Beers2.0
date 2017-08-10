@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
 {
     public class MirrorImage : Debuff
     {
@@ -12,6 +14,10 @@
         {
             get { return this.damage; }
             protected set { this.damage = value; }
+        }
+
+        public override void DebuffPlayer(Hero player)
+        {
         }
 
         public override string ToString()

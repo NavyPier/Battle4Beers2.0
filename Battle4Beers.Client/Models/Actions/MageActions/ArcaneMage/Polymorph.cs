@@ -10,6 +10,11 @@ namespace Battle4Beers.Client.Models.Actions
         {
         }
 
+        public override void DebuffPlayer(Hero player)
+        {
+            this.Duration--;
+        }
+
         public override string ToString()
         {
             return $"{this.Name}: Stun target for {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost}";

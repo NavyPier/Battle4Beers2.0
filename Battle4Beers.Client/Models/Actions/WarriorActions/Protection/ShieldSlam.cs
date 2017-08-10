@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
     public class ShieldSlam : Debuff
     {
@@ -13,6 +15,11 @@
         {
             get { return this.damage; }
             protected set { this.damage = value; }
+        }
+
+        public override void DebuffPlayer(Hero player)
+        {
+            player.GetDamaged(this.Damage);
         }
 
         public override string ToString()

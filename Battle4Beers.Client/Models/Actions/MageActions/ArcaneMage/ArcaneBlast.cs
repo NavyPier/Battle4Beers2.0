@@ -1,9 +1,8 @@
-﻿using Battle4Beers.Client.Utilities.Constants;
-using System;
+﻿using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models.Actions
 {
-    public class ArcaneBlast : Action
+    public class ArcaneBlast : Action, IAgressiveAction
     {
         private int damage;
 

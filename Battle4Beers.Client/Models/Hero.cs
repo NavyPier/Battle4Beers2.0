@@ -14,6 +14,7 @@ namespace Battle4Beers.Client.Models
         public List<Action> actions;
         public List<Buff> buffs;
         public List<Debuff> debuffs;
+        private int stunnedDuration;
         
         public Hero(string name, int health, int healthRegen, List<Action> actions, int armor)
         {
@@ -22,8 +23,13 @@ namespace Battle4Beers.Client.Models
             this.HealthRegen = healthRegen;
             this.Armor = armor;
             this.actions = new List<Action>(actions);
-            this.buffs = new List<Buff>();
-            this.debuffs = new List<Debuff>();
+            this.StunnedDuration = 0;
+        }
+
+        public int StunnedDuration
+        {
+            get { return this.stunnedDuration; }
+            set { this.stunnedDuration = value; }
         }
 
         public int Armor
@@ -84,6 +90,37 @@ namespace Battle4Beers.Client.Models
                 return this.debuffs;
             }
             protected set { this.debuffs = value; }
+        }
+
+        public abstract void ExecuteAction(int cost);
+
+        public void GetDamaged(int amount)
+        {
+            if(this.Armor <= amount)
+            {
+                amount -= this.Armor;
+                this.Health -= amount;
+                this.Armor = 0;
+            }
+            else if(this.Armor > amount)
+            {
+                this.Armor -= amount;
+            }
+        }
+
+        public void GetHealed(int amount)
+        {
+            this.Health += amount;
+        }
+
+        public void GetArmor(int amount)
+        {
+            this.Armor += amount;
+        }
+
+        public void SelectAction(Hero player)
+        {
+            TypesOfMenu.ActionsMenu(player);
         }
     }
 }

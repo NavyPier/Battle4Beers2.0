@@ -42,14 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionManager.cs" />
-    <Compile Include="Combat.cs" />
+    <Compile Include="GameProperties\ActionManager.cs" />
+    <Compile Include="BattleGround\Combat.cs" />
+    <Compile Include="Interfaces\IAgressiveAction.cs" />
     <Compile Include="Interfaces\ICombat.cs" />
-    <Compile Include="MenuActions.cs" />
-    <Compile Include="CharacterCreation.cs" />
-    <Compile Include="MenuDrawer.cs" />
-    <Compile Include="Models\Actions\Randomizer.cs" />
-    <Compile Include="TypesOfMenu.cs" />
+    <Compile Include="GameProperties\MenuActions.cs" />
+    <Compile Include="GameProperties\CharacterCreation.cs" />
+    <Compile Include="GameProperties\MenuDrawer.cs" />
+    <Compile Include="Utilities\Randomizer.cs" />
+    <Compile Include="GameProperties\TypesOfMenu.cs" />
     <Compile Include="Interfaces\IAction.cs" />
     <Compile Include="Interfaces\IBuff.cs" />
     <Compile Include="Interfaces\IBuffable.cs" />
@@ -108,7 +109,7 @@
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Constants\Constants.cs" />
-    <Compile Include="Validator.cs" />
+    <Compile Include="GameProperties\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

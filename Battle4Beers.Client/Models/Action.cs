@@ -46,6 +46,16 @@ namespace Battle4Beers.Client.Models
             }
         }
 
+        public void ReduceCooldown()
+        {
+            this.CoolDown--;
+        }
+
+        public void SetCooldown(int coolDown)
+        {
+            this.CoolDown = coolDown;
+        }
+
         public abstract override string ToString();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.FrostMage
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.FrostMage
 {
     public class FrostArmor : Buff
     {
@@ -32,6 +34,11 @@
         public override string ToString()
         {
             return $"{this.Name}: Give {this.Armor} to target. Buff target ally to receive only {this.Percentage}% damage for the next {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+        }
+
+        public int ReduceDamage(int initialDamage)
+        {
+            return (int) (initialDamage * 0.8);
         }
     }
 }

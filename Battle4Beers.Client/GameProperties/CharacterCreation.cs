@@ -73,11 +73,11 @@ namespace Battle4Beers.Client
 
             foreach(var player in tempDict)
             {
-                if(Constants.MageRoles.Contains(playerNamesAndHeroes[player.Key]))
+                if(Constants.MageRoles.Contains(player.Value))
                 {
                     CreateMage(player.Key, player.Value);
                 }
-                else if(Constants.WarriorRoles.Contains(playerNamesAndHeroes[player.Key]))
+                else if(Constants.WarriorRoles.Contains(player.Value))
                 {
                     CreateWarrior(player.Key, player.Value);
                 }
@@ -87,7 +87,7 @@ namespace Battle4Beers.Client
                 }
             }
             playerNamesAndHeroes = tempDict;
-            TypesOfMenu.ChooseFirstAttacker();
+            Combat.ArrangeTeams(players);
         }
 
         public static void CreateWarrior(string playerName, string typeOfWarrior)

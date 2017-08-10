@@ -3,7 +3,7 @@ using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models
 {
-    public class Debuff : Action, IDebuff
+    public abstract class Debuff : Action, IDebuff
     {
         private int duration;
 
@@ -20,6 +20,8 @@ namespace Battle4Beers.Client.Models
             }
             protected set { this.duration = value; }
         }
+
+        public abstract void DebuffPlayer(Hero player);
 
         public override string ToString()
         {

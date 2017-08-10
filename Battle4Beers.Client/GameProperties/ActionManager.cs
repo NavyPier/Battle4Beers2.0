@@ -32,9 +32,10 @@ namespace Battle4Beers.Client
                 CharacterCreation.TypeNames(action);
             }
         }
-        public void CombatPrep()
-        {
 
+        public static void CombatActions(Hero player, string action)
+        {
+            
         }
     }
 }

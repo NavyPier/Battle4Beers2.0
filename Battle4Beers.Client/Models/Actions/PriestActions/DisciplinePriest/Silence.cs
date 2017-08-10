@@ -1,8 +1,14 @@
-﻿namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 {
     public class Silence : Debuff
     {
         public Silence(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost, duration)
+        {
+        }
+
+        public override void DebuffPlayer(Hero player)
         {
         }
 

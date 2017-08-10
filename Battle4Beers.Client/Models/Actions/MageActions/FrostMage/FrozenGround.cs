@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.FrostMage
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.FrostMage
 {
     public class FrozenGround : Debuff
     {
@@ -13,6 +15,11 @@
         {
             get { return this.damage; }
             protected set { this.damage = value; }
+        }
+
+        public override void DebuffPlayer(Hero player)
+        {
+            player.GetDamaged(this.Damage);
         }
 
         public override string ToString()

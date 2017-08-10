@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 {
     public class Renew : Buff
     {
@@ -19,5 +21,6 @@
         {
             return $"{this.Name}: Heal target ally for {this.Heal} for the next {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
+
     }
 }

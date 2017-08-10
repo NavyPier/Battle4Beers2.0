@@ -44,9 +44,8 @@ namespace Battle4Beers.Client
             var secondAction = player.Actions[1].ToString();
             var thirdAction = player.Actions[2].ToString();
             var fourthAction = player.Actions[3].ToString();
-            var command = MenuDrawer.DrawMenu(new List<string>() { title, firstAction, secondAction, thirdAction, fourthAction });
-            var manager = new ActionManager();
-            manager.DoAction(command);
+            var action = MenuDrawer.DrawMenu(new List<string>() { title, firstAction, secondAction, thirdAction, fourthAction });
+            ActionManager.CombatActions(player, action);
         }
 
         public static void NewGameMenu()

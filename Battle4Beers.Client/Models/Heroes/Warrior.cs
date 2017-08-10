@@ -32,5 +32,15 @@ namespace Battle4Beers.Client.Models
                 this.rage = value;
             }
         }
+
+        public void GetRage(int rage)
+        {
+
+        }
+
+        public override void ExecuteAction(int cost)
+        {
+            this.Rage -= cost;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Battle4Beers.Client.Models.Actions
 {
-    class Randomizer
+    public class Randomizer
     {
         public int RandomNumber;
     }

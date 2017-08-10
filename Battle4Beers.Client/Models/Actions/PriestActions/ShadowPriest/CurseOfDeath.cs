@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 {
     public class CurseOfDeath : Debuff
     {
@@ -13,6 +15,11 @@
         {
             get { return this.damageOverTime; }
             protected set { this.damageOverTime = value; }
+        }
+
+        public override void DebuffPlayer(Hero player)
+        {
+            player.GetDamaged(this.DamageOverTime);
         }
 
         public override string ToString()

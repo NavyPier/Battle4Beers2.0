@@ -1,4 +1,6 @@
-﻿namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
+﻿using System;
+
+namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
 {
     public class Sadism : Buff
     {
@@ -22,10 +24,12 @@
             get { return this.HealingPercentage; }
             protected set { this.healingPercentage = value; }
         }
-        
+
         public override string ToString()
         {
             return $"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {this.Duration} turns. The player heals for {this.HealingPercentage}% of his damage dealt. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
+
+        
     }
 }
