@@ -1,4 +1,6 @@
-﻿using Battle4Beers.Client.Interfaces;
+﻿using Battle4Beers.Client.BattleGround;
+using Battle4Beers.Client.GameProperties;
+using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System;
 
@@ -35,7 +37,35 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
 
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
-            enemy.GetDamaged(this.Damage);
+            var isCritical = CriticalChecker.CheckForCrit(player);
+            var isBerserk = HeroTypeChecker.CheckForPassive(player);
+            if (isBerserk)
+            {
+                if(!isCritical)
+                {
+                    enemy.GetDamaged(this.Damage * 2);
+                }
+                else
+                {
+                    enemy.GetArmor(this.Damage * 3);
+                }
+                BerserkerWarrior warrior = (BerserkerWarrior)player;
+                warrior.PassiveDuration--;
+                if(warrior.PassiveDuration <= 0)
+                {
+                    warrior.IsBerserk = false;
+                }
+            }
+            else
+            {
+                enemy.GetDamaged(this.Damage);
+            }
+
+            if(isCritical)
+            {
+                enemy.GetDamaged(this.Damage);
+            }
+
             Warrior playerOnTurn = (Warrior)player;
             playerOnTurn.GetRageOnHit();
         }

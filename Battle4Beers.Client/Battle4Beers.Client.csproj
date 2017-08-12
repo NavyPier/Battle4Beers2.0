@@ -43,14 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleGround\ActionGetter.cs" />
+    <Compile Include="BattleGround\ActionResult.cs" />
+    <Compile Include="BattleGround\CriticalChecker.cs" />
+    <Compile Include="BattleGround\HeroCooldownReductor.cs" />
+    <Compile Include="BattleGround\GameResult.cs" />
     <Compile Include="BattleGround\TypesOfAction\AgressiveAction.cs" />
     <Compile Include="BattleGround\TypesOfAction\BuffAction.cs" />
     <Compile Include="BattleGround\TypesOfAction\DebuffAction.cs" />
+    <Compile Include="BattleGround\TypesOfAction\ExecutionAction.cs" />
     <Compile Include="BattleGround\TypesOfAction\FriendlyAction.cs" />
     <Compile Include="BattleGround\TypesOfAction\PassiveAction.cs" />
     <Compile Include="BattleGround\TargetTeamGetter.cs" />
     <Compile Include="GameProperties\ActionManager.cs" />
     <Compile Include="BattleGround\Combat.cs" />
+    <Compile Include="GameProperties\HeroTypeChecker.cs" />
     <Compile Include="Interfaces\IAgressiveAction.cs" />
     <Compile Include="Interfaces\ICombat.cs" />
     <Compile Include="GameProperties\MenuActions.cs" />
@@ -59,9 +65,9 @@
     <Compile Include="Interfaces\IExecution.cs" />
     <Compile Include="Interfaces\IFriendlyAction.cs" />
     <Compile Include="Interfaces\IPassiveActivator.cs" />
-    <Compile Include="Utilities\Constants\AbilityConstants.cs" />
-    <Compile Include="Utilities\Constants\AbilityCooldownConstants.cs" />
-    <Compile Include="Utilities\Constants\AbilityDurationConstants.cs" />
+    <Compile Include="Utilities\Constants\AbilityConstants\AbilityConstants.cs" />
+    <Compile Include="Utilities\Constants\AbilityConstants\AbilityCooldownConstants.cs" />
+    <Compile Include="Utilities\Constants\AbilityConstants\AbilityDurationConstants.cs" />
     <Compile Include="Utilities\Randomizer.cs" />
     <Compile Include="GameProperties\TypesOfMenu.cs" />
     <Compile Include="Interfaces\IAction.cs" />
@@ -80,15 +86,15 @@
     <Compile Include="Models\Actions\MageActions\FireMage\FireBlast.cs" />
     <Compile Include="Models\Actions\MageActions\FireMage\Incinerate.cs" />
     <Compile Include="Models\Actions\MageActions\FireMage\PyroBlast.cs" />
-    <Compile Include="Models\Actions\MageActions\FrostMage\FrostArmor.cs" />
-    <Compile Include="Models\Actions\MageActions\FrostMage\FrostBolt.cs" />
-    <Compile Include="Models\Actions\MageActions\FrostMage\FrozenGround.cs" />
-    <Compile Include="Models\Actions\MageActions\FrostMage\IcyVeins.cs" />
+    <Compile Include="Models\Actions\MageActions\FrostMageActions\FrostArmor.cs" />
+    <Compile Include="Models\Actions\MageActions\FrostMageActions\FrostBolt.cs" />
+    <Compile Include="Models\Actions\MageActions\FrostMageActions\FrozenGround.cs" />
+    <Compile Include="Models\Actions\MageActions\FrostMageActions\IcyVeins.cs" />
     <Compile Include="Models\Actions\PriestActions\DisciplinePriest\PurgeTheWicked.cs" />
     <Compile Include="Models\Actions\PriestActions\DisciplinePriest\Shield.cs" />
     <Compile Include="Models\Actions\PriestActions\DisciplinePriest\Silence.cs" />
     <Compile Include="Models\Actions\PriestActions\FlashHeal.cs" />
-    <Compile Include="Models\Actions\PriestActions\HolyPriest\HolyNova.cs" />
+    <Compile Include="Models\Actions\PriestActions\HolyPriest\PunishTheUnholy.cs" />
     <Compile Include="Models\Actions\PriestActions\HolyPriest\Renew.cs" />
     <Compile Include="Models\Actions\PriestActions\HolyPriest\Serenity.cs" />
     <Compile Include="Models\Actions\PriestActions\ShadowPriest\CurseOfDeath.cs" />

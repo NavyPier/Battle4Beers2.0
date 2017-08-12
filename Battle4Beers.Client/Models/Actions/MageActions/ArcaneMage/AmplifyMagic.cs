@@ -11,6 +11,7 @@ namespace Battle4Beers.Client.Models.Actions
         public AmplifyMagic(string name, int coolDown, int cost) : base(name, coolDown, cost)
         {
             this.Type = "passive";
+            this.Amplifier = 100;
         }
 
         public int Amplifier

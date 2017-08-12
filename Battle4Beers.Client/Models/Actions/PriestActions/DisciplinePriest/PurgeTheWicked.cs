@@ -1,8 +1,9 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System;
+using System.Linq;
 
-namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
+namespace Battle4Beers.Client.Models.Actions
 {
     public class PurgeTheWicked : Action, IAgressiveAction
     {
@@ -23,6 +24,14 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
             enemy.GetDamaged(this.Damage);
+            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.PurgeTheWickedCooldown);
+
+            DisciplinePriest priest = (DisciplinePriest)player;
+            priest.PassiveDuration--;
+            if(priest.PassiveDuration <= 0)
+            {
+                priest.IsShielded = false;
+            }
         }
 
         public override string ToString()

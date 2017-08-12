@@ -1,5 +1,4 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
+﻿using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models.Actions
 {
@@ -29,6 +28,12 @@ namespace Battle4Beers.Client.Models.Actions
             else
             {
                 enemy.GetDamaged(this.Damage);
+            }
+
+            playerOnTurn.PassiveDuration--;
+            if (playerOnTurn.PassiveDuration <= 0)
+            {
+                playerOnTurn.IsAmplified = false;
             }
         }
 

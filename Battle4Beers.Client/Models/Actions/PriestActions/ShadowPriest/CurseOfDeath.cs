@@ -8,7 +8,6 @@ namespace Battle4Beers.Client.Models.Actions
     public class CurseOfDeath : Debuff, IDebuff
     {
         private int damage;
-        private ShadowPriest caster;
 
         public CurseOfDeath(string name, int coolDown, int cost, int duration, int damage) : base(name, coolDown, cost, duration)
         {
@@ -25,10 +24,6 @@ namespace Battle4Beers.Client.Models.Actions
         public override void DebuffPlayer(Hero player)
         {
             player.GetDamaged(this.Damage);
-            if(caster.Sadist)
-            {
-                caster.GetHealed((int)(this.Damage * 0.1));
-            }
             player.Debuffs.Where(a => a.Name == this.Name && a.Duration == this.Duration).First().ReduceDuration(player);
         }
 
@@ -38,12 +33,10 @@ namespace Battle4Beers.Client.Models.Actions
             if (playerOnTurn.Sadist)
             {
                 enemy.Debuffs.Add(new CurseOfDeath("CURSE OF DEATH", 0, 0, AbilityDurationConstants.CurseOfDeathDuration, (int)(this.Damage * 1.5)));
-                this.caster = playerOnTurn;
             }
             else
             {
                 enemy.Debuffs.Add(new CurseOfDeath("CURSE OF DEATH", 0, 0, AbilityDurationConstants.CurseOfDeathDuration, this.Damage));
-                this.caster = playerOnTurn;
             }
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.CurseOfDeathCooldown);
         }

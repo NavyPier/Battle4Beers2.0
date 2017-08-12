@@ -1,7 +1,10 @@
-﻿namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
-{
-    using Interfaces;
+﻿using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
+using System;
+using System.Linq;
 
+namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
+{
     public class WindFury : Action, IAgressiveAction
     {
         private int damage;
@@ -21,9 +24,14 @@
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
             SwordmasterWarrior playerOnTurn = (SwordmasterWarrior)player;
-            if(playerOnTurn.CriticalStrike)
+            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.MirrorImageCooldown);
+            if (playerOnTurn.CriticalStrike)
             {
-                enemy.GetDamaged(this.Damage * 2);
+                var random = new Random().Next(1, 101);
+                if (random <= 35)
+                {
+                    enemy.GetDamaged(this.Damage);
+                }
             }
             else
             {

@@ -21,8 +21,17 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 
         public bool IsExecutionPossible(Hero player)
         {
+            BerserkerWarrior warr = (BerserkerWarrior)player;
             if (player.Health <= this.Damage)
             {
+                if(warr.IsBerserk)
+                {
+                    warr.PassiveDuration--;
+                    if(warr.PassiveDuration <= 0)
+                    {
+                        warr.IsBerserk = false;
+                    }
+                }
                 return true;
             }
             else

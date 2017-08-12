@@ -1,14 +1,15 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System;
+using System.Linq;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 {
-    public class HolyNova : Action, IAgressiveAction
+    public class PunishTheUnholy : Action, IAgressiveAction
     {
         private int damage;
 
-        public HolyNova(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
+        public PunishTheUnholy(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.Damage = damage;
             this.Type = "agressive";
@@ -23,11 +24,12 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
             enemy.GetDamaged(this.Damage);
+            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.PunishTheUnholyCooldown);
         }
 
         public override string ToString()
         {
-            return $"{this.Name}: Damage all of your opponents by {this.damage}. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+            return $"{this.Name}: Damage your target by {this.damage}. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

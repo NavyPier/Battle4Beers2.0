@@ -11,9 +11,9 @@ namespace Battle4Beers.Client.Utilities.Constants
 
         #region WarriorConstants
         public static List<string> WarriorRoles = new List<string>() { "SWORDMASTER", "BERSERKER", "PROTECTOR" };
-        public const int WarriorHealth = 2800;
+        public const int WarriorHealth = 2600;
         public const int WarriorDamage = 80;
-        public const int WarriorHealtRegen = 70;
+        public const int WarriorHealthRegen = 60;
         public const int ProtectionWarriorArmor = 300;
         public const int WarriorStartingRage = 0;
         public const int WarriorRageOnHit = 20;
@@ -88,7 +88,9 @@ namespace Battle4Beers.Client.Utilities.Constants
           |  ______    | |_______    | |  ______    |
           |  |     |   |         |   | |  |     |   |
           |  |_____|   |         |   | |  |_____|   |
-          |____________|         |___| |____________|";
+          |____________|         |___| |____________|
+
+";
 
     }
 }

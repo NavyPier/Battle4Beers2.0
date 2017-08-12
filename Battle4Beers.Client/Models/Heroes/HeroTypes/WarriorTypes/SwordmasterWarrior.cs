@@ -19,14 +19,7 @@ namespace Battle4Beers.Client.Models
             set { this.criticalStrike = value; }
         }
 
-        public int PassiveDuration
-        {
-            get
-            {
-                return this.PassiveDuration;
-            }
-            set { this.PassiveDuration = int.MaxValue; }
-        }
+        public int PassiveDuration { get; set; }
 
         public void ActivatePassive(string nameOfPassive, Hero player)
         {

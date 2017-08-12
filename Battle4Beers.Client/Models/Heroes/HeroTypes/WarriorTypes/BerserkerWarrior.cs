@@ -21,14 +21,7 @@ namespace Battle4Beers.Client.Models
             set { this.isBerserk = value; }
         }
 
-        public int PassiveDuration
-        {
-            get
-            {
-                return this.PassiveDuration;
-            }
-            set { this.PassiveDuration = value; }
-        }
+        public int PassiveDuration { get; set; }
 
         public void ActivatePassive(string nameOfPassive, Hero player)
         {
@@ -36,7 +29,7 @@ namespace Battle4Beers.Client.Models
             warr.IsBerserk = true;
             warr.GetDamaged(AbilityConstants.BerserkModeCost);
             this.PassiveDuration = AbilityDurationConstants.BerserkDuration;
-            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.GoBerserkCooldown);
+            player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.GoBerserkCooldown);
         }
 
         public void DeactivatePassive(string nameOfPassive)

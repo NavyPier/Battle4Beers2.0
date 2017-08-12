@@ -31,8 +31,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine($"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {AbilityDurationConstants.SadismDuration} turns.");
-            sb.AppendLine($"The player heals for {this.HealingPercentage}% of his damage dealt. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana");
+            sb.AppendLine($"{this.Name}: Makes the player deal {this.percentage}% more damage for the next {AbilityDurationConstants.SadismDuration} turns. The player heals for {this.healingPercentage}% of his on-turn damage dealt. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana");
             return sb.ToString().Trim();
         }
 

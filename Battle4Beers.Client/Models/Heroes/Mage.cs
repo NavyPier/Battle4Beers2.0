@@ -1,6 +1,7 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using System.Collections.Generic;
 using System;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models
 {
@@ -44,11 +45,32 @@ namespace Battle4Beers.Client.Models
             {
                 this.manaRegen = value;
             }
-        }   
+        }
 
         public override void ExecuteAction(int cost)
         {
             this.Mana -= cost;
+        }
+
+        public override void Regenerate()
+        {
+            if (this.Health + Constants.MageHealthRegen < Constants.MageHealth)
+            {
+                this.Health += Constants.MageHealthRegen;
+            }
+            else
+            {
+                this.Health = Constants.MageHealth;
+            }
+
+            if (this.Mana + Constants.MageManaRegen < Constants.MageMana)
+            {
+                this.Mana += Constants.MageManaRegen;
+            }
+            else
+            {
+                this.Mana = Constants.MageMana;
+            }
         }
     }
 }

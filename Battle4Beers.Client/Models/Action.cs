@@ -58,12 +58,31 @@ namespace Battle4Beers.Client.Models
 
         public void ReduceCooldown()
         {
-            this.CoolDown--;
+            if (this.CoolDown > 0)
+            {
+                this.CoolDown--;
+            }
+            else
+            {
+                this.CoolDown = 0;
+            }
         }
 
         public void SetCooldown(int coolDown)
         {
             this.CoolDown = coolDown;
+        }
+
+        public bool IsOnCooldown()
+        {
+            if(this.CoolDown > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public abstract override string ToString();

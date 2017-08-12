@@ -24,6 +24,8 @@ namespace Battle4Beers.Client.Models
             this.Armor = armor;
             this.actions = new List<Action>(actions);
             this.StunnedDuration = 0;
+            this.Buffs = new List<Buff>();
+            this.Debuffs = new List<Debuff>();
         }
 
         public int StunnedDuration
@@ -94,7 +96,7 @@ namespace Battle4Beers.Client.Models
 
         public abstract void ExecuteAction(int cost);
 
-        public void GetDamaged(int amount)
+        public virtual void GetDamaged(int amount)
         {
             if(this.Armor <= amount)
             {
@@ -116,6 +118,13 @@ namespace Battle4Beers.Client.Models
         public void GetArmor(int amount)
         {
             this.Armor += amount;
+        }
+
+        public abstract void Regenerate();
+
+        public override string ToString()
+        {
+            return $"{this.Name}: HEALTH: {this.Health} ARMOR: {this.Armor}";
         }
     }
 }

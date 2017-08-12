@@ -1,6 +1,5 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,9 +7,6 @@ namespace Battle4Beers.Client.Models
 {
     public class FrostMage : Mage, IPassiveActivator
     {
-        private bool icyVeins;
-        private bool frostArmored;
-
         public FrostMage(string name, int health, int healthRegen, List<Action> actions, int armor, int mana, int manaRegen, int spellPower) : base(name, health, healthRegen, actions, armor, mana, manaRegen, spellPower)
         {
             this.IcyVeins = false;
@@ -19,61 +15,62 @@ namespace Battle4Beers.Client.Models
 
         public bool FrostArmored
         {
-            get { return this.frostArmored; }
-            set { this.frostArmored = value; }
+            get;
+            set;
         }
 
         public bool IcyVeins
         {
-            get { return icyVeins; }
-            protected set { icyVeins = value; }
+            get;
+            set;
         }
 
         public int FrostArmorDuration
         {
-            get
-            {
-                return this.FrostArmorDuration;
-            }
-            set { this.FrostArmorDuration = value; }
+            get; set;
         }
 
         public int IcyVeinsDuration
         {
-            get
-            {
-                return this.IcyVeinsDuration;
-            }
-            set { this.IcyVeinsDuration = value; }
+            get; set;
         }
 
         public int PassiveDuration
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
         }
 
         public void ActivatePassive(string nameOfPassive, Hero player)
         {
-            if(nameOfPassive == "ICY VEINS")
+            if (nameOfPassive == "ICY VEINS")
             {
                 this.IcyVeins = true;
                 this.IcyVeinsDuration = AbilityDurationConstants.IcyVeinsDuration;
+                this.FrostArmorDuration--;
                 player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.IcyVeinsCooldown);
             }
             else
             {
                 this.FrostArmorDuration = AbilityDurationConstants.FrostArmorDuration;
                 this.FrostArmored = true;
+                this.IcyVeinsDuration--;
                 player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.FrostArmorCooldown);
+            }
+
+            if (this.FrostArmorDuration <= 0)
+            {
+                this.FrostArmored = false;
+            }
+
+            if (this.IcyVeinsDuration <= 0)
+            {
+                this.IcyVeins = false;
             }
         }
 
         public void DeactivatePassive(string nameOfPassive)
         {
-            if(nameOfPassive == "ICY VEINS")
+            if (nameOfPassive == "ICY VEINS")
             {
                 this.IcyVeins = false;
             }

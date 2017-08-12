@@ -1,6 +1,5 @@
 ﻿using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Models.Actions;
-using Battle4Beers.Client.Models.Actions.FrostMage;
 using Battle4Beers.Client.Models.Actions.PriestActions;
 using Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest;
 using Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest;
@@ -98,25 +97,25 @@ namespace Battle4Beers.Client
                 actions.Add(new LevelUpCrit("LEVEL UP CRITICAL STRIKE", 0, 0));
                 actions.Add(new MirrorImage("MIRROR IMAGE", 0, 20, Constants.WarriorDamage));
                 actions.Add(new WindFury("WINDFURY", 0, 50, Constants.WarriorDamage * 4));
-                Hero swordmaster = new SwordmasterWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealtRegen
+                Hero swordmaster = new SwordmasterWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.WarriorStartingRage, Constants.WarriorDamage);
                 players.Add(swordmaster);
             }
             else if(typeOfWarrior == "BERSERKER")
             {
-                actions.Add(new GoBerserk("GO BERSERK", 0, 200, 100));
+                actions.Add(new GoBerserk("GO BERSERK", 0, 0, 100));
                 actions.Add(new WildAxes("WILD AXES", 0, 40, Constants.WarriorDamage * 3));
                 actions.Add(new Execute("EXECUTE", 0, 50, 700));
-                Hero berserker = new BerserkerWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealtRegen
+                Hero berserker = new BerserkerWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.WarriorStartingRage, Constants.WarriorDamage);
                 players.Add(berserker);
             }
             else
             {
                 actions.Add(new ArmorUp("ARMOR UP",0, 0, Constants.ProtectionWarriorArmor));
-                actions.Add(new Hibernate("HIBERNATE",0, 40,  Constants.WarriorHealtRegen * 4));
+                actions.Add(new Hibernate("HIBERNATE",0, 40,  Constants.WarriorHealthRegen * 4));
                 actions.Add(new ShieldSlam("SHIELD SLAM", 0, 30, Constants.WarriorDamage * 4));
-                Hero protector = new ProtectionWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealtRegen
+                Hero protector = new ProtectionWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealthRegen
                     , actions, Constants.ProtectionWarriorArmor, Constants.WarriorStartingRage, Constants.WarriorDamage);
                 players.Add(protector);
             }
@@ -138,7 +137,7 @@ namespace Battle4Beers.Client
             else if (typeOfMage == "ARCANE")
             {
                 actions.Add(new ArcaneBlast("ARCANE BLAST", 0, Constants.MageManaRegen, Constants.MageSpellPower));
-                actions.Add(new AmplifyMagic("AMPLIFY MAGIC", 0, 200  ));
+                actions.Add(new AmplifyMagic("AMPLIFY MAGIC", 0, 200));
                 actions.Add(new Polymorph("POLYMORPH", 0, 300));
                 actions.Add(new ManaRegeneration("MANA REGENERATION", 0, 0, Constants.MageManaRegen * 4));
                 Hero arcaneMage = new ArcaneMage(playerName, Constants.MageHealth, Constants.MageHealthRegen
@@ -165,7 +164,7 @@ namespace Battle4Beers.Client
             {
                 actions.Add(new Renew("RENEW", 0, 200, 2, (int)(Constants.PriestSpellPower * 1.5)));
                 actions.Add(new Serenity("SERENITY", 0, 400, Constants.PriestSpellPower * 5));
-                actions.Add(new HolyNova("HOLY NOVA", 0, 300, Constants.PriestSpellPower * 2));
+                actions.Add(new PunishTheUnholy("HOLY NOVA", 0, 300, Constants.PriestSpellPower * 2));
                 Hero holyPriest = new HolyPriest(playerName, Constants.PriestHealth, Constants.PriestHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.PriestMana, Constants.PriestManaRegen, Constants.PriestSpellPower);
                 players.Add(holyPriest);

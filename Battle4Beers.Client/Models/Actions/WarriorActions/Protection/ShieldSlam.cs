@@ -1,6 +1,7 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System;
+using System.Linq;
 
 namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
@@ -23,6 +24,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
             enemy.StunnedDuration++;
+            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.ShieldSlamCooldown);
             enemy.GetDamaged(this.Damage);
         }
 

@@ -3,6 +3,7 @@ using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Utilities.Constants;
 using System.Collections.Generic;
 using System.Linq;
+using Battle4Beers.Client.GameProperties;
 
 namespace Battle4Beers.Client
 {
@@ -39,7 +40,13 @@ namespace Battle4Beers.Client
         //Gives the MenuDraw method the properties needed to draw an Action Menu for the current hero.
         public static Models.Action ActionsMenu(Hero player)
         {
-            var title = $"{player.Name} NEEDS TO SELECT AN ACTION:";
+            var energyTypeAndAmount = HeroTypeChecker.GetHeroEnergyTypeAndAmount(player);
+            var title = $"{player.Name} NEEDS TO SELECT AN ACTION: Health: {player.Health} ARMOR {player.Armor} {energyTypeAndAmount[0]}: {energyTypeAndAmount[1]}";
+            var isAmplified = HeroTypeChecker.CheckForPassive(player);
+            if(isAmplified)
+            {
+                title += $" {player.Name}'S DAMAGE IS BUFFED DUE TO PASSIVE";
+            }
             var firstAction = player.Actions[0].ToString();
             var secondAction = player.Actions[1].ToString();
             var thirdAction = player.Actions[2].ToString();
@@ -130,7 +137,9 @@ namespace Battle4Beers.Client
         public static Hero SelectATarget(List<Hero> players)
         {
             var title = "SELECT YOUR TARGET";
-            var target = players.Count == 2 ? MenuDrawer.DrawMenu(new List<string> { title, players[0].Name, players[1].Name }) : MenuDrawer.DrawMenu(new List<string> { title, players[0].Name });
+            var firstTarget = $"{players[0].Name} HEALTH: {players[0].Health} ARMOR: {players[0].Armor}";
+            var secondTarget = $"{players[1].Name} HEALTH: {players[1].Health} ARMOR: {players[1].Armor}";
+            var target = MenuDrawer.DrawMenu(new List<string> { title, firstTarget,secondTarget });
             return players.Where(a => a.Name == target).First();
         }
     }

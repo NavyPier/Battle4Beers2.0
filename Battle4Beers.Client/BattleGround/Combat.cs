@@ -4,56 +4,128 @@ using System.Linq;
 using System;
 using Battle4Beers.Client.Utilities.Constants;
 using Battle4Beers.Client.BattleGround;
+using Battle4Beers.Client.GameProperties;
 
 namespace Battle4Beers.Client
 {
     public class Combat
     {
-        public static bool arenaBattle = false;
-        public static bool duelBattle = false;
         public static List<Hero> firstTeam;
         public static List<Hero> secondTeam;
+        public static List<Hero> firstTeamDeadPlayers = new List<Hero>();
+        public static List<Hero> secondTeamDeadPlayers = new List<Hero>();
 
         public static void ArrangeTeams(List<Hero> players)
         {
             if (players.Count == 2)
             {
-                duelBattle = true;
                 firstTeam = new List<Hero> { players[0] };
                 secondTeam = new List<Hero> { players[1] };
-                Battle(firstTeam, secondTeam);
+                BattleStart(firstTeam, secondTeam);
             }
             else
             {
-                arenaBattle = true;
                 firstTeam = new List<Hero> { players[0], players[1] };
                 secondTeam = new List<Hero> { players[2], players[3] };
-                Battle(firstTeam, secondTeam);
+                BattleStart(firstTeam, secondTeam);
             }
         }
 
-        public static void Battle(List<Hero> firstTeam, List<Hero> secondTeam)
+        public static void BattleStart(List<Hero> firstTeam, List<Hero> secondTeam)
         {
             while (firstTeam.Count > 0 && secondTeam.Count > 0)
             {
-                CheckIfStunned(firstTeam[0]);
-                CheckIfStunned(secondTeam[0]);
+                CheckPlayerHealth(firstTeam[0]);
+                CheckPlayerHealth(secondTeam[0]);
                 if (firstTeam.Count == 2)
                 {
-                    CheckIfStunned(firstTeam[1]);
+                    CheckPlayerHealth(firstTeam[1]);
                 }
                 if (secondTeam.Count == 2)
                 {
-                    CheckIfStunned(secondTeam[1]);
+                    CheckPlayerHealth(secondTeam[1]);
                 }
+
+                foreach(var player in firstTeam)
+                {
+                    player.Regenerate();
+                }
+
+                foreach(var player in secondTeam)
+                {
+                    player.Regenerate();
+                }
+            }
+            GameResult.GetResult(firstTeam, firstTeamDeadPlayers, secondTeam, secondTeamDeadPlayers);
+        }
+
+        private static void CheckPlayerHealth(Hero player)
+        {
+            if (player.Buffs.Count > 0)
+            {
+                foreach (var buff in player.Buffs)
+                {
+                    buff.BuffPlayer(player);
+                }
+            }
+
+            player.Buffs.RemoveAll(a => a.Duration <= 0);
+
+            if (player.Debuffs.Count > 0)
+            {
+                foreach (var debuff in player.Debuffs)
+                {
+                    debuff.DebuffPlayer(player);
+                }
+            }
+
+            player.Debuffs.RemoveAll(a => a.Duration <= 0);
+
+            if (player.Health <= 0)
+            {
+                if (firstTeam.Contains(player))
+                {
+                    firstTeamDeadPlayers.Add(player);
+                    firstTeam.Remove(player);
+                }
+                else
+                {
+                    secondTeamDeadPlayers.Add(player);
+                    secondTeam.Remove(player);
+                }
+            }
+            else
+            {
+                PlayerTurn(player);
             }
         }
 
-        public static void CheckIfStunned(Hero player)
+        public static void PlayerTurn(Hero player)
         {
             if (player.StunnedDuration <= 0)
             {
                 var action = TypesOfMenu.ActionsMenu(player);
+                while (!CheckForEnoughManaOrRage(player, action) || action.IsOnCooldown())
+                {
+                    var key = new ConsoleKeyInfo();
+                    while (key.Key != ConsoleKey.Enter)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(Constants.GameTitle);
+                        if (action.IsOnCooldown())
+                        {
+                            Console.WriteLine($"{action.Name} is on cooldown right now! Select a different action!");
+                        }
+                        else if (!CheckForEnoughManaOrRage(player, action))
+                        {
+                            Console.WriteLine($"{action.Name} CANNOT BE CAST DUE TO INSUFFICIENT ENERGY!");
+                        }
+                        Console.WriteLine("-- PRESS ENTER TO CONTINUE TO ACTION MENU --");
+                        key = Console.ReadKey();
+                    }
+                    action = TypesOfMenu.ActionsMenu(player);
+                }
                 ActionGetter.GetTypeOfAction(action, player, firstTeam, secondTeam);
             }
             else
@@ -61,13 +133,20 @@ namespace Battle4Beers.Client
                 var key = new ConsoleKeyInfo();
                 while (key.Key != ConsoleKey.Enter)
                 {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(Constants.GameTitle);
                     Console.WriteLine($"{player.Name} is stunned right now. Proceeding to next player");
                     Console.WriteLine("-- PRESS ENTER TO CONTINUE TO NEXT PLAYER --");
-                    Console.Clear();
-                    Console.ReadKey();
+                    key = Console.ReadKey();
                 }
                 player.StunnedDuration--;
             }
+        }
+
+        private static bool CheckForEnoughManaOrRage(Hero player, Models.Action action)
+        {
+            return HeroTypeChecker.CheckHeroClass(player, action);
         }
     }
 }

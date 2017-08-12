@@ -29,11 +29,6 @@ namespace Battle4Beers.Client.Models
         public void ReduceDuration(Hero player)
         {
             this.Duration--;
-            if(this.Duration <= 0)
-            {
-                var debuffToRemove = player.Debuffs.Where(a => a.Name == this.Name && a.Duration <= 0).First();
-                player.Debuffs.Remove(debuffToRemove);
-            }
         }
 
         public abstract override string ToString();

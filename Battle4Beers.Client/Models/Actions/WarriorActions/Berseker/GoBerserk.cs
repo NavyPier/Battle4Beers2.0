@@ -21,7 +21,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 
         public override string ToString()
         {
-            return $"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {AbilityDurationConstants.BerserkDuration} turns.Cooldown: {this.CoolDown}, Cost: {this.Cost} HP";
+            return $"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {AbilityDurationConstants.BerserkDuration} turns.Cooldown: {this.CoolDown}, Cost: 200 HP";
         }
 
     }

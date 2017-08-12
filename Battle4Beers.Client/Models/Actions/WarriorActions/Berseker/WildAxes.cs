@@ -1,5 +1,8 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
+using System.Linq;
+using Battle4Beers.Client.BattleGround;
 
 namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 {
@@ -21,14 +24,36 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
+            var isCrit = CriticalChecker.CheckForCrit(player);
             BerserkerWarrior playerOnTurn = (BerserkerWarrior)player;
-            if(playerOnTurn.IsBerserk)
+            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.WildAxesCooldown);
+            if (playerOnTurn.IsBerserk)
             {
-                enemy.GetDamaged(this.Damage * 2);
+                if(isCrit)
+                {
+                    enemy.GetDamaged(this.Damage * 4);
+                }
+                else
+                {
+                    enemy.GetDamaged(this.Damage * 2);
+                }
+
+                playerOnTurn.PassiveDuration--;
+                if(playerOnTurn.PassiveDuration <= 0)
+                {
+                    playerOnTurn.IsBerserk = false;
+                }
             }
             else
             {
-                enemy.GetDamaged(this.Damage);
+                if (isCrit)
+                {
+                    enemy.GetDamaged(this.Damage * 2);
+                }
+                else
+                {
+                    enemy.GetDamaged(this.Damage);
+                }
             }
         }
 

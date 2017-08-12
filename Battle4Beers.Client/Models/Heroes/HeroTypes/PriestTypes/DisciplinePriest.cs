@@ -21,14 +21,7 @@ namespace Battle4Beers.Client.Models
             set { this.isShielded = value; }
         }
 
-        public int PassiveDuration
-        {
-            get
-            {
-                return this.PassiveDuration;
-            }
-            set { this.PassiveDuration = value; }
-        }
+        public int PassiveDuration { get; set; }
 
         public void ActivatePassive(string nameOfPassive, Hero player)
         {
@@ -36,6 +29,25 @@ namespace Battle4Beers.Client.Models
             priest.IsShielded = true;
             this.PassiveDuration = AbilityDurationConstants.ShieldDuration;
             player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.ShieldCooldown);
+        }
+
+        public override void GetDamaged(int amount)
+        {
+            if(this.IsShielded)
+            {
+                amount =(int)(amount * 0.6);
+            }
+
+            if (this.Armor <= amount)
+            {
+                amount -= this.Armor;
+                this.Health -= amount;
+                this.Armor = 0;
+            }
+            else if (this.Armor > amount)
+            {
+                this.Armor -= amount;
+            }
         }
 
         public void DeactivatePassive(string nameOfPassive)

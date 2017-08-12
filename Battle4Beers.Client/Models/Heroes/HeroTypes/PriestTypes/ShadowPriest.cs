@@ -15,14 +15,7 @@ namespace Battle4Beers.Client.Models
             this.Sadist = false;
         }
 
-        public int PassiveDuration
-        {
-            get
-            {
-                return this.PassiveDuration;
-            }
-            set { this.PassiveDuration = value; }
-        }
+        public int PassiveDuration { get; set; }
 
         public bool Sadist
         {

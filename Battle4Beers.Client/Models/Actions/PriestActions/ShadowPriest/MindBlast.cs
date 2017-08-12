@@ -1,5 +1,7 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using System.Linq;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions
 {
@@ -22,10 +24,15 @@ namespace Battle4Beers.Client.Models.Actions
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
             ShadowPriest playerOnTurn = (ShadowPriest)player;
-            if(playerOnTurn.Sadist)
+            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.MindBlastCooldown);
+            if (playerOnTurn.Sadist)
             {
                 enemy.GetDamaged((int)(this.Damage * 1.5));
                 player.GetHealed((int)(this.Damage * 0.1));
+            }
+            else
+            {
+                enemy.GetDamaged(this.Damage);
             }
         }
 

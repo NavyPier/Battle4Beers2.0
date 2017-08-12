@@ -2,15 +2,16 @@
 {
     public class AbilityConstants
     {
+        //Execution Damage
+        public const int ExecutionDamage = 10000;
+
         //Arcane Mage
         public const int ArcaneMageManaRegeneration = 300;
-
-
 
         //Berserker Warrior
         public const int BerserkModeCost = 200;
 
         //Protection Warrior
-        public const int HibernationHeal = Constants.WarriorHealtRegen * 4;
+        public const int HibernationHeal = Constants.WarriorHealthRegen * 4;
     }
 }

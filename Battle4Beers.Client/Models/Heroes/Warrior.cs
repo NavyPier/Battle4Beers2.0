@@ -34,9 +34,26 @@ namespace Battle4Beers.Client.Models
             }
         }
 
+        public override void ExecuteAction(int cost)
+        {
+            this.Rage -= cost;
+        }
+
+        public override void Regenerate()
+        {
+            if (this.Health + Constants.WarriorHealthRegen < Constants.WarriorHealth)
+            {
+                this.Health += Constants.WarriorHealthRegen;
+            }
+            else
+            {
+                this.Health = Constants.WarriorHealth;
+            }
+        }
+
         public void GetRageOnHit()
         {
-            if(this.Rage + Constants.WarriorRageOnHit > 100)
+            if (this.Rage + Constants.WarriorRageOnHit > 100)
             {
                 this.Rage = 100;
             }
@@ -44,11 +61,6 @@ namespace Battle4Beers.Client.Models
             {
                 this.Rage += Constants.WarriorRageOnHit;
             }
-        }
-
-        public override void ExecuteAction(int cost)
-        {
-            this.Rage -= cost;
         }
     }
 }

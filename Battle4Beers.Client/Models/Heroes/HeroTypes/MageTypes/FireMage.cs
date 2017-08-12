@@ -21,14 +21,7 @@ namespace Battle4Beers.Client.Models
             set { fireArmored = value; }
         }
 
-        public int PassiveDuration
-        {
-            get
-            {
-                return this.PassiveDuration;
-            }
-            set { this.PassiveDuration = value; }
-        }
+        public int PassiveDuration { get; set; }
 
         public void ActivatePassive(string nameOfPassive, Hero player)
         {

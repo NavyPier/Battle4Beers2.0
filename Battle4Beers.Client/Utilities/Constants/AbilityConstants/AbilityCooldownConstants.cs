@@ -31,7 +31,7 @@
         public const int WindFuryCooldown = 4;
 
         //Protection Warrior
-        public const int ArmorUpCooldown = 3;
+        public const int ArmorUpCooldown = 2;
         public const int ShieldSlamCooldown = 3;
         public const int HibernateCooldown = 4;
 
@@ -40,7 +40,7 @@
         //Holy Priest
         public const int RenewCooldown = 4;
         public const int SerenityCooldown = 4;
-        public const int HolyNovaCooldown = 4;
+        public const int PunishTheUnholyCooldown = 4;
 
         //Discipline Priest
         public const int ShieldCooldown = 4;
