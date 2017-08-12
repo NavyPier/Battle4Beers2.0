@@ -1,4 +1,5 @@
-﻿using Battle4Beers.Client.Interfaces;
+﻿using Battle4Beers.Client.BattleGround;
+using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
                 var random = new Random().Next(1, 101);
                 if(random <= 35)
                 {
+                    CriticalPrinter.PrintCritical(player);
                     enemy.GetDamaged(this.Damage);
                 }
             }

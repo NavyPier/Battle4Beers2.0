@@ -12,8 +12,8 @@ namespace Battle4Beers.Client
     {
         public static List<Hero> firstTeam;
         public static List<Hero> secondTeam;
-        public static List<Hero> firstTeamDeadPlayers = new List<Hero>();
-        public static List<Hero> secondTeamDeadPlayers = new List<Hero>();
+
+        public static int Count { get; private set; }
 
         public static void ArrangeTeams(List<Hero> players)
         {
@@ -33,7 +33,7 @@ namespace Battle4Beers.Client
 
         public static void BattleStart(List<Hero> firstTeam, List<Hero> secondTeam)
         {
-            while (firstTeam.Count > 0 && secondTeam.Count > 0)
+            while (firstTeam.Where(a => a.Health >0).ToList().Count > 0 && secondTeam.Where(a => a.Health > 0).ToList().Count > 0)
             {
                 CheckPlayerHealth(firstTeam[0]);
                 CheckPlayerHealth(secondTeam[0]);
@@ -46,17 +46,17 @@ namespace Battle4Beers.Client
                     CheckPlayerHealth(secondTeam[1]);
                 }
 
-                foreach(var player in firstTeam)
+                foreach (var player in firstTeam)
                 {
                     player.Regenerate();
                 }
 
-                foreach(var player in secondTeam)
+                foreach (var player in secondTeam)
                 {
                     player.Regenerate();
                 }
             }
-            GameResult.GetResult(firstTeam, firstTeamDeadPlayers, secondTeam, secondTeamDeadPlayers);
+            GameResult.GetResult(firstTeam, secondTeam);
         }
 
         private static void CheckPlayerHealth(Hero player)
@@ -81,28 +81,12 @@ namespace Battle4Beers.Client
 
             player.Debuffs.RemoveAll(a => a.Duration <= 0);
 
-            if (player.Health <= 0)
-            {
-                if (firstTeam.Contains(player))
-                {
-                    firstTeamDeadPlayers.Add(player);
-                    firstTeam.Remove(player);
-                }
-                else
-                {
-                    secondTeamDeadPlayers.Add(player);
-                    secondTeam.Remove(player);
-                }
-            }
-            else
-            {
-                PlayerTurn(player);
-            }
+            PlayerTurn(player);
         }
 
         public static void PlayerTurn(Hero player)
         {
-            if (player.StunnedDuration <= 0)
+            if (player.StunnedDuration <= 0 && player.Health > 0)
             {
                 var action = TypesOfMenu.ActionsMenu(player);
                 while (!CheckForEnoughManaOrRage(player, action) || action.IsOnCooldown())
@@ -128,7 +112,7 @@ namespace Battle4Beers.Client
                 }
                 ActionGetter.GetTypeOfAction(action, player, firstTeam, secondTeam);
             }
-            else
+            else if (player.Health > 0)
             {
                 var key = new ConsoleKeyInfo();
                 while (key.Key != ConsoleKey.Enter)

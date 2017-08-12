@@ -42,18 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleGround\ActionGetter.cs" />
-    <Compile Include="BattleGround\ActionResult.cs" />
-    <Compile Include="BattleGround\CriticalChecker.cs" />
+    <Compile Include="BattleGround\ActionProperties\ActionGetter.cs" />
+    <Compile Include="BattleGround\ActionProperties\ActionResult.cs" />
+    <Compile Include="BattleGround\CriticalProperties\CriticalChecker.cs" />
+    <Compile Include="BattleGround\CriticalProperties\CriticalPrinter.cs" />
     <Compile Include="BattleGround\HeroCooldownReductor.cs" />
     <Compile Include="BattleGround\GameResult.cs" />
-    <Compile Include="BattleGround\TypesOfAction\AgressiveAction.cs" />
-    <Compile Include="BattleGround\TypesOfAction\BuffAction.cs" />
-    <Compile Include="BattleGround\TypesOfAction\DebuffAction.cs" />
-    <Compile Include="BattleGround\TypesOfAction\ExecutionAction.cs" />
-    <Compile Include="BattleGround\TypesOfAction\FriendlyAction.cs" />
-    <Compile Include="BattleGround\TypesOfAction\PassiveAction.cs" />
-    <Compile Include="BattleGround\TargetTeamGetter.cs" />
+    <Compile Include="BattleGround\ActionProperties\AgressiveAction.cs" />
+    <Compile Include="BattleGround\ActionProperties\BuffAction.cs" />
+    <Compile Include="BattleGround\ActionProperties\DebuffAction.cs" />
+    <Compile Include="BattleGround\ActionProperties\ExecutionAction.cs" />
+    <Compile Include="BattleGround\ActionProperties\FriendlyAction.cs" />
+    <Compile Include="BattleGround\ActionProperties\PassiveAction.cs" />
+    <Compile Include="BattleGround\ActionProperties\TargetTeamGetter.cs" />
     <Compile Include="GameProperties\ActionManager.cs" />
     <Compile Include="BattleGround\Combat.cs" />
     <Compile Include="GameProperties\HeroTypeChecker.cs" />

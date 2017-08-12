@@ -32,6 +32,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
                 if(isCrit)
                 {
                     enemy.GetDamaged(this.Damage * 4);
+                    CriticalPrinter.PrintCritical(player);
                 }
                 else
                 {
@@ -49,6 +50,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
                 if (isCrit)
                 {
                     enemy.GetDamaged(this.Damage * 2);
+                    CriticalPrinter.PrintCritical(player);
                 }
                 else
                 {

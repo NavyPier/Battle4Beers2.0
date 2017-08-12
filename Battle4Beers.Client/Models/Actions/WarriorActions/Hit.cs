@@ -38,6 +38,12 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
             var isCritical = CriticalChecker.CheckForCrit(player);
+
+            if(isCritical)
+            {
+                CriticalPrinter.PrintCritical(player);
+            }
+
             var isBerserk = HeroTypeChecker.CheckForPassive(player);
             if (isBerserk)
             {
