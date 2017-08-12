@@ -1,17 +1,17 @@
-﻿using Battle4Beers.Client.Utilities.Constants;
+﻿using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 using System;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 {
-    public class HolyNova : Action
+    public class HolyNova : Action, IAgressiveAction
     {
         private int damage;
-        private int heal;
 
-        public HolyNova(string name, int coolDown, int cost, int damage, int heal) : base(name, coolDown, cost)
+        public HolyNova(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.Damage = damage;
-            this.Heal = heal;
+            this.Type = "agressive";
         }
 
         public int Damage
@@ -20,15 +20,14 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
             protected set { this.damage = value; }
         }
 
-        public int Heal
+        public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
-            get { return this.heal; }
-            protected set { this.heal = value; }
+            enemy.GetDamaged(this.Damage);
         }
 
         public override string ToString()
         {
-            return $"{this.Name}: Damage all of your opponents by {this.damage} and heal yourself and nearby teammates by {this.heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+            return $"{this.Name}: Damage all of your opponents by {this.damage}. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

@@ -10,9 +10,8 @@ namespace Battle4Beers.Client.Models.Actions
         public ManaRegeneration(string name, int coolDown, int cost, int mana) : base(name, coolDown, cost)
         {
             this.Mana = mana;
+            this.Type = "passive";
         }
-
-        public object Constant { get; private set; }
 
         public int Mana
         {

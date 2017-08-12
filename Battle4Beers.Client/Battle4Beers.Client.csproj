@@ -42,6 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleGround\ActionGetter.cs" />
+    <Compile Include="BattleGround\TypesOfAction\AgressiveAction.cs" />
+    <Compile Include="BattleGround\TypesOfAction\BuffAction.cs" />
+    <Compile Include="BattleGround\TypesOfAction\DebuffAction.cs" />
+    <Compile Include="BattleGround\TypesOfAction\FriendlyAction.cs" />
+    <Compile Include="BattleGround\TypesOfAction\PassiveAction.cs" />
+    <Compile Include="BattleGround\TargetTeamGetter.cs" />
     <Compile Include="GameProperties\ActionManager.cs" />
     <Compile Include="BattleGround\Combat.cs" />
     <Compile Include="Interfaces\IAgressiveAction.cs" />
@@ -49,6 +56,12 @@
     <Compile Include="GameProperties\MenuActions.cs" />
     <Compile Include="GameProperties\CharacterCreation.cs" />
     <Compile Include="GameProperties\MenuDrawer.cs" />
+    <Compile Include="Interfaces\IExecution.cs" />
+    <Compile Include="Interfaces\IFriendlyAction.cs" />
+    <Compile Include="Interfaces\IPassiveActivator.cs" />
+    <Compile Include="Utilities\Constants\AbilityConstants.cs" />
+    <Compile Include="Utilities\Constants\AbilityCooldownConstants.cs" />
+    <Compile Include="Utilities\Constants\AbilityDurationConstants.cs" />
     <Compile Include="Utilities\Randomizer.cs" />
     <Compile Include="GameProperties\TypesOfMenu.cs" />
     <Compile Include="Interfaces\IAction.cs" />

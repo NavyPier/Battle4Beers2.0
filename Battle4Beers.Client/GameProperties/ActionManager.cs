@@ -33,9 +33,6 @@ namespace Battle4Beers.Client
             }
         }
 
-        public static void CombatActions(Hero player, string action)
-        {
-            
-        }
+        
     }
 }

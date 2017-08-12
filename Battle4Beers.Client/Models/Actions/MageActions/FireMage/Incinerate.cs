@@ -1,20 +1,34 @@
-﻿using System;
+﻿using Battle4Beers.Client.Interfaces;
+using System;
 
-namespace Battle4Beers.Client.Models.Actions.FireMage
+namespace Battle4Beers.Client.Models.Actions
 {
-    public class Incinerate : Action
+    public class Incinerate : Action, IExecution
     {
         private int damage;
 
         public Incinerate(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.Damage = damage;
+            this.Type = "execution";
         }
 
         public int Damage
         {
             get { return this.damage; }
             protected set { this.damage = value; }
+        }
+
+        public bool IsExecutionPossible(Hero player)
+        {
+            if(player.Health <= this.Damage)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override string ToString()

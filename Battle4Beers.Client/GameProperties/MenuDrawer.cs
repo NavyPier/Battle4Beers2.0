@@ -46,7 +46,6 @@ namespace Battle4Beers.Client
                 }
                 key = Console.ReadKey();
             }
-            ActionManager manager = new ActionManager();
             var command = currentActions.Where(a => a.Contains("-->")).First();
             return command.Split()[1];
         }

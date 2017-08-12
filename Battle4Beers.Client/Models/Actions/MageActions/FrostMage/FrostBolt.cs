@@ -1,22 +1,25 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
-using Battle4Beers.Client.Utilities.Constants;
+﻿using Battle4Beers.Client.Interfaces;
 
-namespace Battle4Beers.Client.Models.Actions.FrostMage
+namespace Battle4Beers.Client.Models.Actions
 {
-    public class FrostBolt : Action
+    public class FrostBolt : Action, IAgressiveAction
     {
         private int damage;
 
         public FrostBolt(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.Damage = damage;
+            this.Type = "agressive";
         }
 
         public int Damage
         {
             get { return this.damage; }
             protected set { this.damage = value; }
+        }
+
+        public void ExecuteAgressiveAction(Hero player, Hero enemy)
+        {
         }
 
         public override string ToString()

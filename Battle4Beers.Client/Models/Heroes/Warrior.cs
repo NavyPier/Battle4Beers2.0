@@ -1,6 +1,7 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
 using System.Collections.Generic;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models
 {
@@ -33,9 +34,16 @@ namespace Battle4Beers.Client.Models
             }
         }
 
-        public void GetRage(int rage)
+        public void GetRageOnHit()
         {
-
+            if(this.Rage + Constants.WarriorRageOnHit > 100)
+            {
+                this.Rage = 100;
+            }
+            else
+            {
+                this.Rage += Constants.WarriorRageOnHit;
+            }
         }
 
         public override void ExecuteAction(int cost)

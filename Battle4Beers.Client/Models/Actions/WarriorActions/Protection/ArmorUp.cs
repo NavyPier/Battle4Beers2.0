@@ -1,20 +1,28 @@
-﻿using Battle4Beers.Client.Utilities.Constants;
+﻿using System;
+using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
-    public class ArmorUp : Action
+    public class ArmorUp : Action, IFriendlyAction
     {
         private int armor;
 
         public ArmorUp(string name, int coolDown, int cost, int armor) : base(name, coolDown, cost)
         {
             this.Armor = armor;
+            this.Type = "friendly";
         }
 
         public int Armor
         {
             get { return this.armor; }
             set { this.armor = value; }
+        }
+
+        public void DoFriendlyAction(Hero player, Hero ally)
+        {
+            ally.GetArmor(this.Armor);
         }
 
         public override string ToString()

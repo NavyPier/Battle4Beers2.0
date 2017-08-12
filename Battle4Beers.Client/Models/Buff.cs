@@ -1,5 +1,6 @@
 ﻿using System;
 using Battle4Beers.Client.Interfaces;
+using System.Linq;
 
 namespace Battle4Beers.Client.Models
 {
@@ -21,9 +22,20 @@ namespace Battle4Beers.Client.Models
             protected set { this.duration = value; }
         }
 
-        public override string ToString()
+        public abstract void BuffPlayer(Hero player);
+
+        public abstract void GivePlayerBuff(Buff buff, Hero player);
+
+        public void ReduceDuration(Hero player)
         {
-            throw new NotImplementedException();
+            this.Duration--;
+            if (this.Duration <= 0)
+            {
+                var buffToRemove = player.Buffs.Where(a => a.Name == this.Name && a.Duration <= 0).First();
+                player.Buffs.Remove(buffToRemove);
+            }
         }
+
+        public abstract override string ToString();
     }
 }

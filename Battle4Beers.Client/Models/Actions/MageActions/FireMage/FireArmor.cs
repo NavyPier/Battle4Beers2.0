@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Battle4Beers.Client.Interfaces;
+using System;
 
-namespace Battle4Beers.Client.Models.Actions.FireMage
+namespace Battle4Beers.Client.Models.Actions
 {
-    public class FireArmor : Buff
+    public class FireArmor : Action
     {
         private int burnDamage;
         private int armor;
 
-        public FireArmor(string name, int coolDown, int cost, int duration, int damageOverTime, int armor) : base(name, coolDown, cost, duration)
+        public FireArmor(string name, int coolDown, int cost, int burnDamage, int armor) : base(name, coolDown, cost)
         {
-            this.BurnDamage = damageOverTime;
+            this.BurnDamage = burnDamage;
             this.Armor = armor;
+            this.Type = "passive";
         }
 
         public int BurnDamage
@@ -28,11 +30,6 @@ namespace Battle4Beers.Client.Models.Actions.FireMage
         public override string ToString()
         {
             return $"{this.Name}: Give {this.Armor} armor to target. If anyone attacks the person with Fire Armor on, they get burned for {this.BurnDamage} damage. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
-        }
-
-        public void DamageEnemy(Hero enemy)
-        {
-            enemy.GetDamaged(this.BurnDamage);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Battle4Beers.Client.Utilities.Constants
         public const int WarriorHealtRegen = 70;
         public const int ProtectionWarriorArmor = 300;
         public const int WarriorStartingRage = 0;
+        public const int WarriorRageOnHit = 20;
         #endregion
 
         //01.2.Priest
@@ -88,5 +89,6 @@ namespace Battle4Beers.Client.Utilities.Constants
           |  |     |   |         |   | |  |     |   |
           |  |_____|   |         |   | |  |_____|   |
           |____________|         |___| |____________|";
+
     }
 }

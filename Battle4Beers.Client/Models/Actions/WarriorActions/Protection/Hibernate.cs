@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Battle4Beers.Client.Utilities.Constants;
+using System;
 
 namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
-    public class Hibernate : Buff
+    public class Hibernate : Action
     {
         private int heal;
         private int percentage;
 
-        public Hibernate(string name, int coolDown, int cost, int duration, int heal) : base(name, coolDown, cost, duration)
+        public Hibernate(string name, int coolDown, int cost, int heal) : base(name, coolDown, cost)
         {
             this.Heal = heal;
             this.Percentage = 50;
+            this.Type = "passive";
         }
 
         public int Percentage
@@ -27,7 +29,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
 
         public override string ToString()
         {
-            return $"{this.Name}: Buff target ally to receive only {this.Percentage}% damage for the next {this.Duration} turns. Heal target ally for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost}";
+            return $"{this.Name}: Buff target ally to receive only {this.Percentage}% damage for the next {AbilityDurationConstants.HibernateDuration} turns. Heal target ally for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost}";
         }
     }
 }

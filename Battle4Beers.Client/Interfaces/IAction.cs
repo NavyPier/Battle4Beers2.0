@@ -5,5 +5,6 @@
         string Name { get; }
         int CoolDown { get; }
         int Cost { get; }
+        string Type { get; }
     }
 }

@@ -8,6 +8,7 @@ namespace Battle4Beers.Client.Models
         private string name;
         private int coolDown;
         private int cost;
+        private string type;
 
         public Action(string name, int coolDown, int cost)
         {
@@ -44,6 +45,15 @@ namespace Battle4Beers.Client.Models
             {
                 this.cost = value;
             }
+        }
+
+        public string Type
+        {
+            get
+            {
+                return this.type;
+            }
+            set { this.type = value; }
         }
 
         public void ReduceCooldown()

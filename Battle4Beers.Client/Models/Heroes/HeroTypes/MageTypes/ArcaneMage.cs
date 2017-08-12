@@ -1,10 +1,13 @@
-﻿using Battle4Beers.Client.Utilities.Constants;
+﻿using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Models.Actions;
+using Battle4Beers.Client.Utilities.Constants;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Battle4Beers.Client.Models
 {
-    public class ArcaneMage : Mage
+    public class ArcaneMage : Mage, IPassiveActivator
     {
         private bool isAmplified;
 
@@ -17,6 +20,37 @@ namespace Battle4Beers.Client.Models
         {
             get { return this.isAmplified; }
             set { this.isAmplified = value; }
+        }
+
+        public int PassiveDuration
+        {
+            get { return this.PassiveDuration; }
+            set
+            {
+                this.PassiveDuration = value ;
+            }
+        }
+
+        public void ActivatePassive(string nameOfPassive, Hero player)
+        {
+            if(nameOfPassive == "AMPLIFY MAGIC")
+            {
+                this.IsAmplified = true;
+                this.PassiveDuration = AbilityDurationConstants.AmplifierDuration;
+                player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.AmplifyMagicCooldown);
+            }
+            else
+            {
+                this.Mana += AbilityConstants.ArcaneMageManaRegeneration;
+                player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.ManaRegenerationCooldown);
+
+            }
+
+        }
+
+        public void DeactivatePassive(string nameOfPassive)
+        {
+            this.IsAmplified = false;
         }
     }
 }

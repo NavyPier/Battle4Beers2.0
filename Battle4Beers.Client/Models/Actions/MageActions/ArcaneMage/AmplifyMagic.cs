@@ -4,13 +4,13 @@ using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions
 {
-    public class AmplifyMagic : Buff
+    public class AmplifyMagic : Action
     {
         private int amplifier;
 
-        public AmplifyMagic(string name, int coolDown, int cost, int duration, int amplifier) : base(name, coolDown, cost, duration)
+        public AmplifyMagic(string name, int coolDown, int cost) : base(name, coolDown, cost)
         {
-            this.Amplifier = amplifier;
+            this.Type = "passive";
         }
 
         public int Amplifier
@@ -21,7 +21,7 @@ namespace Battle4Beers.Client.Models.Actions
 
         public override string ToString()
         {
-            return $"{this.Name}: Makes the player deal {this.Amplifier}% more damage for the next {this.Duration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+            return $"{this.Name}: Makes the player deal {this.Amplifier}% more damage for the next {AbilityDurationConstants.AmplifierDuration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

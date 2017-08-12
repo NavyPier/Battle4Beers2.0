@@ -1,4 +1,5 @@
-﻿using Battle4Beers.Client.Interfaces;
+﻿using System;
+using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models.Actions
 {
@@ -9,12 +10,26 @@ namespace Battle4Beers.Client.Models.Actions
         public ArcaneBlast(string name, int coolDown, int cost, int damage) : base(name, coolDown, cost)
         {
             this.Damage = damage;
+            this.Type = "agressive";
         }
 
         public int Damage
         {
             get { return this.damage; }
             protected set { this.damage = value; }
+        }
+
+        public void ExecuteAgressiveAction(Hero player, Hero enemy)
+        {
+            ArcaneMage playerOnTurn = (ArcaneMage)player;
+            if (playerOnTurn.IsAmplified)
+            {
+                enemy.GetDamaged(this.Damage * 2);
+            }
+            else
+            {
+                enemy.GetDamaged(this.Damage);
+            }
         }
 
         public override string ToString()

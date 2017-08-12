@@ -1,10 +1,12 @@
-﻿using Battle4Beers.Client.Utilities.Constants;
+﻿using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Utilities.Constants;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Battle4Beers.Client.Models
 {
-    public class FireMage : Mage
+    public class FireMage : Mage, IPassiveActivator
     {
         private bool fireArmored;
 
@@ -17,6 +19,27 @@ namespace Battle4Beers.Client.Models
         {
             get { return fireArmored; }
             set { fireArmored = value; }
+        }
+
+        public int PassiveDuration
+        {
+            get
+            {
+                return this.PassiveDuration;
+            }
+            set { this.PassiveDuration = value; }
+        }
+
+        public void ActivatePassive(string nameOfPassive, Hero player)
+        {
+            this.PassiveDuration = AbilityDurationConstants.FireArmorDuration;
+            this.FireArmored = true;
+            player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.FireArmorCooldown);
+        }
+
+        public void DeactivatePassive(string nameOfPassive)
+        {
+            this.FireArmored = false;
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Battle4Beers.Client.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace Battle4Beers.Client.Models
 {
-    public class SwordmasterWarrior : Warrior
+    public class SwordmasterWarrior : Warrior, IPassiveActivator
     {
         private bool criticalStrike;
 
@@ -16,6 +17,24 @@ namespace Battle4Beers.Client.Models
         {
             get { return this.criticalStrike; }
             set { this.criticalStrike = value; }
+        }
+
+        public int PassiveDuration
+        {
+            get
+            {
+                return this.PassiveDuration;
+            }
+            set { this.PassiveDuration = int.MaxValue; }
+        }
+
+        public void ActivatePassive(string nameOfPassive, Hero player)
+        {
+            this.CriticalStrike = true;
+        }
+
+        public void DeactivatePassive(string nameOfPassive)
+        {
         }
     }
 }

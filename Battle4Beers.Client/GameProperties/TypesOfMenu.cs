@@ -37,15 +37,15 @@ namespace Battle4Beers.Client
             Console.Clear();
         }
         //Gives the MenuDraw method the properties needed to draw an Action Menu for the current hero.
-        public static void ActionsMenu(Hero player)
+        public static Models.Action ActionsMenu(Hero player)
         {
-            var title = "SELECT AN ACTION:";
+            var title = $"{player.Name} NEEDS TO SELECT AN ACTION:";
             var firstAction = player.Actions[0].ToString();
             var secondAction = player.Actions[1].ToString();
             var thirdAction = player.Actions[2].ToString();
             var fourthAction = player.Actions[3].ToString();
             var action = MenuDrawer.DrawMenu(new List<string>() { title, firstAction, secondAction, thirdAction, fourthAction });
-            ActionManager.CombatActions(player, action);
+            return player.Actions.Where(a => a.Name.Contains(action.Trim(':'))).First();
         }
 
         public static void NewGameMenu()
@@ -125,6 +125,13 @@ namespace Battle4Beers.Client
             var winner = MenuDrawer.DrawMenu(new List<string>() { title, Constants.beer1, Constants.beer2, Constants.beer3, Constants.beer4 }).Trim('-');
             var beerSelected = int.Parse(winner);
             return 0;
+        }
+
+        public static Hero SelectATarget(List<Hero> players)
+        {
+            var title = "SELECT YOUR TARGET";
+            var target = players.Count == 2 ? MenuDrawer.DrawMenu(new List<string> { title, players[0].Name, players[1].Name }) : MenuDrawer.DrawMenu(new List<string> { title, players[0].Name });
+            return players.Where(a => a.Name == target).First();
         }
     }
 }

@@ -1,20 +1,18 @@
-﻿using System;
+﻿using Battle4Beers.Client.Utilities.Constants;
+using System;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 {
-    public class Silence : Debuff
+    public class Silence : Action
     {
-        public Silence(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost, duration)
+        public Silence(string name, int coolDown, int cost) : base(name, coolDown, cost)
         {
-        }
-
-        public override void DebuffPlayer(Hero player)
-        {
+            this.Type = "agressive";
         }
 
         public override string ToString()
         {
-            return $"Silence: Disables the target from casting any spells or actions for {this.Duration} turns Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+            return $"Silence: Disables the target from casting any spells or actions for {AbilityDurationConstants.SilenceDuration} turns Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

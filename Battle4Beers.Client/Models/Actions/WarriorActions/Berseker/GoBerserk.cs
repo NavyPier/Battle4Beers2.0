@@ -3,13 +3,14 @@ using System;
 
 namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 {
-    public class GoBerserk : Buff
+    public class GoBerserk : Action
     {
         private int percentage;
 
-        public GoBerserk(string name, int coolDown, int cost, int duration, int percentage) : base(name, coolDown, cost, duration)
+        public GoBerserk(string name, int coolDown, int cost, int percentage) : base(name, coolDown, cost)
         {
-            this.Percentage = 100;
+            this.Percentage = percentage;
+            this.Type = "passive";
         }
 
         public int Percentage
@@ -20,7 +21,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 
         public override string ToString()
         {
-            return $"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {this.Duration}turns.Cooldown: {this.CoolDown}, Cost: {this.Cost} HP";
+            return $"{this.Name}: Makes the player deal {this.Percentage}% more damage for the next {AbilityDurationConstants.BerserkDuration} turns.Cooldown: {this.CoolDown}, Cost: {this.Cost} HP";
         }
 
     }

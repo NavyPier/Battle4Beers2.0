@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Battle4Beers.Client.Utilities.Constants;
+using System;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
 {
-    public class Shield : Buff
+    public class Shield : Action
     {
         private double shieldRatio;
 
-        public Shield(string name, int coolDown, int cost, int duration, double shieldRatio) : base(name, coolDown, cost, duration)
+        public Shield(string name, int coolDown, int cost, double shieldRatio) : base(name, coolDown, cost)
         {
             this.ShieldRatio = shieldRatio;
+            this.Type = "passive";
         }
 
         public double ShieldRatio
@@ -17,10 +19,9 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest
             protected set { this.shieldRatio = value; }
         }
 
-
         public override string ToString()
         {
-            return $"{this.Name}: Buff target ally to receive only {this.ShieldRatio}% damage for the next {this.Duration} turns Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+            return $"{this.Name}: Buff target ally to receive only {this.ShieldRatio}% damage for the next {AbilityDurationConstants.ShieldDuration} turns Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
 
     }

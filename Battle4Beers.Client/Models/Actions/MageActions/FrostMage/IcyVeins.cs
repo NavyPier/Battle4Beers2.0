@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Battle4Beers.Client.Utilities.Constants;
+using System;
 
 namespace Battle4Beers.Client.Models.Actions.FrostMage
 {
-    public class IcyVeins : Buff
+    public class IcyVeins : Action
     {
         private double amplifier;
 
-        public IcyVeins(string name, int coolDown, int cost, int duration, double amplifier) : base(name, coolDown, cost, duration)
+        public IcyVeins(string name, int coolDown, int cost, double amplifier) : base(name, coolDown, cost)
         {
             this.Amplifier = amplifier;
+            this.Type = "passive";
         }
 
         public double Amplifier
@@ -19,7 +21,7 @@ namespace Battle4Beers.Client.Models.Actions.FrostMage
 
         public override string ToString()
         {
-            return $"{this.Name}: Makes the player deal {this.Amplifier}% more damage for the next {this.Duration} turns. Lowers remaining cooldown on all used spells by 1. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+            return $"{this.Name}: Makes the player deal {this.Amplifier}% more damage for the next {AbilityDurationConstants.IcyVeinsDuration} turns. Lowers remaining cooldown on all used spells by 1. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
     }
 }

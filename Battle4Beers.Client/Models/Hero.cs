@@ -117,10 +117,5 @@ namespace Battle4Beers.Client.Models
         {
             this.Armor += amount;
         }
-
-        public void SelectAction(Hero player)
-        {
-            TypesOfMenu.ActionsMenu(player);
-        }
     }
 }

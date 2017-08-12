@@ -1,6 +1,5 @@
 ﻿using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Models.Actions;
-using Battle4Beers.Client.Models.Actions.FireMage;
 using Battle4Beers.Client.Models.Actions.FrostMage;
 using Battle4Beers.Client.Models.Actions.PriestActions;
 using Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest;
@@ -97,16 +96,16 @@ namespace Battle4Beers.Client
             if (typeOfWarrior == "SWORDMASTER")
             {
                 actions.Add(new LevelUpCrit("LEVEL UP CRITICAL STRIKE", 0, 0));
-                actions.Add(new MirrorImage("MIRROR IMAGE", 3, 20, 1, Constants.WarriorDamage));
-                actions.Add(new WindFury("WINDFURY", 4, 50, Constants.WarriorDamage * 4));
+                actions.Add(new MirrorImage("MIRROR IMAGE", 0, 20, Constants.WarriorDamage));
+                actions.Add(new WindFury("WINDFURY", 0, 50, Constants.WarriorDamage * 4));
                 Hero swordmaster = new SwordmasterWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealtRegen
                     , actions, Constants.HeroBaseArmor, Constants.WarriorStartingRage, Constants.WarriorDamage);
                 players.Add(swordmaster);
             }
             else if(typeOfWarrior == "BERSERKER")
             {
-                actions.Add(new GoBerserk("GO BERSERK", 4, 200, 2, 100));
-                actions.Add(new WildAxes("WILD AXES", 3, 40, Constants.WarriorDamage * 3));
+                actions.Add(new GoBerserk("GO BERSERK", 0, 200, 100));
+                actions.Add(new WildAxes("WILD AXES", 0, 40, Constants.WarriorDamage * 3));
                 actions.Add(new Execute("EXECUTE", 0, 50, 700));
                 Hero berserker = new BerserkerWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealtRegen
                     , actions, Constants.HeroBaseArmor, Constants.WarriorStartingRage, Constants.WarriorDamage);
@@ -114,9 +113,9 @@ namespace Battle4Beers.Client
             }
             else
             {
-                actions.Add(new ArmorUp("ARMOR UP", 2, 0, Constants.ProtectionWarriorArmor));
-                actions.Add(new Hibernate("HIBERNATE", 5, 40, 2, Constants.WarriorHealtRegen * 4));
-                actions.Add(new ShieldSlam("SHIELD SLAM", 3, 30, 1, Constants.WarriorDamage * 4));
+                actions.Add(new ArmorUp("ARMOR UP",0, 0, Constants.ProtectionWarriorArmor));
+                actions.Add(new Hibernate("HIBERNATE",0, 40,  Constants.WarriorHealtRegen * 4));
+                actions.Add(new ShieldSlam("SHIELD SLAM", 0, 30, Constants.WarriorDamage * 4));
                 Hero protector = new ProtectionWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealtRegen
                     , actions, Constants.ProtectionWarriorArmor, Constants.WarriorStartingRage, Constants.WarriorDamage);
                 players.Add(protector);
@@ -126,22 +125,22 @@ namespace Battle4Beers.Client
         public static void CreateMage(string playerName, string typeOfMage)
         {
             List<Models.Action> actions = new List<Models.Action>();
-            if (typeOfMage == "FIRE MAGE")
+            if (typeOfMage == "FIRE")
             {
                 actions.Add(new FireBlast("FIRE BLAST", 0, Constants.MageManaRegen, Constants.MageSpellPower));
-                actions.Add(new FireArmor("FIRE ARMOR", 4, 150, 2, Constants.MageSpellPower, 400));
-                actions.Add(new PyroBlast("PYROBLAST", 4, 200, Constants.MageSpellPower * 5));
+                actions.Add(new FireArmor("ARMOR OF FIRE", 0, 150, Constants.MageSpellPower, 400));
+                actions.Add(new PyroBlast("PYROBLAST", 0, 200, Constants.MageSpellPower * 5));
                 actions.Add(new Incinerate("INCINERATE", 0, 0,  900));
                 Hero fireMage = new FireMage(playerName, Constants.MageHealth, Constants.MageHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.MageMana, Constants.MageManaRegen, Constants.MageSpellPower);
                 players.Add(fireMage);
             }
-            else if (typeOfMage == "ARCANE MAGE")
+            else if (typeOfMage == "ARCANE")
             {
                 actions.Add(new ArcaneBlast("ARCANE BLAST", 0, Constants.MageManaRegen, Constants.MageSpellPower));
-                actions.Add(new AmplifyMagic("AMPLIFY MAGIC", 4, 200, 2, 100));
-                actions.Add(new Polymorph("POLYMORPH", 5, 300, 3));
-                actions.Add(new ManaRegeneration("MANA REGENERATION", 3, 0, Constants.MageManaRegen * 4));
+                actions.Add(new AmplifyMagic("AMPLIFY MAGIC", 0, 200  ));
+                actions.Add(new Polymorph("POLYMORPH", 0, 300));
+                actions.Add(new ManaRegeneration("MANA REGENERATION", 0, 0, Constants.MageManaRegen * 4));
                 Hero arcaneMage = new ArcaneMage(playerName, Constants.MageHealth, Constants.MageHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.MageMana, Constants.MageManaRegen, Constants.MageSpellPower);
                 players.Add(arcaneMage);
@@ -149,9 +148,9 @@ namespace Battle4Beers.Client
             else
             {
                 actions.Add(new FrostBolt("FROST BOLT", 0, Constants.MageManaRegen, Constants.MageSpellPower));
-                actions.Add(new FrostArmor("FROST ARMOR", 3, 200, 2, 200, 20));
-                actions.Add(new IcyVeins("ICY VEINS", 5, 300, 3, 50));
-                actions.Add(new FrozenGround("FROZEN GROUND", 5, 400, 2, Constants.MageSpellPower * 2));
+                actions.Add(new FrostArmor("FROSTED ARMOR", 0, 200, 200, 20));
+                actions.Add(new IcyVeins("ICY VEINS", 0, 300, 50));
+                actions.Add(new FrozenGround("FROZEN GROUND", 0, 400, Constants.MageSpellPower * 2));
                 Hero frostMage = new FrostMage(playerName, Constants.MageHealth, Constants.MageHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.MageMana, Constants.MageManaRegen, Constants.MageSpellPower);
                 players.Add(frostMage);
@@ -162,29 +161,29 @@ namespace Battle4Beers.Client
         {
             List<Models.Action> actions = new List<Models.Action>();
             actions.Add(new FlashHeal("FLASH HEAL", 0, Constants.PriestManaRegen, Constants.PriestSpellPower));
-            if (typeOfPriest == "HOLY PRIEST")
+            if (typeOfPriest == "HOLY")
             {
-                actions.Add(new Renew("RENEW", 2, 200, 2, (int)(Constants.PriestSpellPower * 1.5)));
-                actions.Add(new Serenity("SERENITY", 5, 400, Constants.PriestSpellPower * 5));
-                actions.Add(new HolyNova("HOLY NOVA", 4, 300, Constants.PriestSpellPower * 2, Constants.PriestSpellPower * 2));
+                actions.Add(new Renew("RENEW", 0, 200, 2, (int)(Constants.PriestSpellPower * 1.5)));
+                actions.Add(new Serenity("SERENITY", 0, 400, Constants.PriestSpellPower * 5));
+                actions.Add(new HolyNova("HOLY NOVA", 0, 300, Constants.PriestSpellPower * 2));
                 Hero holyPriest = new HolyPriest(playerName, Constants.PriestHealth, Constants.PriestHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.PriestMana, Constants.PriestManaRegen, Constants.PriestSpellPower);
                 players.Add(holyPriest);
             }
-            else if (typeOfPriest == "DISCIPLINE PRIEST")
+            else if (typeOfPriest == "DISCIPLINE")
             {
-                actions.Add(new Shield("POWER WORD: SHIELD", 4, 200, 2, 40));
-                actions.Add(new Silence("SILENCE", 5, 300, 3));
-                actions.Add(new PurgeTheWicked("PURGE THE WICKED", 4, 300, Constants.PriestSpellPower * 5));
+                actions.Add(new Shield("POWER WORD: SHIELD", 0, 200,  40));
+                actions.Add(new Silence("SILENCE", 0, 300));
+                actions.Add(new PurgeTheWicked("PURGE THE WICKED", 0, 300, Constants.PriestSpellPower * 5));
                 Hero disciplinePriest = new DisciplinePriest(playerName, Constants.PriestHealth, Constants.PriestHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.PriestMana, Constants.PriestManaRegen, Constants.PriestSpellPower);
                 players.Add(disciplinePriest);
             }
             else
             {
-                actions.Add(new CurseOfDeath("CURSE OF DEATH", 2, 150, 3, Constants.PriestSpellPower));
-                actions.Add(new Sadism("SADISM", 5, 300, 3, 50, 30));
-                actions.Add(new MindBlast("MIND BLAST", 4, 300, Constants.PriestSpellPower * 4));
+                actions.Add(new CurseOfDeath("CURSE OF DEATH", 0, 150, 3, Constants.PriestSpellPower));
+                actions.Add(new Sadism("SADISM", 0, 300, 50, 30));
+                actions.Add(new MindBlast("MIND BLAST", 0, 300, Constants.PriestSpellPower * 4));
                 Hero shadowPriest = new ShadowPriest(playerName, Constants.PriestHealth, Constants.PriestHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.PriestMana, Constants.PriestManaRegen, Constants.PriestSpellPower);
                 players.Add(shadowPriest);
