@@ -89,7 +89,7 @@ namespace Battle4Beers.Client.BattleGround
                 if(isExecuted)
                 {
                     HeroCooldownReductor.ReduceCooldowns(player);
-                    target.GetDamaged(AbilityConstants.ExecutionDamage);
+                    target.TakeDamage(AbilityConstants.ExecutionDamage);
                 }
                 else
                 {

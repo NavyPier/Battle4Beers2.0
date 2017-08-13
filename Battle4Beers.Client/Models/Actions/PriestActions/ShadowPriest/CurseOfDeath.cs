@@ -1,5 +1,4 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
+﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System.Linq;
 
@@ -23,7 +22,7 @@ namespace Battle4Beers.Client.Models.Actions
 
         public override void DebuffPlayer(Hero player)
         {
-            player.GetDamaged(this.Damage);
+            player.TakeDamage(this.Damage);
             player.Debuffs.Where(a => a.Name == this.Name && a.Duration == this.Duration).First().ReduceDuration(player);
         }
 

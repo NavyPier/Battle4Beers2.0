@@ -3,10 +3,7 @@ using Battle4Beers.Models;
 
 namespace Battle4Beers.Data
 {
-
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class Battle4BeersDbContext : DbContext
     {

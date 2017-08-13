@@ -23,11 +23,11 @@ namespace Battle4Beers.Client.Models.Actions
             ArcaneMage playerOnTurn = (ArcaneMage)player;
             if (playerOnTurn.IsAmplified)
             {
-                enemy.GetDamaged(this.Damage * 2);
+                enemy.TakeDamage(this.Damage * 2);
             }
             else
             {
-                enemy.GetDamaged(this.Damage);
+                enemy.TakeDamage(this.Damage);
             }
 
             playerOnTurn.PassiveDuration--;

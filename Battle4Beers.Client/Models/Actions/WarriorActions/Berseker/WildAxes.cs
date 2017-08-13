@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Battle4Beers.Client.BattleGround;
 using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System.Linq;
-using Battle4Beers.Client.BattleGround;
 
 namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
 {
@@ -31,12 +30,12 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
             {
                 if(isCrit)
                 {
-                    enemy.GetDamaged(this.Damage * 4);
+                    enemy.TakeDamage(this.Damage * 4);
                     CriticalPrinter.PrintCritical(player);
                 }
                 else
                 {
-                    enemy.GetDamaged(this.Damage * 2);
+                    enemy.TakeDamage(this.Damage * 2);
                 }
 
                 playerOnTurn.PassiveDuration--;
@@ -49,12 +48,12 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Berseker
             {
                 if (isCrit)
                 {
-                    enemy.GetDamaged(this.Damage * 2);
+                    enemy.TakeDamage(this.Damage * 2);
                     CriticalPrinter.PrintCritical(player);
                 }
                 else
                 {
-                    enemy.GetDamaged(this.Damage);
+                    enemy.TakeDamage(this.Damage);
                 }
             }
         }

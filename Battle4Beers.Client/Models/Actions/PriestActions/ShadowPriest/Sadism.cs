@@ -1,5 +1,4 @@
 ﻿using Battle4Beers.Client.Utilities.Constants;
-using System;
 using System.Text;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest

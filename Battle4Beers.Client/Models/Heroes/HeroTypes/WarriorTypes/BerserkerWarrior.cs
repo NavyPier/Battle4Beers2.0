@@ -1,6 +1,5 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,7 +26,7 @@ namespace Battle4Beers.Client.Models
         {
             BerserkerWarrior warr = (BerserkerWarrior)player;
             warr.IsBerserk = true;
-            warr.GetDamaged(AbilityConstants.BerserkModeCost);
+            warr.TakeDamage(AbilityConstants.BerserkModeCost);
             this.PassiveDuration = AbilityDurationConstants.BerserkDuration;
             player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.GoBerserkCooldown);
         }

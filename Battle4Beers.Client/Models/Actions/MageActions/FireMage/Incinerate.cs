@@ -1,5 +1,4 @@
 ﻿using Battle4Beers.Client.Interfaces;
-using System;
 
 namespace Battle4Beers.Client.Models.Actions
 {

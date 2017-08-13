@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Battle4Beers.Client.Interfaces;
 using System.Collections.Generic;
-using Battle4Beers.Client.Interfaces;
-using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models
 {
@@ -96,7 +94,7 @@ namespace Battle4Beers.Client.Models
 
         public abstract void ExecuteAction(int cost);
 
-        public virtual void GetDamaged(int amount)
+        public virtual void TakeDamage(int amount)
         {
             if(this.Armor <= amount)
             {
@@ -115,7 +113,7 @@ namespace Battle4Beers.Client.Models
             this.Health += amount;
         }
 
-        public void GetArmor(int amount)
+        public void GainArmor(int amount)
         {
             this.Armor += amount;
         }

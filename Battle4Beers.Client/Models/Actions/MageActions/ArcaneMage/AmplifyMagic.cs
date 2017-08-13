@@ -1,6 +1,4 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
-using Battle4Beers.Client.Utilities.Constants;
+﻿using Battle4Beers.Client.Utilities.Constants;
 
 namespace Battle4Beers.Client.Models.Actions
 {

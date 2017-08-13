@@ -1,5 +1,4 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
+﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
 using System.Linq;
 
@@ -23,7 +22,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
 
         public void DoFriendlyAction(Hero player, Hero ally)
         {
-            ally.GetArmor(this.Armor);
+            ally.GainArmor(this.Armor);
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.ArmorUpCooldown);
         }
 

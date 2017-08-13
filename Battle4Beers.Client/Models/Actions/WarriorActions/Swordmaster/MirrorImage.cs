@@ -33,12 +33,12 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
                 if(random <= 35)
                 {
                     CriticalPrinter.PrintCritical(player);
-                    enemy.GetDamaged(this.Damage);
+                    enemy.TakeDamage(this.Damage);
                 }
             }
             else
             {
-                enemy.GetDamaged(this.Damage);
+                enemy.TakeDamage(this.Damage);
             }
         }
 

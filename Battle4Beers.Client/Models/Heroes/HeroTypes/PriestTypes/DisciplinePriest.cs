@@ -1,6 +1,5 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,7 +30,7 @@ namespace Battle4Beers.Client.Models
             player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.ShieldCooldown);
         }
 
-        public override void GetDamaged(int amount)
+        public override void TakeDamage(int amount)
         {
             if(this.IsShielded)
             {

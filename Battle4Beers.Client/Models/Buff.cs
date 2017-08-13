@@ -1,6 +1,4 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
-using System.Linq;
+﻿using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.Models
 {

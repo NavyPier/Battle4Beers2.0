@@ -1,7 +1,6 @@
 ﻿using Battle4Beers.Client.Interfaces;
-using System.Collections.Generic;
-using System;
 using Battle4Beers.Client.Utilities.Constants;
+using System.Collections.Generic;
 
 namespace Battle4Beers.Client.Models
 {

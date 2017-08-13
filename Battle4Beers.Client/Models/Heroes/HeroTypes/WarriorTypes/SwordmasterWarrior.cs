@@ -1,5 +1,4 @@
 ﻿using Battle4Beers.Client.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace Battle4Beers.Client.Models

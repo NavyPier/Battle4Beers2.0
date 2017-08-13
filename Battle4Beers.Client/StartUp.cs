@@ -1,7 +1,9 @@
-﻿using Battle4Beers.Client.Models;
-using Battle4Beers.Client.Models.Actions.PriestActions;
-using Battle4Beers.Client.Models.Actions.PriestActions.ShadowPriest;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Battle4Beers.Client.Models;
+using Battle4Beers.Client.Models.Actions;
+using Action = Battle4Beers.Client.Models.Action;
 
 namespace Battle4Beers.Client
 {

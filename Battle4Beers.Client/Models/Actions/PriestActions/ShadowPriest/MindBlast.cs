@@ -1,7 +1,6 @@
-﻿using System;
-using Battle4Beers.Client.Interfaces;
-using System.Linq;
+﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
+using System.Linq;
 
 namespace Battle4Beers.Client.Models.Actions
 {
@@ -27,12 +26,12 @@ namespace Battle4Beers.Client.Models.Actions
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.MindBlastCooldown);
             if (playerOnTurn.Sadist)
             {
-                enemy.GetDamaged((int)(this.Damage * 1.5));
+                enemy.TakeDamage((int)(this.Damage * 1.5));
                 player.GetHealed((int)(this.Damage * 0.1));
             }
             else
             {
-                enemy.GetDamaged(this.Damage);
+                enemy.TakeDamage(this.Damage);
             }
         }
 

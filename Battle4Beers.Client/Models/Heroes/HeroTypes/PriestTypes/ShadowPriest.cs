@@ -1,6 +1,5 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

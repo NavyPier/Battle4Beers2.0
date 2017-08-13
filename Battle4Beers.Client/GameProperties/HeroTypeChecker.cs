@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Models;
-using Battle4Beers.Client.Interfaces;
-using System.Collections.Generic;
+using System;
 
 namespace Battle4Beers.Client.GameProperties
 {

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Models;
-using Battle4Beers.Client.Interfaces;
 
 namespace Battle4Beers.Client.BattleGround
 {

@@ -1,6 +1,5 @@
 ﻿using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
-using System;
 using System.Linq;
 
 namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
@@ -23,7 +22,7 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 
         public void ExecuteAgressiveAction(Hero player, Hero enemy)
         {
-            enemy.GetDamaged(this.Damage);
+            enemy.TakeDamage(this.Damage);
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.PunishTheUnholyCooldown);
         }
 

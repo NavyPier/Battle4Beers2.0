@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Battle4Beers.Client.GameProperties;
 using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Utilities.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Battle4Beers.Client.GameProperties;
 
 namespace Battle4Beers.Client
 {

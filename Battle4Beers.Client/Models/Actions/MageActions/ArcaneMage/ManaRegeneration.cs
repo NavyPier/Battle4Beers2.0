@@ -1,7 +1,4 @@
-﻿using Battle4Beers.Client.Utilities.Constants;
-using System;
-
-namespace Battle4Beers.Client.Models.Actions
+﻿namespace Battle4Beers.Client.Models.Actions
 {
     public class ManaRegeneration : Action
     {

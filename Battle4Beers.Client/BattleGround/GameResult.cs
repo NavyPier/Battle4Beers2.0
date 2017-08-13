@@ -1,12 +1,16 @@
 ﻿using Battle4Beers.Client.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using Battle4Beers.Client.Interfaces;
+using Battle4Beers.Client.Models.Actions;
+using Battle4Beers.Data;
 
 namespace Battle4Beers.Client.BattleGround
 {
     public class GameResult
     {
+        private static IBeersWriter beersWriter;
         public static void GetResult(List<Hero> firstTeam, List<Hero> secondTeam)
         {
             var arenaBattle = firstTeam.Count == 2 ? true : false;
@@ -39,13 +43,11 @@ namespace Battle4Beers.Client.BattleGround
                     losingTeam = secondTeam;
                 }
             }
-
-            ZapishetePobediteliteKolegi(winningTeam, losingTeam);
+            // I don't use Dependancy Injection because GameResult is static
+            beersWriter = new BeersDatabase();
+            beersWriter.Save(winningTeam, losingTeam);
         }
 
-        private static void ZapishetePobediteliteKolegi(List<Hero> winningTeam, List<Hero> losingTeam)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

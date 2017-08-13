@@ -1,10 +1,10 @@
-﻿using Battle4Beers.Client.Models;
+﻿using Battle4Beers.Client.BattleGround;
+using Battle4Beers.Client.GameProperties;
+using Battle4Beers.Client.Models;
+using Battle4Beers.Client.Utilities.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using Battle4Beers.Client.Utilities.Constants;
-using Battle4Beers.Client.BattleGround;
-using Battle4Beers.Client.GameProperties;
 
 namespace Battle4Beers.Client
 {
@@ -17,23 +17,15 @@ namespace Battle4Beers.Client
 
         public static void ArrangeTeams(List<Hero> players)
         {
-            if (players.Count == 2)
-            {
-                firstTeam = new List<Hero> { players[0] };
-                secondTeam = new List<Hero> { players[1] };
-                BattleStart(firstTeam, secondTeam);
-            }
-            else
-            {
-                firstTeam = new List<Hero> { players[0], players[1] };
-                secondTeam = new List<Hero> { players[2], players[3] };
-                BattleStart(firstTeam, secondTeam);
-            }
+            int sizeOfTeam = players.Count / 2;
+            firstTeam = players.Take(sizeOfTeam).ToList();
+            secondTeam = players.Skip(sizeOfTeam).Take(sizeOfTeam).ToList();
+            BattleStart(firstTeam, secondTeam);
         }
 
         public static void BattleStart(List<Hero> firstTeam, List<Hero> secondTeam)
         {
-            while (firstTeam.Where(a => a.Health >0).ToList().Count > 0 && secondTeam.Where(a => a.Health > 0).ToList().Count > 0)
+            while (firstTeam.Where(a => a.Health > 0).ToList().Count > 0 && secondTeam.Where(a => a.Health > 0).ToList().Count > 0)
             {
                 CheckPlayerHealth(firstTeam[0]);
                 CheckPlayerHealth(secondTeam[0]);
@@ -132,5 +124,6 @@ namespace Battle4Beers.Client
         {
             return HeroTypeChecker.CheckHeroClass(player, action);
         }
+
     }
 }

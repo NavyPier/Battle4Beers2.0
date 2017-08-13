@@ -2,7 +2,6 @@
 using Battle4Beers.Client.GameProperties;
 using Battle4Beers.Client.Interfaces;
 using Battle4Beers.Client.Utilities.Constants;
-using System;
 
 namespace Battle4Beers.Client.Models.Actions.WarriorActions
 {
@@ -49,11 +48,11 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
             {
                 if(!isCritical)
                 {
-                    enemy.GetDamaged(this.Damage * 2);
+                    enemy.TakeDamage(this.Damage * 2);
                 }
                 else
                 {
-                    enemy.GetArmor(this.Damage * 3);
+                    enemy.GainArmor(this.Damage * 3);
                 }
                 BerserkerWarrior warrior = (BerserkerWarrior)player;
                 warrior.PassiveDuration--;
@@ -64,12 +63,12 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
             }
             else
             {
-                enemy.GetDamaged(this.Damage);
+                enemy.TakeDamage(this.Damage);
             }
 
             if(isCritical)
             {
-                enemy.GetDamaged(this.Damage);
+                enemy.TakeDamage(this.Damage);
             }
 
             Warrior playerOnTurn = (Warrior)player;
