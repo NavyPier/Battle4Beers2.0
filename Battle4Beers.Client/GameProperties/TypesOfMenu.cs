@@ -3,6 +3,7 @@ using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Utilities.Constants;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Battle4Beers.Client
@@ -26,9 +27,9 @@ namespace Battle4Beers.Client
         {
             foreach (var text in textToWrite)
             {
-            int instructionsTextLenght = text.Length;
-            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (instructionsTextLenght / 2)) + "}"
-                , text));
+                int instructionsTextLenght = text.Length;
+                Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (instructionsTextLenght / 2)) + "}"
+                    , text));
             }
             var keyInput = Console.ReadKey();
             while (keyInput.Key != ConsoleKey.Enter)
@@ -43,7 +44,7 @@ namespace Battle4Beers.Client
             var energyTypeAndAmount = HeroTypeChecker.GetHeroEnergyTypeAndAmount(player);
             var title = $"{player.Name} NEEDS TO SELECT AN ACTION: Health: {player.Health} ARMOR {player.Armor} {energyTypeAndAmount[0]}: {energyTypeAndAmount[1]}";
             var isAmplified = HeroTypeChecker.CheckForPassive(player);
-            if(isAmplified)
+            if (isAmplified)
             {
                 title += $" {player.Name}'S DAMAGE IS BUFFED DUE TO PASSIVE";
             }
@@ -125,13 +126,93 @@ namespace Battle4Beers.Client
             return new List<string>() { swordMaster, berserker, protector };
         }
 
-        public static int ChooseFirstAttacker()
+
+        public static List<List<Hero>> ChooseFirstAttacker(List<Hero> firstTeam, List<Hero> secondTeam)
         {
-            Instructions(Constants.instructionBeerStart,Constants.pressEnterText);
-            var title = "SELECT A BEER";
-            var winner = MenuDrawer.DrawMenu(new List<string>() { title, Constants.beer1, Constants.beer2, Constants.beer3, Constants.beer4 }).Trim('-');
-            var beerSelected = int.Parse(winner);
-            return 0;
+            //Keeps track of teams/players scores
+            Dictionary<List<Hero>, int> heroesScores = new Dictionary<List<Hero>, int>();
+            heroesScores.Add(firstTeam, 0);
+            heroesScores.Add(secondTeam, 0);
+
+            //Used for accurate messages
+            string first = firstTeam.First().Name;
+            string second = secondTeam.First().Name;
+            if (firstTeam.Count > 1)
+            {
+                first = $"First Team({firstTeam[0].Name} and {firstTeam[1].Name})";
+                second = $"Second Team({secondTeam[0].Name} and {secondTeam[1].Name})";
+            }
+            List<string> firstSecondTeamMessage = new List<string>() { first, second };
+
+            Console.Clear();
+            Instructions(Constants.instructionBeerStart, Constants.pressEnterText);
+
+            while (true)
+            {
+                int counter = 0;
+                while (counter <= 1)
+                {
+                    Instructions(firstSecondTeamMessage.First(), "PRESS ENTER TO CONTINUE AND CHOOSE KEG.");
+                    var message = firstSecondTeamMessage.First();
+
+                    var beerSelected = MenuDrawer
+                            .DrawMenu(new List<string>() { "Choose", Constants.beer1, Constants.beer2, Constants.beer3, Constants.beer4 })
+                            .Trim('-');
+
+                    Random rnd = new Random();
+                    var luckyNumber = rnd.Next(1, 4);
+                    if (luckyNumber == int.Parse(beerSelected))
+                    {
+                        Console.Clear();
+                        message = firstSecondTeamMessage.First() + " found the beer !";
+                        Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (message.Length / 2)) + "}"
+                        , message));
+                        Pause(4);
+                        var name = heroesScores.First().Key;
+                        heroesScores[name]++;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        message = firstSecondTeamMessage.First() + $" wrong answer! The beer was behind number{luckyNumber}.";
+                        Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (message.Length / 2)) + "}"
+                        , message));
+                        Pause(2);
+                    }
+
+                    counter++;
+                    firstSecondTeamMessage.Reverse();
+                    heroesScores.Reverse();
+                }
+                if (heroesScores.First().Value != heroesScores.Last().Value)
+                {
+                    heroesScores.OrderByDescending(x => x.Value);
+                    break;
+                }
+            }
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + ("First team to attack:".ToString().Length / 2)) + "}"
+            , "FIRST TEAM TO ATTACK:"));
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (firstSecondTeamMessage.Last().Length / 2)) + "}"
+            , firstSecondTeamMessage.Last()));
+            Pause(3);
+
+            List<List<Hero>> orderedTeams = new List<List<Hero>>();
+            orderedTeams.Add(heroesScores.Last().Key);
+            orderedTeams.Add(heroesScores.First().Key);
+            return orderedTeams;
+        }
+
+        static void Pause(int sec)
+        {
+            Console.WriteLine();
+            var pauseProc = Process.Start(
+                new ProcessStartInfo()
+                {
+                    FileName = "cmd",
+                    Arguments = "/C TIMEOUT /t " + sec + " /nobreak > NUL",
+                    UseShellExecute = false
+                });
+            pauseProc.WaitForExit();
         }
 
         public static Hero SelectATarget(List<Hero> players)
@@ -139,7 +220,7 @@ namespace Battle4Beers.Client
             var title = "SELECT YOUR TARGET";
             var firstTarget = $"{players[0].Name} HEALTH: {players[0].Health} ARMOR: {players[0].Armor}";
             var secondTarget = $"{players[1].Name} HEALTH: {players[1].Health} ARMOR: {players[1].Armor}";
-            var target = MenuDrawer.DrawMenu(new List<string> { title, firstTarget,secondTarget });
+            var target = MenuDrawer.DrawMenu(new List<string> { title, firstTarget, secondTarget });
             return players.Where(a => a.Name == target).First();
         }
     }
