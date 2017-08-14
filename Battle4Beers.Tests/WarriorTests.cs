@@ -39,7 +39,7 @@ namespace Battle4Beers.Tests
         }
 
         [Test]
-        public void IsWarriorHeroDoesNotRegenerateWhenHealthAndManaAreFull()
+        public void DoesNotWarriorHeroRegenerateWhenHealthAndManaAreFull()
         {
             //Arrange
             this.sut = new BerserkerWarrior("Ragnar", fullHealth, healthRegeneration, new List<Action>(), armor, rage, attackPower);
