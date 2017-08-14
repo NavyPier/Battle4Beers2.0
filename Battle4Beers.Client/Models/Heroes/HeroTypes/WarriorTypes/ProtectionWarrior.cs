@@ -7,18 +7,12 @@ namespace Battle4Beers.Client.Models
 {
     public class ProtectionWarrior : Warrior, IPassiveActivator
     {
-        private bool hibernating;
-
         public ProtectionWarrior(string name, int health, int healthRegen, List<Action> actions, int armor, int rage, int attackPower) : base(name, health, healthRegen, actions, armor, rage, attackPower)
         {
             this.Hibernating = false;
         }
 
-        public bool Hibernating
-        {
-            get { return this.hibernating; }
-            set { this.hibernating = value; }
-        }
+        public bool Hibernating { get; set; }
 
         public int PassiveDuration { get; set; }
 
@@ -27,7 +21,7 @@ namespace Battle4Beers.Client.Models
             this.Hibernating = true;
             player.GetHealed(AbilityConstants.HibernationHeal);
             this.PassiveDuration = AbilityDurationConstants.HibernateDuration;
-            player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.HibernateCooldown);
+            player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.HibernateCooldown);
         }
 
         public override void TakeDamage(int amount)

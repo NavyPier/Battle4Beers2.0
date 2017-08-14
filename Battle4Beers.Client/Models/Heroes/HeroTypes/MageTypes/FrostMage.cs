@@ -47,14 +47,14 @@ namespace Battle4Beers.Client.Models
                 this.IcyVeins = true;
                 this.IcyVeinsDuration = AbilityDurationConstants.IcyVeinsDuration;
                 this.FrostArmorDuration--;
-                player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.IcyVeinsCooldown);
+                player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.IcyVeinsCooldown);
             }
             else
             {
                 this.FrostArmorDuration = AbilityDurationConstants.FrostArmorDuration;
                 this.FrostArmored = true;
                 this.IcyVeinsDuration--;
-                player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.FrostArmorCooldown);
+                player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.FrostArmorCooldown);
             }
 
             if (this.FrostArmorDuration <= 0)
