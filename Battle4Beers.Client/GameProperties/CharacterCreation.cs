@@ -105,7 +105,7 @@ namespace Battle4Beers.Client
             {
                 actions.Add(new GoBerserk("GO BERSERK", 0, 0, 100));
                 actions.Add(new WildAxes("WILD AXES", 0, 40, Constants.WarriorDamage * 3));
-                actions.Add(new Execute("EXECUTE", 0, 50, 700));
+                actions.Add(new Execute("EXECUTE", 0, 0, 700));
                 Hero berserker = new BerserkerWarrior(playerName, Constants.WarriorHealth, Constants.WarriorHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.WarriorStartingRage, Constants.WarriorDamage);
                 players.Add(berserker);

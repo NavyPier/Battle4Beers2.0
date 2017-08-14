@@ -44,10 +44,5 @@ namespace Battle4Beers.Client.Models
                 this.isAmplified = false;
             }
         }
-
-        public void DeactivatePassive(string nameOfPassive)
-        {
-            this.IsAmplified = false;
-        }
     }
 }

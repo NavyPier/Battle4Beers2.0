@@ -3,6 +3,7 @@ using Battle4Beers.Client.Models;
 using Battle4Beers.Client.Utilities.Constants;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Battle4Beers.Client.BattleGround
 {
@@ -13,28 +14,28 @@ namespace Battle4Beers.Client.BattleGround
             if (action.Type == "friendly")
             {
                 var allyTeam = TargetTeamGetter.GetAllies(player, firstTeam, secondTeam);
-                if(allyTeam.Count > 1)
+                if(allyTeam.Where(a => a.Health > 0).ToList().Count > 1)
                 {
                     Hero target = ChooseTarget(allyTeam);
                     FriendlyAction.ExecuteAction(action, player, target);
                 }
                 else
                 {
-                    Hero target = allyTeam[0];
+                    Hero target = allyTeam.Where(a => a.Health > 0).First();
                     FriendlyAction.ExecuteAction(action, player, target);
                 }
             }
             else if (action.Type == "agressive")
             {
                 var enemyTeam = TargetTeamGetter.GetEnemies(player, firstTeam, secondTeam);
-                if (enemyTeam.Count > 1)
+                if (enemyTeam.Where(a => a.Health > 0).ToList().Count > 1)
                 {
                     Hero target = ChooseTarget(enemyTeam);
                     AgressiveAction.ExecuteAction(action, player, target);
                 }
                 else
                 {
-                    Hero target = enemyTeam[0];
+                    Hero target = enemyTeam.Where(a => a.Health > 0).First();
                     AgressiveAction.ExecuteAction(action, player, target);
                 }
             }
@@ -44,29 +45,29 @@ namespace Battle4Beers.Client.BattleGround
             }
             else if(action.Type == "buff")
             {
-                var enemyTeam = TargetTeamGetter.GetEnemies(player, firstTeam, secondTeam);
-                if (enemyTeam.Count > 1)
+                var allyTeam = TargetTeamGetter.GetAllies(player, firstTeam, secondTeam);
+                if (allyTeam.Where(a => a.Health > 0).ToList().Count > 1)
                 {
-                    Hero target = ChooseTarget(enemyTeam);
+                    Hero target = ChooseTarget(allyTeam);
                     BuffAction.ExecuteAction(action, player, target);
                 }
                 else
                 {
-                    Hero target = enemyTeam[0];
+                    Hero target = allyTeam.Where(a => a.Health > 0).First();
                     BuffAction.ExecuteAction(action, player, target);
                 }
             }
             else if(action.Type == "debuff")
             {
                 var enemyTeam = TargetTeamGetter.GetEnemies(player, firstTeam, secondTeam);
-                if (enemyTeam.Count > 1)
+                if (enemyTeam.Where(a => a.Health > 0).ToList().Count > 1)
                 {
                     Hero target = ChooseTarget(enemyTeam);
                     DebuffAction.ExecuteAction(action, player, target);
                 }
                 else
                 {
-                    Hero target = enemyTeam[0];
+                    Hero target = enemyTeam.Where(a => a.Health > 0).First();
                     DebuffAction.ExecuteAction(action, player, target);
                 }
             }
@@ -75,14 +76,14 @@ namespace Battle4Beers.Client.BattleGround
                 var enemyTeam = TargetTeamGetter.GetEnemies(player, firstTeam, secondTeam);
                 bool isExecuted;
                 Hero target;
-                if (enemyTeam.Count > 1)
+                if (enemyTeam.Where(a => a.Health > 0).ToList().Count > 1)
                 {
                     target = ChooseTarget(enemyTeam);
                     isExecuted = ExecutionAction.ExecuteAction(action, player, target);
                 }
                 else
                 {
-                    target = enemyTeam[0];
+                    target = enemyTeam.Where(a => a.Health > 0).First();
                     isExecuted = ExecutionAction.ExecuteAction(action, player, target);
                 }
 

@@ -68,6 +68,18 @@ namespace Battle4Beers.Client.Models
             }
         }
 
+        public override void TakeDamage(int amount)
+        {
+            if(this.FrostArmored)
+            {
+                this.Health -= (int)(amount * 0.8);
+            }
+            else
+            {
+                this.Health -= amount;
+            }
+        }
+
         public void DeactivatePassive(string nameOfPassive)
         {
             if (nameOfPassive == "ICY VEINS")

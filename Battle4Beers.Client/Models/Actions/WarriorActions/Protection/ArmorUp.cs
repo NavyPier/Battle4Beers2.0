@@ -24,6 +24,8 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
         {
             ally.GainArmor(this.Armor);
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.ArmorUpCooldown);
+            ProtectionWarrior warr = (ProtectionWarrior)player;
+            warr.PassiveDuration--;
         }
 
         public override string ToString()

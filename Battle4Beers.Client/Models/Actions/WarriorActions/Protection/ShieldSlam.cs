@@ -25,6 +25,12 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
             enemy.StunnedDuration++;
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.ShieldSlamCooldown);
             enemy.TakeDamage(this.Damage);
+            ProtectionWarrior warr = (ProtectionWarrior)player;
+            warr.PassiveDuration--;
+            if(warr.PassiveDuration <= 0)
+            {
+                warr.Hibernating = false;
+            }
         }
 
         public override string ToString()
