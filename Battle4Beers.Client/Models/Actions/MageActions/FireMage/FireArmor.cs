@@ -1,21 +1,26 @@
-﻿namespace Battle4Beers.Client.Models.Actions
+﻿using System;
+using Battle4Beers.Client.Interfaces;
+using System.Linq;
+using Battle4Beers.Client.Utilities.Constants;
+
+namespace Battle4Beers.Client.Models.Actions
 {
-    public class FireArmor : Action
+    public class FireArmor : Action, IFriendlyAction
     {
-        private int burnDamage;
+        private int heal;
         private int armor;
 
-        public FireArmor(string name, int coolDown, int cost, int burnDamage, int armor) : base(name, coolDown, cost)
+        public FireArmor(string name, int coolDown, int cost, int heal, int armor) : base(name, coolDown, cost)
         {
-            this.BurnDamage = burnDamage;
+            this.Heal = heal;
             this.Armor = armor;
-            this.Type = "passive";
+            this.Type = "friendly";
         }
 
-        public int BurnDamage
+        public int Heal
         {
-            get { return this.burnDamage; }
-            protected set { this.burnDamage = value; }
+            get { return this.heal; }
+            protected set { this.heal = value; }
         }
 
         public int Armor
@@ -24,9 +29,18 @@
             protected set { this.armor = value; }
         }
 
+        public void DoFriendlyAction(Hero player, Hero ally)
+        {
+            ally.GetHealed(this.Heal);
+            ally.GainArmor(this.Armor);
+            player.Actions.First(a => a.Name == this.Name).SetCooldown(AbilityCooldownConstants.FireArmorCooldown);
+        }
+
         public override string ToString()
         {
-            return $"{this.Name}: Give {this.Armor} armor to target. If anyone attacks the person with Fire Armor on, they get burned for {this.BurnDamage} damage. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
+            return $"{this.Name}: Give {this.Armor} armor to target. Heal target for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost} Mana";
         }
+
+        
     }
 }

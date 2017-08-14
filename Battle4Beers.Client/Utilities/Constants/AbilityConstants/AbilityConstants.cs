@@ -13,5 +13,7 @@
 
         //Protection Warrior
         public const int HibernationHeal = Constants.WarriorHealthRegen * 4;
+
+        public static int FrostArmorAmount = 200;
     }
 }
