@@ -48,6 +48,7 @@
     <Compile Include="PriestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MageTests.cs" />
+    <Compile Include="WarriorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

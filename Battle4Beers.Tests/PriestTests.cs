@@ -38,7 +38,7 @@ namespace Battle4Beers.Tests
         }
 
         [Test]
-        public void IsPriestHeroDoesNotRegenerateWhenHealthAndManaAreFull()
+        public void DoesNotPriestHeroRegenerateWhenHealthAndManaAreFull()
         {
             //Arrange
             sut = new HolyPriest("Patriarch", fullHealth, healthRegeneration, new List<Action>(), armor, fullMana, manaRegen, spellPower);

@@ -38,7 +38,7 @@ namespace Battle4Beers.Tests
         }
 
         [Test]
-        public void IsMageHeroDoesNotRegenerateWhenHealthAndManaAreFull()
+        public void DoesNotMageHeroRegenerateWhenHealthAndManaAreFull()
         {
             //Arrange
             this.sut = new ArcaneMage("Erystrazsa", fullHealth, healthRegeneration, new List<Action>(), armor, fullMana, manaRegen, spellPower );
