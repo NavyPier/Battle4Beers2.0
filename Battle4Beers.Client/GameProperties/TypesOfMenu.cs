@@ -147,11 +147,16 @@ namespace Battle4Beers.Client
             Console.Clear();
             Instructions(Constants.instructionBeerStart, Constants.pressEnterText);
 
+            int rounds = 0;
+
             while (true)
             {
                 int counter = 0;
+                heroesScores[firstTeam] = 0;
+                heroesScores[secondTeam] = 0;
                 while (counter <= 1)
                 {
+                    Console.Clear();
                     Instructions(firstSecondTeamMessage.First(), "PRESS ENTER TO CONTINUE AND CHOOSE KEG.");
                     var message = firstSecondTeamMessage.First();
 
@@ -160,16 +165,28 @@ namespace Battle4Beers.Client
                             .Trim('-');
 
                     Random rnd = new Random();
-                    var luckyNumber = rnd.Next(1, 4);
+                    int luckyNumber = 0;
+                    if (rounds > 2)
+                    {
+                        if (int.Parse(beerSelected)> 2)
+                        {
+                            luckyNumber = rnd.Next(int.Parse(beerSelected), 4);
+                        }
+                        else
+                        {
+                            luckyNumber = rnd.Next(1, int.Parse(beerSelected));
+                        }
+
+                    }
                     if (luckyNumber == int.Parse(beerSelected))
                     {
                         Console.Clear();
                         message = firstSecondTeamMessage.First() + " found the beer !";
                         Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (message.Length / 2)) + "}"
                         , message));
-                        Pause(4);
+                        Pause(3);
                         var name = heroesScores.First().Key;
-                        heroesScores[name]++;
+                        heroesScores[name] = 1;
                     }
                     else
                     {
@@ -182,23 +199,36 @@ namespace Battle4Beers.Client
 
                     counter++;
                     firstSecondTeamMessage.Reverse();
-                    heroesScores.Reverse();
+                    heroesScores = heroesScores.Reverse().ToDictionary(x => x.Key, a => a.Value);
                 }
                 if (heroesScores.First().Value != heroesScores.Last().Value)
                 {
-                    heroesScores.OrderByDescending(x => x.Value);
+                    heroesScores = heroesScores.OrderByDescending(x => x.Value).ToDictionary(k => k.Key, v => v.Value);
                     break;
                 }
+                else
+                {
+                    Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + ("EVEN RESULT TRY AGAIN".ToString().Length / 2)) + "}"
+                    , "EVEN RESULT TRY AGAIN"));
+                    Pause(2);
+                }
+                rounds++;
             }
+
             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + ("First team to attack:".ToString().Length / 2)) + "}"
             , "FIRST TEAM TO ATTACK:"));
+<<<<<<< HEAD
             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (firstSecondTeamMessage.Last().ToString().Length / 2)) + "}"
             , firstSecondTeamMessage.Last() + "'S TEAM"));
+=======
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (string.Join(" and ", heroesScores.First().Key.Select(x => x.Name)).Length / 2)) + "}"
+            , string.Join(" and ", heroesScores.First().Key.Select(x => x.Name))));
+>>>>>>> 86dd9eb9b5bf459bb97522908273d4db7f00956f
             Pause(3);
 
             List<List<Hero>> orderedTeams = new List<List<Hero>>();
-            orderedTeams.Add(heroesScores.Last().Key);
             orderedTeams.Add(heroesScores.First().Key);
+            orderedTeams.Add(heroesScores.Last().Key);
             return orderedTeams;
         }
 
