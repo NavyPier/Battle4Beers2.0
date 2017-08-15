@@ -53,6 +53,7 @@ namespace Battle4Beers.Client.Models
             {
                 this.FrostArmorDuration = AbilityDurationConstants.FrostArmorDuration;
                 this.FrostArmored = true;
+                this.Armor += AbilityConstants.FrostArmorAmount;
                 this.IcyVeinsDuration--;
                 player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.FrostArmorCooldown);
             }
@@ -65,6 +66,25 @@ namespace Battle4Beers.Client.Models
             if (this.IcyVeinsDuration <= 0)
             {
                 this.IcyVeins = false;
+            }
+        }
+
+        public override void TakeDamage(int amount)
+        {
+            if(this.FrostArmored)
+            {
+                amount -= (amount * 20) / 100;
+            }
+
+            if (this.Armor <= amount)
+            {
+                amount -= this.Armor;
+                this.Health -= amount;
+                this.Armor = 0;
+            }
+            else if (this.Armor > amount)
+            {
+                this.Armor -= amount;
             }
         }
 

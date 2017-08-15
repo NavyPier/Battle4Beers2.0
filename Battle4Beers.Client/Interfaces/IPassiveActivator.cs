@@ -6,6 +6,5 @@ namespace Battle4Beers.Client.Interfaces
     {
         int PassiveDuration { get; }
         void ActivatePassive(string nameOfPassive, Hero player);
-        void DeactivatePassive(string nameOfPassive);
     }
 }

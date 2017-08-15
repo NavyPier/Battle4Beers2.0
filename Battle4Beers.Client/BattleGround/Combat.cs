@@ -41,12 +41,18 @@ namespace Battle4Beers.Client
 
                 foreach (var player in firstTeam)
                 {
-                    player.Regenerate();
+                    if(player.Health > 0)
+                    {
+                        player.Regenerate();
+                    }
                 }
 
                 foreach (var player in secondTeam)
                 {
-                    player.Regenerate();
+                    if (player.Health > 0)
+                    {
+                        player.Regenerate();
+                    }
                 }
             }
             GameResult.GetResult(firstTeam, secondTeam);

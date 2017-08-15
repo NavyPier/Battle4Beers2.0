@@ -28,10 +28,5 @@ namespace Battle4Beers.Client.Models
             this.FireArmored = true;
             player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.FireArmorCooldown);
         }
-
-        public void DeactivatePassive(string nameOfPassive)
-        {
-            this.FireArmored = false;
-        }
     }
 }

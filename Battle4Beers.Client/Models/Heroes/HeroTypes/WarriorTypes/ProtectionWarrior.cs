@@ -48,10 +48,5 @@ namespace Battle4Beers.Client.Models
                 this.Armor -= amount;
             }
         }
-
-        public void DeactivatePassive(string nameOfPassive)
-        {
-            this.Hibernating = false;
-        }
     }
 }
