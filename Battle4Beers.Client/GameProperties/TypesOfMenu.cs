@@ -23,7 +23,7 @@ namespace Battle4Beers.Client
             manager.DoAction(command);
         }
         //Writes instructions and loops untill enter received.
-        internal static void Instructions(params string[] textToWrite)
+        public static void Instructions(params string[] textToWrite)
         {
             foreach (var text in textToWrite)
             {
@@ -192,8 +192,8 @@ namespace Battle4Beers.Client
             }
             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + ("First team to attack:".ToString().Length / 2)) + "}"
             , "FIRST TEAM TO ATTACK:"));
-            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (firstSecondTeamMessage.Last().Length / 2)) + "}"
-            , firstSecondTeamMessage.Last()));
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (firstSecondTeamMessage.Last().ToString().Length / 2)) + "}"
+            , firstSecondTeamMessage.Last() + "'S TEAM"));
             Pause(3);
 
             List<List<Hero>> orderedTeams = new List<List<Hero>>();
