@@ -7,18 +7,12 @@ namespace Battle4Beers.Client.Models
 {
     public class BerserkerWarrior : Warrior, IPassiveActivator
     {
-        private bool isBerserk;
-
         public BerserkerWarrior(string name, int health, int healthRegen, List<Action> actions, int armor, int rage, int attackPower) : base(name, health, healthRegen, actions, armor, rage, attackPower)
         {
             this.IsBerserk = false;
         }
 
-        public bool IsBerserk
-        {
-            get { return this.isBerserk; }
-            set { this.isBerserk = value; }
-        }
+        public bool IsBerserk { get; set; }
 
         public int PassiveDuration { get; set; }
 
@@ -28,7 +22,7 @@ namespace Battle4Beers.Client.Models
             warr.IsBerserk = true;
             warr.TakeDamage(AbilityConstants.BerserkModeCost);
             this.PassiveDuration = AbilityDurationConstants.BerserkDuration;
-            player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.GoBerserkCooldown);
+            player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.GoBerserkCooldown);
         }
 
         public void DeactivatePassive(string nameOfPassive)

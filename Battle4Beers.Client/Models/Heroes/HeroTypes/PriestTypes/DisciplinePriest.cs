@@ -7,18 +7,12 @@ namespace Battle4Beers.Client.Models
 {
     public class DisciplinePriest : Priest, IPassiveActivator
     {
-        private bool isShielded;
-
         public DisciplinePriest(string name, int health, int healthRegen, List<Action> actions, int armor, int mana, int manaRegen, int spellPower) : base(name, health, healthRegen, actions, armor, mana, manaRegen, spellPower)
         {
             this.IsShielded = false;
         }
 
-        public bool IsShielded
-        {
-            get { return this.isShielded; }
-            set { this.isShielded = value; }
-        }
+        public bool IsShielded { get; set; }
 
         public int PassiveDuration { get; set; }
 
@@ -27,7 +21,7 @@ namespace Battle4Beers.Client.Models
             DisciplinePriest priest = (DisciplinePriest) player;
             priest.IsShielded = true;
             this.PassiveDuration = AbilityDurationConstants.ShieldDuration;
-            player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.ShieldCooldown);
+            player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.ShieldCooldown);
         }
 
         public override void TakeDamage(int amount)

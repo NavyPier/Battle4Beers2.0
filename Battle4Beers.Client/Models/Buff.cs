@@ -6,7 +6,7 @@ namespace Battle4Beers.Client.Models
     {
         private int duration;
 
-        public Buff(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost)
+        protected Buff(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost)
         {
             this.Duration = duration;
         }

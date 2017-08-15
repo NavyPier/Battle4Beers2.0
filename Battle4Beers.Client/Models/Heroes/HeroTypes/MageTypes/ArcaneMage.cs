@@ -17,8 +17,8 @@ namespace Battle4Beers.Client.Models
 
         public bool IsAmplified
         {
-            get { return this.isAmplified; }
-            set { this.isAmplified = value; }
+            get => this.isAmplified;
+            set => this.isAmplified = value;
         }
 
         public int PassiveDuration { get; set; }
@@ -29,14 +29,14 @@ namespace Battle4Beers.Client.Models
             {
                 this.IsAmplified = true;
                 this.PassiveDuration = AbilityDurationConstants.AmplifierDuration;
-                player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.AmplifyMagicCooldown);
+                player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.AmplifyMagicCooldown);
                 ArcaneBlast arcaneBlast = (ArcaneBlast)player.Actions[0];
             }
             else
             {
                 this.Mana += AbilityConstants.ArcaneMageManaRegeneration;
                 this.PassiveDuration--;
-                player.Actions.Where(a => a.Name == nameOfPassive).First().SetCooldown(AbilityCooldownConstants.ManaRegenerationCooldown);
+                player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.ManaRegenerationCooldown);
             }
 
             if(this.PassiveDuration <= 0)

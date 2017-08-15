@@ -13,8 +13,8 @@ namespace Battle4Beers.Client.Models
         public List<Buff> buffs;
         public List<Debuff> debuffs;
         private int stunnedDuration;
-        
-        public Hero(string name, int health, int healthRegen, List<Action> actions, int armor)
+
+        protected Hero(string name, int health, int healthRegen, List<Action> actions, int armor)
         {
             this.Name = name;
             this.Health = health;

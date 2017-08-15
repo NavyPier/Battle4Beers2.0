@@ -9,7 +9,7 @@ namespace Battle4Beers.Client.Models
         private int cost;
         private string type;
 
-        public Action(string name, int coolDown, int cost)
+        protected Action(string name, int coolDown, int cost)
         {
             this.Name = name;
             this.CoolDown = coolDown;

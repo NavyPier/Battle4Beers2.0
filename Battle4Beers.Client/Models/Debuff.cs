@@ -6,7 +6,7 @@ namespace Battle4Beers.Client.Models
     {
         private int duration;
 
-        public Debuff(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost)
+        protected Debuff(string name, int coolDown, int cost, int duration) : base(name, coolDown, cost)
         {
             this.Duration = duration;
         }
