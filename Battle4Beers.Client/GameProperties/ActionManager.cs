@@ -2,6 +2,9 @@
 using Battle4Beers.Client.Utilities.Constants;
 using System;
 using System.Collections.Generic;
+using Battle4Beers.Data;
+using Battle4Beers.Models;
+using System.Linq;
 
 namespace Battle4Beers.Client
 {
@@ -19,6 +22,17 @@ namespace Battle4Beers.Client
             {
                 TypesOfMenu.Instructions(Constants.instructionsText.ToString(),Constants.pressEnterText.ToString());
                 TypesOfMenu.StartMenu();
+            }
+
+            else if (action == MenuActions.BEERS.ToString())
+            {
+                Battle4BeersDbContext db = new Battle4BeersDbContext();
+                var nameReader = Console.ReadLine();
+                var player = db.Players.Where(p => p.Name == nameReader).First();
+                foreach(var beer in player.BeersToBeTaken)
+                {
+                    Console.WriteLine(beer.Loser);
+                }
             }
 
             //--> TERMINATES PROGRAM <--

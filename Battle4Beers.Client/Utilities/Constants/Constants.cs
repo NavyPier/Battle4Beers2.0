@@ -45,28 +45,28 @@ namespace Battle4Beers.Client.Utilities.Constants
         public const string instructionsText = "--- PLACEHOLDER SOMEONE WRITE THIS DOWN WHEN WE FINISH THE GAME MECHANICS ---";
         public const string pressEnterText = "--- PRESS ENTER TO CONTINUE ---";
         //04.2 Instructions - How to pick first attacker
-        public const string instructionBeerStart = "Guess which cup is full of beer if you win and your enemy fails you attack first.";
+        public const string instructionBeerStart = "GUESS WHICH CUP IS FULL OF BEER IF YOU WIN AND YOUR ENEMY FAILS YOU ATTACK FIRST.";
         public const string beer1 = @"1-
-        |~~~~~~~~~|
-        | .   . o |
+       ||~~~~~~~~~||
+       || .   . o ||
         \ # o  .  /
          \##  .  /        
           \_____/";
         public const string beer2 = @"2-
-        |~~~~~~~~~|
-        | ##  . . |
-        \ ##   .  /
+       ||~~~~~~~~~||
+       ||## .   . ||
+        \##   .   /
          \ . .   /        
           \_____/";
         public const string beer3 = @"3-
-        |~~~~~~~~~|
-        |# .  . o |
+       ||~~~~~~~~~||
+       ||# .  . o ||
         \#   .  . /
          \# . O ./        
           \_____/";
         public const string beer4 = @"4-
-        |~~~~~~~~~|
-        |###  . o |
+       ||~~~~~~~~~||
+       ||##  . o  ||
         \# o .  . /
          \ .  o  /        
           \_____/";

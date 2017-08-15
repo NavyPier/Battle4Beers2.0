@@ -164,7 +164,7 @@ namespace Battle4Beers.Client
             {
                 actions.Add(new Renew("RENEW", 0, 200, 2, (int)(Constants.PriestSpellPower * 1.5)));
                 actions.Add(new Serenity("SERENITY", 0, 400, Constants.PriestSpellPower * 5));
-                actions.Add(new PunishTheUnholy("HOLY NOVA", 0, 300, Constants.PriestSpellPower * 2));
+                actions.Add(new PunishTheUnholy("PUNISH THE UNHOLY", 0, 300, Constants.PriestSpellPower * 5));
                 Hero holyPriest = new HolyPriest(playerName, Constants.PriestHealth, Constants.PriestHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.PriestMana, Constants.PriestManaRegen, Constants.PriestSpellPower);
                 players.Add(holyPriest);
