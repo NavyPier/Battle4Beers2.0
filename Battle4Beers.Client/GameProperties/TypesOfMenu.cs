@@ -165,19 +165,8 @@ namespace Battle4Beers.Client
                             .Trim('-');
 
                     Random rnd = new Random();
-                    int luckyNumber = 0;
-                    if (rounds > 2)
-                    {
-                        if (int.Parse(beerSelected)> 2)
-                        {
-                            luckyNumber = rnd.Next(int.Parse(beerSelected), 4);
-                        }
-                        else
-                        {
-                            luckyNumber = rnd.Next(1, int.Parse(beerSelected));
-                        }
-
-                    }
+                    int luckyNumber = rnd.Next(1, 5);
+                    
                     if (luckyNumber == int.Parse(beerSelected))
                     {
                         Console.Clear();
@@ -217,14 +206,8 @@ namespace Battle4Beers.Client
 
             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + ("First team to attack:".ToString().Length / 2)) + "}"
             , "FIRST TEAM TO ATTACK:"));
-<<<<<<< HEAD
             Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (firstSecondTeamMessage.Last().ToString().Length / 2)) + "}"
             , firstSecondTeamMessage.Last() + "'S TEAM"));
-=======
-            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (string.Join(" and ", heroesScores.First().Key.Select(x => x.Name)).Length / 2)) + "}"
-            , string.Join(" and ", heroesScores.First().Key.Select(x => x.Name))));
->>>>>>> 86dd9eb9b5bf459bb97522908273d4db7f00956f
-            Pause(3);
 
             List<List<Hero>> orderedTeams = new List<List<Hero>>();
             orderedTeams.Add(heroesScores.First().Key);
