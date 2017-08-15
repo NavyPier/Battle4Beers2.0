@@ -28,10 +28,17 @@ namespace Battle4Beers.Client
             {
                 Battle4BeersDbContext db = new Battle4BeersDbContext();
                 var nameReader = Console.ReadLine();
-                var player = db.Players.Where(p => p.Name == nameReader).First();
-                foreach(var beer in player.BeersToBeTaken)
+                var player = db.Players.FirstOrDefault(p => p.Name == nameReader);
+                if (player != null)
                 {
-                    Console.WriteLine(beer.Loser);
+                    foreach (var beer in player.BeersToBeTaken)
+                    {
+                        Console.WriteLine(beer.Loser.Name);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Player does not exist!");
                 }
             }
 
