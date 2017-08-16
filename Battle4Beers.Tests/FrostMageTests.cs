@@ -9,6 +9,7 @@ namespace Battle4Beers.Tests
     public class FrostMageTests
     {
         private const int health = 20;
+        private const int fullHealth = 1500;
         private const int healthRegeneration = 50;
         private const int armor = 5;
         private const int mana = 20;
