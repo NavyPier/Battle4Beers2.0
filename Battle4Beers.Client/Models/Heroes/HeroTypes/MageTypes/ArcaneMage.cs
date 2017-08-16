@@ -30,7 +30,7 @@ namespace Battle4Beers.Client.Models
                 this.IsAmplified = true;
                 this.PassiveDuration = AbilityDurationConstants.AmplifierDuration;
                 player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.AmplifyMagicCooldown);
-                ArcaneBlast arcaneBlast = (ArcaneBlast)player.Actions[0];
+                ArcaneBlast arcaneBlast = player.Actions[0] as ArcaneBlast;
             }
             else
             {

@@ -43,6 +43,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArcaneMageTests.cs" />
     <Compile Include="CombatTests.cs" />
     <Compile Include="HeroTests.cs" />
     <Compile Include="PriestTests.cs" />
