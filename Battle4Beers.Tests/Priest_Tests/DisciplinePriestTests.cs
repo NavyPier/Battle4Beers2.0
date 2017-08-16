@@ -19,7 +19,7 @@ namespace Battle4Beers.Tests
         private const int smallDamage = 4;
 
         [Test]
-        public void ActivatePassiveWithFireArmor()
+        public void ActivatePassiveWithShield()
         {
             //Arrange
             DisciplinePriest sut = new DisciplinePriest("Patric", health, healthRegeneration, new List<Action>() { new Shield("SHIELD", 3, 3, 4) }, armor, mana, manaRegen, spellPower);

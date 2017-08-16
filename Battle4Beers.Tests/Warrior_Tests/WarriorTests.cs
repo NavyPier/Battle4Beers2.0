@@ -6,7 +6,7 @@ using Battle4Beers.Client.Models;
 namespace Battle4Beers.Tests
 {
     [TestFixture]
-    public class WarriorTests
+    public class WarriorTest
     {
         private const int health = 20;
         private const int fullHealth = 1700;

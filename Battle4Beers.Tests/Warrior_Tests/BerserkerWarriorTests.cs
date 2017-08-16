@@ -16,7 +16,7 @@ namespace Battle4Beers.Tests
         private const int attackPower = 10;
  
         [Test]
-        public void ActivatePassiveWithFireArmor()
+        public void ActivatePassiveWithGoBerserk()
         {
             //Arrange
             BerserkerWarrior sut = new BerserkerWarrior("Avanger", health, healthRegeneration, new List<Action>() { new GoBerserk("GO BERSERK", 3, 3, 4) }, armor, rage, attackPower);
