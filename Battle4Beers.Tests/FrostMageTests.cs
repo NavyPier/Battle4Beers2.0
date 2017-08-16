@@ -28,7 +28,9 @@ namespace Battle4Beers.Tests
 
             //Assert
             Assert.IsTrue(sut.IcyVeins);
-            Assert.AreEqual(3, sut.PassiveDuration);
+            Assert.AreEqual(0, sut.PassiveDuration);
+            Assert.AreEqual(-1, sut.FrostArmorDuration);
+            Assert.AreEqual(2, sut.IcyVeinsDuration);
         }
     }
 }
