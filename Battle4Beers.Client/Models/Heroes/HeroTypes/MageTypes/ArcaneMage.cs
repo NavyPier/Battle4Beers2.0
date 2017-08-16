@@ -17,8 +17,8 @@ namespace Battle4Beers.Client.Models
 
         public bool IsAmplified
         {
-            get => this.isAmplified;
-            set => this.isAmplified = value;
+            get { return this.isAmplified; }
+            set { this.isAmplified = value; }
         }
 
         public int PassiveDuration { get; set; }

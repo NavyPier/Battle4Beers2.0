@@ -37,7 +37,7 @@ namespace Battle4Beers.Client
             for (int i = 0; i < counter; i++)
             {
                 Console.WriteLine($"ENTER NAME FOR PLAYER{i + 1}");
-                var name = Console.ReadLine();
+                var name = Console.ReadLine().Trim();
                 try
                 {
                     validator = new Validator();

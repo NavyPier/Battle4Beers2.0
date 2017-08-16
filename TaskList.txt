@@ -5,13 +5,13 @@ Task List:
  - Georgi - Done
 
 2. Unit Tests
- - Everyone mostly Aleks
+ - Everyone mostly Aleks - Done
 
 3. Models for Heroes and Actions
   3.1 Hero and Action - Done
   3.2 Priest, Warrior, Mage and different actions
   3.3 Priest classes, Warrior classes, Mage classes
- - Ivailo, Vesko
+ - Ivailo, Vesko - Done
 
 4. Optimize functionality
  - Everyone 
@@ -23,4 +23,4 @@ Task List:
   5.4 Battleground
   5.5 Action result screen
   5.6 Game result screen
- - Ivailo, Ivo
+ - Ivailo, Ivo - Done

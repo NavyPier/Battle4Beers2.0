@@ -23,7 +23,7 @@ namespace Battle4Beers.Client
             manager.DoAction(command);
         }
         //Writes instructions and loops untill enter received.
-        public static void Instructions(params string[] textToWrite)
+        public static void BeerInstructions(params string[] textToWrite)
         {
             foreach (var text in textToWrite)
             {
@@ -145,7 +145,7 @@ namespace Battle4Beers.Client
             List<string> firstSecondTeamMessage = new List<string>() { first, second };
 
             Console.Clear();
-            Instructions(Constants.instructionBeerStart, Constants.pressEnterText);
+            BeerInstructions(Constants.instructionBeerStart, Constants.pressEnterText);
 
             int rounds = 0;
 
@@ -157,7 +157,7 @@ namespace Battle4Beers.Client
                 while (counter <= 1)
                 {
                     Console.Clear();
-                    Instructions(firstSecondTeamMessage.First(), "PRESS ENTER TO CONTINUE AND CHOOSE KEG.");
+                    BeerInstructions(firstSecondTeamMessage.First(), "PRESS ENTER TO CONTINUE AND CHOOSE KEG.");
                     var message = firstSecondTeamMessage.First();
 
                     var beerSelected = MenuDrawer
@@ -215,7 +215,7 @@ namespace Battle4Beers.Client
             return orderedTeams;
         }
 
-        static void Pause(int sec)
+        public static void Pause(int sec)
         {
             Console.WriteLine();
             var pauseProc = Process.Start(
