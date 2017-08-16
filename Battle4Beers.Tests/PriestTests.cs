@@ -46,7 +46,7 @@ namespace Battle4Beers.Tests
             //Act
             sut.Regenerate();
             //Assert
-            Assert.AreEqual(2100, sut.Health);
+            Assert.AreEqual(1400, sut.Health);
             Assert.AreEqual(2700, sut.Mana);
         }
     }
