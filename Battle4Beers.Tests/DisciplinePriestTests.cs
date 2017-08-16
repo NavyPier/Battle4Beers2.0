@@ -10,6 +10,7 @@ namespace Battle4Beers.Tests
     public class DisciplinePriestTests
     {
         private const int health = 200;
+        private const int fullHealth = 1400;
         private const int healthRegeneration = 50;
         private const int armor = 5;
         private const int mana = 20;
