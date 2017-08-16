@@ -173,7 +173,7 @@ namespace Battle4Beers.Client
                         message = firstSecondTeamMessage.First() + " found the beer !";
                         Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (message.Length / 2)) + "}"
                         , message));
-                        Pause(3);
+                        ActionManager.Pause(3);
                         var name = heroesScores.First().Key;
                         heroesScores[name] = 1;
                     }
@@ -183,7 +183,7 @@ namespace Battle4Beers.Client
                         message = firstSecondTeamMessage.First() + $" wrong answer! The beer was behind number{luckyNumber}.";
                         Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (message.Length / 2)) + "}"
                         , message));
-                        Pause(2);
+                        ActionManager.Pause(2);
                     }
 
                     counter++;
@@ -199,7 +199,7 @@ namespace Battle4Beers.Client
                 {
                     Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + ("EVEN RESULT TRY AGAIN".ToString().Length / 2)) + "}"
                     , "EVEN RESULT TRY AGAIN"));
-                    Pause(2);
+                    ActionManager.Pause(2);
                 }
                 rounds++;
             }
@@ -215,18 +215,7 @@ namespace Battle4Beers.Client
             return orderedTeams;
         }
 
-        public static void Pause(int sec)
-        {
-            Console.WriteLine();
-            var pauseProc = Process.Start(
-                new ProcessStartInfo()
-                {
-                    FileName = "cmd",
-                    Arguments = "/C TIMEOUT /t " + sec + " /nobreak > NUL",
-                    UseShellExecute = false
-                });
-            pauseProc.WaitForExit();
-        }
+        
 
         public static Hero SelectATarget(List<Hero> players)
         {
