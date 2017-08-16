@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
 using Battle4Beers.Client.Models;
-using Battle4Beers.Client.Models.Actions;
 using Battle4Beers.Client.Models.Actions.PriestActions.DisciplinePriest;
 
 namespace Battle4Beers.Tests

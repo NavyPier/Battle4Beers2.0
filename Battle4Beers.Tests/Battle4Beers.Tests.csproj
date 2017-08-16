@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArcaneMageTests.cs" />
+    <Compile Include="BerserkerWarriorTests.cs" />
     <Compile Include="CombatTests.cs" />
     <Compile Include="DisciplinePriestTests.cs" />
     <Compile Include="FireMageTests.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="PriestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MageTests.cs" />
+    <Compile Include="ShadowPriestTests.cs" />
     <Compile Include="WarriorTests.cs" />
   </ItemGroup>
   <ItemGroup>
