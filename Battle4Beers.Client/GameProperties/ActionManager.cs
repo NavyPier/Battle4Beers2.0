@@ -33,33 +33,45 @@ namespace Battle4Beers.Client
                 Battle4BeersDbContext db = new Battle4BeersDbContext();
                 var nameReader = Console.ReadLine();
                 var player = db.Players.FirstOrDefault(p => p.Name == nameReader);
-                if (player != null)
-                {
-                    var namesWithBeers = new SortedDictionary<string, int>();
-                    foreach (var beer in player.BeersToBeTaken)
-                    {
-                        var loserName = beer.Loser.Name;
-                        if (!namesWithBeers.ContainsKey(loserName))
-                        {
-                            namesWithBeers[loserName] = 0;
-                        }
-                        namesWithBeers[loserName]++;
-                    }
-                    foreach (var nameWithBeers in namesWithBeers.Reverse())
-                    {
-                        Console.WriteLine($"-----   {nameWithBeers.Key} owns {nameWithBeers.Value} beers   -----");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Player does not exist!");
-                    Pause(3);
-                }
                 var key = new ConsoleKeyInfo();
                 while (key.Key != ConsoleKey.Enter)
                 {
-                    Console.Clear();
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    if (player != null)
+                    {
+                        var namesWithBeers = new SortedDictionary<string, int>();
+                        foreach (var beer in player.BeersToBeTaken)
+                        {
+                            var loserName = beer.Loser.Name;
+                            if (!namesWithBeers.ContainsKey(loserName))
+                            {
+                                namesWithBeers[loserName] = 0;
+                            }
+                            namesWithBeers[loserName]++;
+                        }
+                        if (namesWithBeers.Count > 0)
+                        {
+                            foreach (var nameWithBeers in namesWithBeers.Reverse())
+                            {
+                                if (nameWithBeers.Value <= 1)
+                                {
+                                    Console.WriteLine($"-----   {nameWithBeers.Key} owns {nameWithBeers.Value} beer   -----");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"-----   {nameWithBeers.Key} owns {nameWithBeers.Value} beers   -----");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Player has not earned any beers yet!");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Player does not exist!");
+                        Pause(3);
+                    }
                     Console.WriteLine("...PRESS ENTER TO GO BACK TO MAIN MENU...");
                     key = Console.ReadKey();
                 }
@@ -76,7 +88,7 @@ namespace Battle4Beers.Client
             {
                 CharacterCreation.TypeNames(action);
             }
-    }
+        }
         public static void Pause(int sec)
         {
             Console.WriteLine();

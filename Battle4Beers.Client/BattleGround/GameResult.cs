@@ -43,6 +43,17 @@ namespace Battle4Beers.Client.BattleGround
                     losingTeam = secondTeam;
                 }
             }
+
+            var key = new ConsoleKeyInfo();
+            while (key.Key != ConsoleKey.Enter)
+            {
+                Console.Clear();
+                Console.WriteLine(String.Format("{0," + (Console.WindowWidth / 2) + "}"
+                , $"---WINNING TEAM IS {winningTeam[0].Name}'S TEAM---"));
+                Console.WriteLine(String.Format("{0," + (Console.WindowWidth / 2) + "}"
+                , $"---PRESS ENTER TO END THE GAME---"));
+                key = Console.ReadKey();
+            }
             // I don't use Dependancy Injection because GameResult is static
             beersWriter = new BeersDatabase();
             beersWriter.Save(winningTeam, losingTeam);
