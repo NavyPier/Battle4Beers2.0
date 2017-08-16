@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArcaneMageTests.cs" />
+    <Compile Include="BerserkerWarriorTests.cs" />
     <Compile Include="CombatTests.cs" />
     <Compile Include="DisciplinePriestTests.cs" />
     <Compile Include="FireMageTests.cs" />
