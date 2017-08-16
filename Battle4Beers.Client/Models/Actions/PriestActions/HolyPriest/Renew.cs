@@ -21,8 +21,11 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
 
         public override void BuffPlayer(Hero player)
         {
-            player.GetHealed(this.Heal);
-            player.buffs.Where(a => a.Name == this.Name && a.Duration == this.Duration).First().ReduceDuration(player);
+            if(player.Health > 0)
+            {
+                player.GetHealed(this.Heal);
+                player.buffs.Where(a => a.Name == this.Name && a.Duration == this.Duration).First().ReduceDuration(player);
+            }
         }
 
         public override void GivePlayerBuff(Buff buff, Hero player)
