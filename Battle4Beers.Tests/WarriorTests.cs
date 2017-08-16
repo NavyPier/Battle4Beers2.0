@@ -1,11 +1,7 @@
 ﻿using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Battle4Beers.Client.Models;
-using Action = Battle4Beers.Client.Models.Action;
+
 
 namespace Battle4Beers.Tests
 {

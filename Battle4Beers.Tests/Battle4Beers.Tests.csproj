@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="ArcaneMageTests.cs" />
     <Compile Include="CombatTests.cs" />
+    <Compile Include="FireMageTests.cs" />
+    <Compile Include="FrostMageTests.cs" />
     <Compile Include="HeroTests.cs" />
     <Compile Include="PriestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
