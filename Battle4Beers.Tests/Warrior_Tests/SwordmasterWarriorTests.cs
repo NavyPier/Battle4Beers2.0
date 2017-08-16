@@ -25,7 +25,7 @@ namespace Battle4Beers.Tests.WarriorTests
 
             //Assert
             Assert.IsTrue(sut.CriticalStrike);
-            Assert.AreEqual(3, sut.PassiveDuration);
+            Assert.AreEqual(0, sut.PassiveDuration);
         }
     }
 }
