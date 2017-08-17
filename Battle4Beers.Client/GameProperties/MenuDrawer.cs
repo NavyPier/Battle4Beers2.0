@@ -37,7 +37,7 @@ namespace Battle4Beers.Client
                     index = 1;
                 }
                 currentActions[index] = "--> " + actions[index];
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(Constants.GameTitle);
                 Console.WriteLine("{0," + (Console.WindowWidth / 2 + 10) + "}", currentActions[0]);
                 foreach (var action in currentActions.Skip(1))

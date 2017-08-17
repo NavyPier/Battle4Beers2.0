@@ -79,7 +79,6 @@
     <Compile Include="Utilities\Constants\AbilityConstants\AbilityConstants.cs" />
     <Compile Include="Utilities\Constants\AbilityConstants\AbilityCooldownConstants.cs" />
     <Compile Include="Utilities\Constants\AbilityConstants\AbilityDurationConstants.cs" />
-    <Compile Include="Utilities\Randomizer.cs" />
     <Compile Include="GameProperties\TypesOfMenu.cs" />
     <Compile Include="Interfaces\IAction.cs" />
     <Compile Include="Interfaces\IBuff.cs" />

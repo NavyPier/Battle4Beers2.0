@@ -6,6 +6,8 @@ namespace Battle4Beers.Client.Utilities.Constants
     {
         //01.Hero constants
         public const int HeroBaseArmor = 0;
+        public const int BaseCooldown = 0;
+        public const int BaseCost = 0;
 
         //01.1.Warrior
 
@@ -84,7 +86,7 @@ namespace Battle4Beers.Client.Utilities.Constants
         public const string GameTitle = @"          _________       ___     ___  _________
           |   ___  |     |   |   |   | |   ___  |
           |  |___| |     |   |   |   | |  |___| |
-          |________|__   |   |___|   | |________|__
+          |________|__   |   |___|   | |________|___
           |  ______    | |_______    | |  ______    |
           |  |     |   |         |   | |  |     |   |
           |  |_____|   |         |   | |  |_____|   |

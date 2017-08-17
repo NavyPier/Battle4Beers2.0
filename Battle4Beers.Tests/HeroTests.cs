@@ -29,10 +29,9 @@ namespace Battle4Beers.Tests
         [Test]
         public void IsPlayerHealed()
         {
-            //Arrange
-
             //Act
             sut.GetHealed(heal);
+
             //Assert
             Assert.AreEqual(35, sut.Health);
         }
