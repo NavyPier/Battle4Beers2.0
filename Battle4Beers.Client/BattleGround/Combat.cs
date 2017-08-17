@@ -20,8 +20,8 @@ namespace Battle4Beers.Client
             int sizeOfTeam = players.Count / 2;
             firstTeam = players.Take(sizeOfTeam).ToList();
             secondTeam = players.Skip(sizeOfTeam).Take(sizeOfTeam).ToList();
-            List<List<Hero>> orderedTeams = TypesOfMenu.ChooseFirstAttacker(firstTeam, secondTeam);
-            BattleStart(orderedTeams.First(), orderedTeams.Last());
+            //List<List<Hero>> orderedTeams = TypesOfMenu.ChooseFirstAttacker(firstTeam, secondTeam);
+            BattleStart(firstTeam, secondTeam);
         }
 
         public static void BattleStart(List<Hero> firstTeam, List<Hero> secondTeam)

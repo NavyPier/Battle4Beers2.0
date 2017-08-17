@@ -24,7 +24,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
         {
             enemy.StunnedDuration++;
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.ShieldSlamCooldown);
-            enemy.TakeDamage(this.Damage);
+            enemy.TakeDamage(player.Armor);
             ProtectionWarrior warr = (ProtectionWarrior)player;
             warr.PassiveDuration--;
             if(warr.PassiveDuration <= 0)
@@ -35,7 +35,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
 
         public override string ToString()
         {
-            return $"{this.Name}: Damage the selected opponent for {this.Damage} damage. Stun target for {AbilityDurationConstants.ShieldSlamDuration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Rage";
+            return $"{this.Name}: Damage the selected opponent for damage equal to your current armor. Stun target for {AbilityDurationConstants.ShieldSlamDuration} turns. Cooldown: {this.CoolDown}, Cost: {this.Cost} Rage";
         }
 
     }

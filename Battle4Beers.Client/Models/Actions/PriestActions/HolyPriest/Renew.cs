@@ -32,7 +32,6 @@ namespace Battle4Beers.Client.Models.Actions.PriestActions.HolyPriest
         {
             Buff renew = new Renew("RENEW", 0, 0, AbilityDurationConstants.RenewDuration, this.Heal);
             player.buffs.Add(renew);
-            player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.RenewCooldown);
         }
 
         public override string ToString()
