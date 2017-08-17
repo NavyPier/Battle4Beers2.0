@@ -26,7 +26,7 @@ namespace Battle4Beers.Client.Models
 
         public override void TakeDamage(int amount)
         {
-            if(this.Hibernating)
+            if(this.Hibernating && amount != 0)
             {
                 amount /= 2;
             }
