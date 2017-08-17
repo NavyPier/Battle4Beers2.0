@@ -6,6 +6,7 @@ using Battle4Beers.Data;
 using Battle4Beers.Models;
 using System.Linq;
 using System.Diagnostics;
+using Battle4Beers.Client.GameProperties;
 
 namespace Battle4Beers.Client
 {
@@ -21,7 +22,7 @@ namespace Battle4Beers.Client
             }
             else if (action == MenuActions.INSTRUCTIONS.ToString())
             {
-                TypesOfMenu.BeerInstructions(Constants.instructionsText.ToString(), Constants.pressEnterText.ToString());
+                InstructionsWriter.WriteInstructions();
                 TypesOfMenu.StartMenu();
             }
 

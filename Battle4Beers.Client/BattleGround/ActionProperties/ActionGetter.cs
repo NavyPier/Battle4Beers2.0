@@ -91,6 +91,16 @@ namespace Battle4Beers.Client.BattleGround
                 {
                     HeroCooldownReductor.ReduceCooldowns(player);
                     target.TakeDamage(AbilityConstants.ExecutionDamage);
+                    var key = new ConsoleKeyInfo();
+                    while (key.Key != ConsoleKey.Enter)
+                    {
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(Constants.GameTitle);
+                        Console.WriteLine($"{target.Name} HAS BEEN BRUTALLY EXECUTED!");
+                        Console.WriteLine("-- PRESS ENTER TO CONTINUE TO ACTION MENU TO SELECT A DIFFERENT ACTION --");
+                        key = Console.ReadKey();
+                    }
                 }
                 else
                 {

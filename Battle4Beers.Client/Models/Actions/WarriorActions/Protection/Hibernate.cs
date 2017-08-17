@@ -28,7 +28,7 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions
 
         public override string ToString()
         {
-            return $"{this.Name}: Buff target ally to receive only {this.Percentage}% damage for the next {AbilityDurationConstants.HibernateDuration} turns. Heal target ally for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost}";
+            return $"{this.Name}: Receive only {this.Percentage}% damage for the next {AbilityDurationConstants.HibernateDuration} turns. Get healed for {this.Heal}. Cooldown: {this.CoolDown}, Cost: {this.Cost}";
         }
     }
 }

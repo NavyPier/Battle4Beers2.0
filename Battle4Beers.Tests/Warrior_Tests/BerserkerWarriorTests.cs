@@ -19,7 +19,7 @@ namespace Battle4Beers.Tests
         public void ActivatePassiveWithGoBerserk()
         {
             //Arrange
-            BerserkerWarrior sut = new BerserkerWarrior("Avanger", health, healthRegeneration, new List<Action>() { new GoBerserk("GO BERSERK", 3, 3, 4) }, armor, rage, attackPower);
+            BerserkerWarrior sut = new BerserkerWarrior("Avanger", health, healthRegeneration, new List<Action>() { new GoBerserk ("GO BERSERK", 3, 3, 4) }, armor, rage, attackPower);
 
             //Act
             sut.ActivatePassive("GO BERSERK", sut);

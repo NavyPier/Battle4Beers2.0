@@ -48,15 +48,19 @@ namespace Battle4Beers.Client.BattleGround
             while (key.Key != ConsoleKey.Enter)
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(String.Format("{0," + (Console.WindowWidth / 2) + "}"
                 , $"---WINNING TEAM IS {winningTeam[0].Name}'S TEAM---"));
                 Console.WriteLine(String.Format("{0," + (Console.WindowWidth / 2) + "}"
-                , $"---PRESS ENTER TO END THE GAME---"));
+                , $"---BEERS UPDATED---"));
+                Console.WriteLine(String.Format("{0," + (Console.WindowWidth / 2) + "}"
+                , $"---PRESS ENTER TO GET BACK TO GAME MENU---"));
                 key = Console.ReadKey();
             }
             // I don't use Dependancy Injection because GameResult is static
             beersWriter = new BeersDatabase();
             beersWriter.Save(winningTeam, losingTeam);
+            TypesOfMenu.StartMenu();
         }
 
         

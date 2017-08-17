@@ -9,7 +9,7 @@ namespace Battle4Beers.Client.BattleGround
     {
         public static void ExecuteAction(Models.Action action, Hero player)
         {
-            if (action.Name != "CRITICAL STRIKE")
+            if (action.Name != "LEVEL UP CRITICAL STRIKE")
             {
                 HeroCooldownReductor.ReduceCooldowns(player);
                 IPassiveActivator hero = (IPassiveActivator)player;

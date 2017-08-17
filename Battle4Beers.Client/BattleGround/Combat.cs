@@ -49,7 +49,8 @@ namespace Battle4Beers.Client
 
                 foreach (var player in secondTeam)
                 {
-                    if (player.Health > 0)
+                    if (player
+                        .Health > 0)
                     {
                         player.Regenerate();
                     }

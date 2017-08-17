@@ -18,11 +18,21 @@ namespace Battle4Beers.Client.Models
 
         public void ActivatePassive(string nameOfPassive, Hero player)
         {
-            BerserkerWarrior warr = (BerserkerWarrior)player;
-            warr.IsBerserk = true;
-            warr.TakeDamage(AbilityConstants.BerserkModeCost);
-            this.PassiveDuration = AbilityDurationConstants.BerserkDuration;
-            player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.GoBerserkCooldown);
+            if(player.Health > AbilityConstants.BerserkModeCost)
+            {
+                BerserkerWarrior warr = (BerserkerWarrior)player;
+                warr.IsBerserk = true;
+                warr.TakeDamage(AbilityConstants.BerserkModeCost);
+                this.PassiveDuration = AbilityDurationConstants.BerserkDuration;
+                player.Actions.First(a => a.Name == nameOfPassive).SetCooldown(AbilityCooldownConstants.GoBerserkCooldown);
+            }
+            else
+            {
+                System.Console.WriteLine("PLAYER'S HP IS TOO LOW TO USE THIS ACTION!");
+                ActionManager.Pause(3);
+                Combat.PlayerTurn(player);
+            }
+
         }
 
         public void DeactivatePassive(string nameOfPassive)

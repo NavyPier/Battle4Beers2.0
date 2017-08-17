@@ -129,7 +129,7 @@ namespace Battle4Beers.Client
                 actions.Add(new FireBlast("FIRE BLAST", 0, Constants.MageManaRegen, Constants.MageSpellPower));
                 actions.Add(new FireArmor("ARMOR OF FIRE", 0, 150, Constants.MageSpellPower, 400));
                 actions.Add(new PyroBlast("PYROBLAST", 0, 200, Constants.MageSpellPower * 5));
-                actions.Add(new Incinerate("INCINERATE", 0, 0,  900));
+                actions.Add(new Incinerate("INCINERATE", 0, 0,  800));
                 Hero fireMage = new FireMage(playerName, Constants.MageHealth, Constants.MageHealthRegen
                     , actions, Constants.HeroBaseArmor, Constants.MageMana, Constants.MageManaRegen, Constants.MageSpellPower);
                 players.Add(fireMage);

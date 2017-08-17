@@ -28,17 +28,15 @@ namespace Battle4Beers.Client.Models.Actions.WarriorActions.Swordmaster
             player.Actions.Where(a => a.Name == this.Name).First().SetCooldown(AbilityCooldownConstants.MirrorImageCooldown);
             if (playerOnTurn.CriticalStrike)
             {
-                var random = new Random().Next(1, 101);
-                if (random <= 35)
+                bool isCrit = CriticalChecker.CheckForCrit(player);
+                if (isCrit)
                 {
                     CriticalPrinter.PrintCritical(player);
-                    enemy.TakeDamage(this.Damage * 2);
+                    enemy.TakeDamage(this.Damage);
                 }
             }
-            else
-            {
-                enemy.TakeDamage(this.Damage);
-            }
+
+            enemy.TakeDamage(this.Damage);
         }
 
         public override string ToString()

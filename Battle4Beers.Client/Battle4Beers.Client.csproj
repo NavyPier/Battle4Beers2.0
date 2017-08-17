@@ -65,6 +65,7 @@
     <Compile Include="GameProperties\ActionManager.cs" />
     <Compile Include="BattleGround\Combat.cs" />
     <Compile Include="GameProperties\HeroTypeChecker.cs" />
+    <Compile Include="GameProperties\InstructionsWriter.cs" />
     <Compile Include="Interfaces\IAgressiveAction.cs" />
     <Compile Include="Interfaces\IBeersWriter.cs" />
     <Compile Include="Interfaces\ICombat.cs" />

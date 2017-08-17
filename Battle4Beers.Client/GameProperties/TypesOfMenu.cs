@@ -48,12 +48,13 @@ namespace Battle4Beers.Client
             {
                 title += $" {player.Name}'S DAMAGE IS BUFFED DUE TO PASSIVE";
             }
-            var firstAction = player.Actions[0].ToString();
-            var secondAction = player.Actions[1].ToString();
-            var thirdAction = player.Actions[2].ToString();
-            var fourthAction = player.Actions[3].ToString();
-            var action = MenuDrawer.DrawMenu(new List<string>() { title, firstAction, secondAction, thirdAction, fourthAction });
-            return player.Actions.Where(a => a.Name.Contains(action.Trim(':'))).First();
+            List<string> stringsToBeGiven = new List<string>() { title};
+            foreach(var action in player.Actions)
+            {
+                stringsToBeGiven.Add(action.ToString());
+            }
+            var option = MenuDrawer.DrawMenu(stringsToBeGiven);
+            return player.Actions.Where(a => a.Name.Contains(option.Trim(':'))).First();
         }
 
         public static void NewGameMenu()
